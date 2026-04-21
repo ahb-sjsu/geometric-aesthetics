@@ -1,6 +1,6 @@
 # Chapter 12: The Aesthetic Brain
 
-> Part IV of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part IV of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 

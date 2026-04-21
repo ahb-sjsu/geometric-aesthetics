@@ -97,7 +97,8 @@ flowchart TB
 | [Geometric Politics](https://github.com/ahb-sjsu/geometric-politics) | Outline |
 | [Geometric AI](https://github.com/ahb-sjsu/geometric-ai) | Outline |
 | [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Outline |
-| **Geometric Aesthetics: The Mathematical Structure of Beauty Across Domains** | **Paper complete, book drafting** |
+| [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Outline |
+| **Geometric Aesthetics: Beauty as Preference Optimization on Perceptual Eigenspaces** | **Paper complete, book drafting (Vol 13)** |
 
 ## Repository layout
 

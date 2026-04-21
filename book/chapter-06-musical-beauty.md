@@ -1,6 +1,6 @@
 # Chapter 6: Musical Beauty
 
-> Part II of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part II of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 

@@ -1,6 +1,6 @@
 # Chapter 10: Literary and Narrative Beauty
 
-> Part III of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part III of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 

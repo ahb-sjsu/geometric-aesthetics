@@ -1,6 +1,6 @@
 # Chapter 2: Symmetry and Its Violations
 
-> Part I of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part I of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 

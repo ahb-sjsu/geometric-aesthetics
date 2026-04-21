@@ -194,7 +194,7 @@ def render(n, slug, title, part, bullets, figures, refs):
     section_plan = "\n".join(f"{n}.{i + 1}. {b}" for i, b in enumerate(bullets))
     return f"""# Chapter {n}: {title}
 
-> Part {part} of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part {part} of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 

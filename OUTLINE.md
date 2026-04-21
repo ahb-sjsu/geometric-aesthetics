@@ -1,5 +1,5 @@
 # Geometric Aesthetics
-## Volume 7 of the Geometric Series
+## Volume 13 of the Geometric Series
 
 **Working subtitle:** *Why Harmony Has Shape — The Mathematical Structure of Beauty Across Domains*
 

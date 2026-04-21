@@ -1,6 +1,6 @@
 # Chapter 16: Open Questions and Future Directions
 
-> Part V of *Geometric Aesthetics* - Volume 7 of the Geometric Series
+> Part V of *Geometric Aesthetics* - Volume 13 of the Geometric Series
 
 **Draft status:** outline
 
