@@ -1,0 +1,754 @@
+\documentclass[journal]{IEEEtran}
+
+% ---- Packages ----
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{cite}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=blue
+}
+
+% ---- Theorem environments ----
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+
+% ---- Custom commands ----
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\norm}[1]{\left\lVert #1 \right\rVert}
+\newcommand{\ip}[2]{\langle #1, #2 \rangle}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\DeclareMathOperator{\tr}{tr}
+
+\begin{document}
+
+% ---- Title ----
+\title{Geometric Aesthetics: A Framework for Beauty\\as
+Compressibility in Perceptual Eigenspaces}
+
+\author{Andrew~H.~Bond
+\thanks{Department of Computer Engineering, San Jose State University.
+E-mail: andrew.bond@sjsu.edu}}
+
+\markboth{Geometric Aesthetics}{Bond: Beauty as Compressibility
+in Perceptual Eigenspaces}
+
+\maketitle
+
+% =====================================================================
+% ABSTRACT
+% =====================================================================
+\begin{abstract}
+We propose a mathematical framework in which aesthetic
+experience---the perception of beauty, harmony, and
+elegance---arises from the compressibility of stimuli relative
+to a perceiver's learned perceptual eigenstructure.  We formalize
+perceptual spaces as finite-dimensional inner product spaces equipped
+with a learned covariance, define a scoring functional that measures
+description efficiency relative to this structure, and derive three
+main results under simplifying assumptions:
+(1)~the scoring functional is maximized at a characterizable
+boundary between order and randomness;
+(2)~stimuli with group symmetry achieve exact compression as a
+special case;
+(3)~a temporal extension yields a compression-progress functional
+whose peaks correspond to moments of ``insight.''
+We show how Birkhoff's aesthetic measure, Berlyne's inverted-U,
+and reward prediction error theory can be interpreted within this
+framework, and we derive heuristic predictions testable against
+existing datasets.  The framework is proposed as a formalization of
+intuitions, not as a closed theory; we are explicit about where
+the mathematics is rigorous and where it is conjectural.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Aesthetics, information theory, perception, symmetry, compression,
+eigenspectrum, beauty.
+\end{IEEEkeywords}
+
+
+% =====================================================================
+\section{Introduction}
+\label{sec:intro}
+% =====================================================================
+
+The question of why certain configurations are perceived as beautiful
+has occupied philosophers since antiquity and scientists since
+Fechner's experimental aesthetics in the 1870s~\cite{fechner1876vorschule}.
+Despite sustained inquiry, no mathematical framework has achieved broad
+acceptance.
+
+We propose that aesthetic experience has a geometric structure that
+can be partially formalized.  The central idea is simple: each
+perceiver carries a \emph{perceptual eigenstructure}---a learned
+decomposition of the stimulus space into directions of decreasing
+importance---and the aesthetic response to a stimulus depends on the
+relationship between the stimulus's structure and the perceiver's
+eigenstructure.  A stimulus that is compressible in the perceiver's
+eigenbasis but not in a random basis carries \emph{meaningful
+structure relative to that perceiver}.  We identify this property
+with beauty.
+
+\paragraph{Scope and honesty.}
+This paper is a \emph{conceptual theory paper with formal
+scaffolding}, not a theorem-driven paper in the classical sense.
+We prove some results rigorously
+(Propositions~\ref{prop:expertise}, \ref{prop:symmetry_compression},
+\ref{prop:existence}, and~\ref{prop:berlyne_shape}).
+Other results are heuristic observations or conjectures, labeled
+as such (the temporal theory in~\S\ref{sec:temporal}, broken
+symmetry in~\S\ref{sec:symmetry}, connections to neuroscience
+and cultural distance in~\S\ref{sec:conjectural}).  We believe the framework is
+productive even where it is not yet rigorous, but we do not claim
+more rigor than exists.
+
+
+% =====================================================================
+\section{The Perceptual Eigenspace}
+\label{sec:eigenspace}
+% =====================================================================
+
+\subsection{Setup}
+
+Let $\mathcal{X} \subseteq \R^d$ be a \emph{stimulus space}---the
+set of all possible stimuli in a domain.  A perceiver~$P$ has been
+exposed to a distribution~$\mu$ over~$\mathcal{X}$ (their lifetime
+experience in the domain).
+
+\begin{definition}[Perceptual covariance]
+\label{def:cov}
+The \emph{perceptual covariance} of perceiver~$P$ is the positive
+semi-definite matrix
+\begin{equation}
+    \Sigma_P = \E_\mu\bigl[(x - \bar{x})(x - \bar{x})^\top\bigr],
+    \quad \bar{x} = \E_\mu[x].
+    \label{eq:cov}
+\end{equation}
+Its eigendecomposition $\Sigma_P = U \Lambda U^\top$ with
+$\lambda_1 \geq \cdots \geq \lambda_d \geq 0$ defines the
+perceiver's \emph{perceptual eigenbasis}.
+\end{definition}
+
+\begin{definition}[Perceptual coordinates]
+\label{def:coords}
+The representation of stimulus~$x$ in the perceiver's eigenbasis is
+$z = U^\top(x - \bar{x}) \in \R^d$.  In these coordinates,
+$\Sigma_P$ is diagonal with entries~$\lambda_i$.
+\end{definition}
+
+\begin{definition}[Participation ratio]
+\label{def:pr}
+For a nonnegative spectrum $s_1, \ldots, s_d$ with $\sum s_i > 0$,
+the \emph{participation ratio} is
+\begin{equation}
+    D_{\mathrm{eff}}(s) = \frac{(\sum_{i=1}^d s_i)^2}
+    {\sum_{i=1}^d s_i^2},
+    \label{eq:pr}
+\end{equation}
+satisfying $1 \leq D_{\mathrm{eff}} \leq d$.  Applied to the
+eigenvalues, $D_{\mathrm{eff}}(\lambda)$ measures the effective
+dimensionality of the perceiver's experience.  Applied to
+$\{z_i^2\}$, it measures the effective dimensionality of a stimulus.
+\end{definition}
+
+\begin{proposition}[Expertise can expand effective dimensionality]
+\label{prop:expertise}
+Let $\Sigma' = (1-\alpha)\Sigma + \alpha \Sigma_{\mathrm{new}}$
+for $\alpha \in (0,1)$.  If the normalized eigenvalue spectrum of
+$\Sigma'$ majorizes that of $\Sigma$ less sharply---that is, if the
+update \emph{flattens} the normalized spectrum in the sense that
+$\sum_{i=1}^k \lambda'_i / S' \leq \sum_{i=1}^k \lambda_i / S$
+for all $k < d$ (where $S = \sum \lambda_i$, $S' = \sum \lambda'_i$,
+and eigenvalues are sorted descending)---then
+$D_{\mathrm{eff}}(\Sigma') \geq D_{\mathrm{eff}}(\Sigma)$,
+with equality iff the normalized spectra coincide.
+\end{proposition}
+
+\begin{proof}
+The participation ratio is $D_{\mathrm{eff}} = 1 / \sum q_i^2$
+where $q_i = \lambda_i / S$ is the normalized spectrum.  The map
+$q \mapsto \sum q_i^2$ is a Schur-convex function on the probability
+simplex.  By the Schur--Ostrowski criterion, $\sum (q'_i)^2 \leq
+\sum q_i^2$ whenever $q'$ is majorized by $q$ (i.e., the
+normalized spectrum of $\Sigma'$ is more uniform than that of
+$\Sigma$).  Therefore $D_{\mathrm{eff}}(\Sigma') \geq
+D_{\mathrm{eff}}(\Sigma)$.  Equality holds iff $q = q'$.
+\end{proof}
+
+\begin{remark}
+The majorization condition is not automatically satisfied by
+adding variance on low-eigenvalue directions; it depends on the
+specific update.  The proposition says that expertise
+\emph{can} expand effective dimensionality---and does so precisely
+when the learning flattens the normalized spectrum.  This is a
+sufficient condition, not a claim that all learning increases
+$D_{\mathrm{eff}}$.
+\end{remark}
+
+This formalizes the intuition that expertise in a domain expands
+the perceiver's effective perceptual dimensionality: a wine expert
+discriminates along dimensions invisible to a novice.
+
+
+% =====================================================================
+\section{The Aesthetic Score}
+\label{sec:score}
+% =====================================================================
+
+\subsection{Motivation and Design}
+
+We seek a score $\mathcal{A}(x; \Sigma)$ that captures: \emph{a
+stimulus is aesthetically valued when it carries meaningful
+structure relative to the perceiver}.  ``Meaningful structure'' means
+the stimulus is (i)~not trivial (it has content across multiple
+dimensions), (ii)~not random (it is compressible), and
+(iii)~compressible specifically in the perceiver's eigenbasis
+(the structure is aligned with learned experience).
+
+\subsection{Definition}
+
+We work on the unit energy surface $\norm{z}^2 = 1$ to eliminate
+scale dependence.  All stimuli are normalized to unit energy in
+perceptual coordinates before scoring.  We restrict to the
+\emph{active subspace}: let $r = |\{i : \lambda_i > 0\}|$ be the
+rank of $\Sigma_P$, and work in the $r$-dimensional subspace
+spanned by eigenvectors with positive eigenvalues.  This avoids
+division by zero in the compressibility term.
+
+\begin{definition}[Aesthetic score]
+\label{def:score}
+Let $z \in \R^r$ with $\norm{z}^2 = 1$, where $r$ is the rank of
+$\Sigma_P$ and all coordinates correspond to eigenvectors with
+$\lambda_i > 0$.  Define the energy distribution $p_i = z_i^2$
+(so $p_i \geq 0$ and $\sum_{i=1}^r p_i = 1$).  Let
+$q_i = \lambda_i / \sum_{j=1}^r \lambda_j$ be the normalized
+perceiver eigenvalues.  The \emph{aesthetic score} is
+\begin{equation}
+    \mathcal{A}(p; q) =
+    \underbrace{D_{\mathrm{eff}}(p)}_{\text{complexity}}
+    \;\cdot\;
+    \underbrace{\exp\!\left(-\frac{1}{r}\sum_{i=1}^r
+    \frac{p_i}{q_i}\right)}_{\text{compressibility}},
+    \label{eq:score}
+\end{equation}
+which is well-defined since $q_i > 0$ for all $i \leq r$.
+\end{definition}
+
+The first factor, $D_{\mathrm{eff}}(p) = 1/\sum p_i^2$, measures
+how many dimensions the stimulus occupies (complexity).  The second
+factor measures how well the stimulus's energy distribution aligns
+with the perceiver's eigenvalue distribution: when $p_i$ concentrates
+on high-$\lambda_i$ directions, the argument of the exponential is
+small and the compressibility factor is close to~1; when energy is
+spread onto low-$\lambda_i$ directions, the factor decreases.
+
+The exponential form ensures the compressibility factor is bounded
+in $[0, 1]$, eliminating the sign and scale issues of the linear
+penalty used in the preliminary version.
+
+\begin{remark}
+On the unit simplex $\{p : p_i \geq 0, \sum p_i = 1\}$, the
+score $\mathcal{A}(p; \lambda)$ is well-defined, continuous,
+and bounded.  At $p = e_i$ (all energy on one dimension),
+$D_{\mathrm{eff}} = 1$ and $\mathcal{A}$ is small.  At
+$p = (1/d, \ldots, 1/d)$ (uniform), $D_{\mathrm{eff}} = d$
+but the compressibility factor is generally small for non-uniform
+$\lambda$.  The maximum occurs at an interior point of the simplex.
+\end{remark}
+
+
+% =====================================================================
+\section{The Aesthetic Optimum}
+\label{sec:optimum}
+% =====================================================================
+
+\begin{proposition}[Existence of an interior maximizer]
+\label{prop:existence}
+The aesthetic score $\mathcal{A}(p; \lambda)$ on the closed simplex
+$\Delta^{d-1} = \{p : p_i \geq 0, \sum p_i = 1\}$ attains its
+maximum.  The maximizer does not lie at any vertex $p = e_i$
+(provided $d \geq 2$ and at least two $\lambda_i > 0$).
+\end{proposition}
+
+\begin{proof}
+$\mathcal{A}$ is continuous on the compact set $\Delta^{d-1}$, so
+attains its maximum by the extreme value theorem.  At any vertex
+$p = e_i$, $D_{\mathrm{eff}}(e_i) = 1$, so $\mathcal{A}(e_i;
+\lambda) = 1 \cdot \exp(-1/(d \cdot \lambda_i / S))$ where
+$S = \sum \lambda_j$.  By moving a small amount of mass $\delta$
+from coordinate $i$ to a coordinate $j$ with $\lambda_j > 0$,
+$D_{\mathrm{eff}}$ increases to first order (since
+$\partial D_{\mathrm{eff}}/\partial p_j |_{p=e_i}$ is unbounded
+from above as we leave the vertex), while the exponential factor
+changes continuously.  Therefore $e_i$ is not a maximizer.
+\end{proof}
+
+\begin{proposition}[Inverted-U on the power-law family]
+\label{prop:berlyne_shape}
+On the one-parameter family $p_i(\alpha) = c_\alpha \cdot i^{-\alpha}$
+(where $c_\alpha$ normalizes to unit sum), the score
+$\mathcal{A}(\alpha) = \mathcal{A}(p(\alpha); \lambda)$ satisfies:
+\begin{enumerate}
+    \item[(a)] $\mathcal{A}(0) > 0$ and $\mathcal{A}(\alpha) \to 0$
+    as $\alpha \to \infty$.
+    \item[(b)] There exists $\alpha^* > 0$ achieving the maximum.
+    \item[(c)] As $\beta \to 0$ (flat perceiver spectrum),
+    $\alpha^* \to 0$.
+\end{enumerate}
+That is, the score is an inverted-U function of concentration
+(and hence of stimulus complexity).
+\end{proposition}
+
+\begin{proof}
+(a) At $\alpha = 0$, $p_i = 1/d$ and $D_{\mathrm{eff}} = d$, so
+$\mathcal{A}(0) = d \cdot \exp(-S^{-1} \sum \lambda_i^{-1} / d^2)
+> 0$.  As $\alpha \to \infty$, all mass concentrates on $i = 1$, so
+$D_{\mathrm{eff}} \to 1$ and $\mathcal{A} \to \exp(-1/(d \cdot
+\lambda_1 / S))$, which is less than $\mathcal{A}(0)$ for $d \geq 2$.
+
+(b) By continuity of $\mathcal{A}(\alpha)$ on $[0, \infty)$ and
+the boundary behavior in~(a), the maximum is attained at some
+$\alpha^* \in (0, \infty)$.
+
+(c) When $\beta = 0$ (all $\lambda_i$ equal), the compressibility
+factor is constant for all $p$, so $\mathcal{A}$ is proportional to
+$D_{\mathrm{eff}}(p)$, which is maximized at $\alpha = 0$.
+\end{proof}
+
+This formalizes Berlyne's~\cite{berlyne1971aesthetics} central
+finding: the optimal stimulus complexity is intermediate.
+
+\begin{remark}[What we do not prove]
+We do not prove that $\alpha^* < \beta$ in general.  Numerical
+experiments suggest this holds for moderate $\beta$ (the aesthetically
+optimal stimulus decays more slowly than the perceiver's spectrum),
+but for sharply peaked spectra ($\beta \gtrsim 2$ at moderate $d$)
+the maximizer can occur at $\alpha > \beta$.  We also do not prove
+uniqueness of $\alpha^*$ or characterize the global optimum over the
+full simplex.  These remain open problems.
+\end{remark}
+
+
+% =====================================================================
+\section{Symmetry as Compression}
+\label{sec:symmetry}
+% =====================================================================
+
+The classical theory of beauty as symmetry is a special case of
+compression.
+
+\begin{definition}[Fixed-point subspace]
+Let $G$ be a finite group acting on $\R^d$ via linear
+transformations $\{T_g\}_{g \in G}$.  The \emph{fixed-point
+subspace} is $\mathrm{Fix}(G) = \{v \in \R^d : T_g v = v
+\;\forall g \in G\}$.
+\end{definition}
+
+\begin{proposition}[Symmetry implies compression]
+\label{prop:symmetry_compression}
+If $x \in \mathrm{Fix}(G)$ for some representation of $G$ on
+$\R^d$, then $x$ is determined by $\dim(\mathrm{Fix}(G))$
+coordinates.  The compression ratio relative to the ambient space
+is $d / \dim(\mathrm{Fix}(G))$.
+\end{proposition}
+
+\begin{proof}
+$\mathrm{Fix}(G)$ is a linear subspace of $\R^d$.  Any element
+$x \in \mathrm{Fix}(G)$ can be represented in a basis for this
+subspace using $\dim(\mathrm{Fix}(G))$ coordinates.  The compression
+ratio follows by definition.
+\end{proof}
+
+\begin{remark}
+The dimension $\dim(\mathrm{Fix}(G))$ depends on the specific
+representation, not just on $|G|$.  For the regular representation,
+$\dim(\mathrm{Fix}(G)) = 1$ (maximal compression).  For a
+representation with many trivial summands, $\dim(\mathrm{Fix}(G))$
+can be much larger.  Specific examples:
+\end{remark}
+
+\begin{example}[Bilateral symmetry]
+For $G = \mathbb{Z}/2\mathbb{Z}$ acting on $\R^d$ by
+$(z_1, z_2, \ldots, z_{d/2}, z_{d/2+1}, \ldots, z_d) \mapsto
+(z_{d/2+1}, \ldots, z_d, z_1, \ldots, z_{d/2})$ (swapping left and
+right halves), $\mathrm{Fix}(G)$ consists of vectors with identical
+halves: $\dim(\mathrm{Fix}(G)) = d/2$, giving $2:1$ compression.
+\end{example}
+
+\begin{example}[Rotational symmetry of order $n$]
+For $G = \mathbb{Z}/n\mathbb{Z}$ acting by cyclic permutation on
+$\R^n$, $\mathrm{Fix}(G)$ consists of constant vectors:
+$\dim(\mathrm{Fix}(G)) = 1$, giving $n:1$ compression.
+\end{example}
+
+\paragraph{Broken symmetry (heuristic).}
+The intuition that perfect symmetry is boring---and that small
+asymmetries can enhance aesthetic value---is well-supported
+empirically (slightly asymmetric faces are preferred over perfectly
+symmetric ones).  Within our framework, this corresponds to the
+observation that a small perturbation $\epsilon \perp \mathrm{Fix}(G)$
+added to a symmetric stimulus $x_s \in \mathrm{Fix}(G)$ can increase
+$D_{\mathrm{eff}}$ (by activating new dimensions) faster than it
+decreases the compressibility factor (by spreading energy onto
+less-aligned directions).
+
+However, whether $\mathcal{A}(x_s + \epsilon) > \mathcal{A}(x_s)$
+depends on the specific directions in which $\epsilon$ lies.  If
+the perturbation projects onto directions with very small $\lambda_i$
+(directions the perceiver considers unimportant), the compressibility
+penalty can dominate.  A general proposition would require an
+explicit condition on the alignment of $\epsilon$ with the
+perceiver's eigenspectrum.  We leave this as an open problem and
+note that the phenomenon is robustly observed in the empirical
+literature on symmetry preference~\cite{ramachandran1999science}.
+
+
+% =====================================================================
+\section{Compression Progress: A Temporal Extension}
+\label{sec:temporal}
+% =====================================================================
+
+Many aesthetic experiences are temporal: music, narrative,
+mathematical proof.  We propose a temporal extension, noting
+that this section is more speculative than the preceding ones.
+
+\subsection{Setup}
+
+Let $x_1, x_2, \ldots, x_T \in \R^d$ be a sequence of stimuli.
+We represent the perceiver's cumulative experience at time $t$ by the
+sufficient statistic
+\begin{equation}
+    \bar{z}_t = \frac{1}{t}\sum_{s=1}^t z_s, \qquad
+    S_t = \frac{1}{t}\sum_{s=1}^t z_s z_s^\top,
+    \label{eq:sufficient}
+\end{equation}
+where $z_s = U^\top(x_s - \bar{x})$ are perceptual coordinates.
+The sample covariance is $\hat{\Sigma}_t = S_t - \bar{z}_t
+\bar{z}_t^\top$.
+
+\begin{definition}[Compression progress]
+\label{def:progress}
+Let $p_s^{(t)}$ denote the normalized energy distribution of $z_s$
+relative to the eigenbasis of $\hat{\Sigma}_t$: that is,
+$p_{s,i}^{(t)} = (u_i^{(t)\top} z_s)^2 / \norm{z_s}^2$
+where $\{u_i^{(t)}\}$ are the eigenvectors of $\hat{\Sigma}_t$,
+and let $q^{(t)}$ be the normalized eigenvalues of $\hat{\Sigma}_t$.
+The \emph{compression progress} at time $t$ is
+\begin{equation}
+    \dot{\mathcal{A}}_t =
+    \sum_{s=1}^t \mathcal{A}(p_s^{(t)}; q^{(t)})
+    - \sum_{s=1}^t \mathcal{A}(p_s^{(t-1)}; q^{(t-1)}).
+    \label{eq:progress}
+\end{equation}
+This measures how much better the perceiver can describe all prior
+stimuli using the updated model versus the previous model.
+\end{definition}
+
+In words: compression progress measures how much better the
+perceiver can describe \emph{all data seen so far} using their
+updated model.  A large positive value at time $t$ means $x_t$
+caused a model update that retroactively made everything more
+compressible---a moment of insight.
+
+\begin{conjecture}[Compression progress under rank-one updates]
+\label{conj:progress}
+If $\hat{\Sigma}_t$ differs from $\hat{\Sigma}_{t-1}$ by an
+approximate rank-one update (the new stimulus is the dominant
+source of change), then $\dot{\mathcal{A}}_t$ is approximately
+proportional to the squared projection of $z_t$ onto the
+eigenvector of $\hat{\Sigma}_{t-1}$ that undergoes the largest
+relative eigenvalue increase.
+
+In particular, compression progress is large when the new stimulus
+(i)~projects strongly onto a previously low-variance direction, and
+(ii)~reveals a systematic pattern (not just noise) that makes prior
+data more compressible along that direction.
+\end{conjecture}
+
+We do not prove this conjecture in full generality.  The difficulty
+is that the aesthetic score $\mathcal{A}$ involves the participation
+ratio, which is not differentiable at certain boundaries and does not
+decompose cleanly under rank-one updates.  A rigorous treatment would
+require smoothing or restricting to the power-law family.  We include
+the conjecture because it generates testable predictions and
+connects to the neuroscience literature.
+
+\begin{example}[The punchline of a joke]
+A joke's setup builds a model (high-$\lambda$ directions).  The
+punchline reveals an alternative interpretation: a previously
+zero-variance direction suddenly explains the setup data.  The
+compression progress is large because the entire setup sequence
+becomes more compressible under the new model.
+\end{example}
+
+\begin{example}[Modulation in music]
+A modulation from the home key to a distant key projects onto a
+previously low-variance direction in harmonic space.  The return
+to the home key causes another spike: the listener's model updates
+to accommodate the overall tonal plan.
+\end{example}
+
+
+% =====================================================================
+\section{Connections to Classical Theories}
+\label{sec:connections}
+% =====================================================================
+
+We now show how the framework \emph{relates to} (not ``subsumes'')
+three classical theories.
+
+\paragraph{Birkhoff's aesthetic measure.}
+Birkhoff~\cite{birkhoff1933aesthetic} defined $M = O/C$ (order over
+complexity).  In our framework, order corresponds to compression via
+symmetry (Proposition~\ref{prop:symmetry_compression}) and complexity
+to $D_{\mathrm{eff}}$.  The ratio $O/C$ is a monotone function of
+the compressibility-per-dimension, which is one component of our
+score.  Our framework replaces the division (which penalizes
+complexity) with a product (which rewards complexity up to a point),
+addressing Birkhoff's known failure to account for the appeal of
+complex stimuli.
+
+\paragraph{Berlyne's inverted-U.}
+Corollary~\ref{prop:berlyne_shape} derives the inverted-U as a
+consequence of the competing drives toward complexity and
+compressibility.  The novel prediction is that the peak shifts with
+perceiver eigenvalue distribution, which is measurable through
+preference experiments stratified by expertise.
+
+\paragraph{Reward prediction error.}
+The neuroscience literature reports that aesthetic pleasure
+correlates with dopaminergic prediction
+error~\cite{salimpoor2011anatomically}.  We conjecture
+(but do not prove) that compression progress
+(Definition~\ref{def:progress}) is a computational-level description
+of the same signal: the brain's reward system fires when the
+internal model improves---when something that was complex becomes
+compressible.  This interpretation follows
+Schmidhuber~\cite{schmidhuber2009simple}, who first proposed
+compression progress as a theory of beauty.  Our contribution is to
+ground it in a specific eigenspace framework rather than abstract
+Kolmogorov complexity.
+
+
+% =====================================================================
+\section{Conjectural Extensions}
+\label{sec:conjectural}
+% =====================================================================
+
+We briefly note two extensions that are speculative but
+suggestive.
+
+\paragraph{Cultural distance.}
+The space of positive definite matrices $\mathcal{S}_{++}^d$
+carries the Fisher information metric, under which the geodesic
+distance between $\Sigma_A$ and $\Sigma_B$ is
+$d_F = \norm{\log(\Sigma_A^{-1/2}\Sigma_B\Sigma_A^{-1/2})}_F$.
+We conjecture that aesthetic disagreement between cultural groups
+$A$ and~$B$ on a stimulus~$x$ is bounded by a Lipschitz multiple
+of $d_F(\Sigma_A, \Sigma_B)$.  This would formalize the intuition
+that cultures with similar artistic traditions have similar aesthetic
+preferences.  A proof would require careful handling of the
+coordinate-dependent nature of the score.
+
+\paragraph{Cross-domain universality.}
+If the same perceiver has eigenstructures in different
+domains (visual, musical, gustatory), the framework predicts that
+aesthetic principles are \emph{structurally identical} across
+domains but the \emph{eigenspaces are different}.  Symmetry is
+beautiful in faces and in music for the same reason (compression),
+but a visual art expert's expanded eigenbasis does not transfer to
+music appreciation.  This is testable.
+
+
+% =====================================================================
+\section{Predictions}
+\label{sec:predictions}
+% =====================================================================
+
+The framework generates heuristic predictions, all testable against
+existing or obtainable data:
+
+\begin{enumerate}
+    \item \textbf{Expertise shift.}  Experts prefer stimuli with
+    higher effective dimensionality than novices
+    (Corollary~\ref{prop:berlyne_shape}).  Testable by comparing
+    preferred complexity in trained vs untrained listeners.
+
+    \item \textbf{Broken symmetry preference.}  Stimuli with
+    small controlled asymmetry should be preferred over both
+    perfect symmetry and strong asymmetry, provided the
+    perturbation aligns with perceiver-important directions.
+    Testable against face preference data with parametric
+    asymmetry manipulation.
+
+    \item \textbf{Compression progress predicts chills.}
+    Musical ``frisson'' should correlate with peaks of
+    $\dot{\mathcal{A}}_t$ (Conjecture~\ref{conj:progress}).
+    Testable by computing the score from MIDI and comparing
+    against physiological chill recordings.
+
+    \item \textbf{Mathematical elegance.}  Among proofs of the
+    same theorem, mathematicians should rate shorter proofs (lower
+    description length) as more elegant.  Approximately testable
+    using proof length in a fixed formal system.
+
+    \item \textbf{No cross-domain transfer.}  Training in visual
+    art should not shift preferred complexity in music, because the
+    eigenspaces are domain-specific.  Testable via a pre/post
+    design with domain-specific preference measurement.
+\end{enumerate}
+
+
+% =====================================================================
+\section{Discussion}
+\label{sec:discussion}
+% =====================================================================
+
+\paragraph{What is rigorous.}
+Propositions~\ref{prop:expertise} (under the majorization condition),
+\ref{prop:symmetry_compression}, \ref{prop:existence}, and
+\ref{prop:berlyne_shape} are proved.  The existence of an interior
+maximizer and the inverted-U shape on the power-law family are
+established; the location and uniqueness of the maximizer are not.
+
+\paragraph{What is heuristic.}
+The aesthetic score (Definition~\ref{def:score}) is a motivated
+construction, not derived from first principles.  The exponential
+compressibility factor is chosen for boundedness and mathematical
+convenience; other monotone, bounded functions of the alignment
+penalty would yield qualitatively similar behavior.  The broken
+symmetry phenomenon (\S\ref{sec:symmetry}) is a heuristic
+observation supported by empirical evidence but not proved in
+full generality.
+
+\paragraph{What is conjectural.}
+The temporal theory (Conjecture~\ref{conj:progress}), the cultural
+distance bound, the connection to reward prediction error, and the
+cross-domain universality claim are interpretive connections, not
+proved results.  We include them because they generate testable
+predictions and point toward a research program.
+
+\paragraph{Linearity.}
+We model perceptual spaces as linear.  Real perceptual spaces are
+likely nonlinear manifolds.  Extending to kernel PCA or
+autoencoders would capture nonlinear structure at the cost of
+analytical tractability.  The qualitative predictions
+(inverted-U, expertise shift, broken symmetry) should survive
+nonlinearization, but the closed-form results will not.
+
+\paragraph{The PCA-Matryoshka connection.}
+In PCA-Matryoshka~\cite{bond2026pcamatryoshka}, we showed that
+eigenvalues serve as importance weights for embedding
+compression: truncating in the PCA basis preserves meaning while
+truncating in a random basis destroys it.  The aesthetic framework
+developed here suggests this may reflect something deeper about
+perception.  Beauty may be the subjective experience of encountering
+meaningful structure---structure that compresses in the basis
+evolution and experience gave us to understand the world.
+
+This connection is metaphorical, not proved.  But we find it
+suggestive enough to state.
+
+
+% =====================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% =====================================================================
+
+We have proposed a mathematical framework for aesthetic experience
+based on compressibility in perceptual eigenspaces.  The framework
+yields four proved results (expertise expands effective
+dimensionality under a majorization condition; symmetry compresses
+description length; an interior maximizer exists; the score is
+inverted-U on the power-law family), one heuristic observation
+(broken symmetry), one conjecture (compression progress for temporal
+aesthetics), and five testable predictions.
+
+The framework interprets---but does not subsume---Birkhoff's
+aesthetic measure, Berlyne's inverted-U, and reward prediction
+error theory.  The main value, we believe, is not in the specific
+functional form chosen, but in the conceptual identification:
+\emph{the perceiver's learned eigenstructure determines what counts
+as meaningful structure, and beauty is the perception of structure
+that is meaningful in this sense}.
+
+The framework is incomplete.  A complete theory of aesthetics
+would need to account for temporal dynamics beyond our conjecture,
+social and cultural mechanisms beyond our Fisher metric speculation,
+emotional valence beyond our compression-based proxy, and the
+irreducible role of personal history and association.  We offer this
+framework not as a final word but as a mathematical starting point
+that is precise enough to be wrong in testable ways.
+
+
+% ---- References ----
+\bibliographystyle{IEEEtran}
+\begin{thebibliography}{15}
+
+\bibitem{bond2026pcamatryoshka}
+A.~H.~Bond, ``PCA-Matryoshka: Enabling effective dimension reduction
+for non-Matryoshka embedding models,'' \emph{IEEE Trans.\ Artificial
+Intelligence}, 2026.
+
+\bibitem{birkhoff1933aesthetic}
+G.~D.~Birkhoff, \emph{Aesthetic Measure}.\hskip 1em plus 0.5em minus
+0.4em Cambridge, MA: Harvard Univ.\ Press, 1933.
+
+\bibitem{berlyne1971aesthetics}
+D.~E.~Berlyne, \emph{Aesthetics and Psychobiology}.\hskip 1em plus
+0.5em minus 0.4em New York: Appleton-Century-Crofts, 1971.
+
+\bibitem{schmidhuber2009simple}
+J.~Schmidhuber, ``Simple algorithmic theory of subjective beauty,
+novelty, surprise, interestingness, attention, curiosity, creativity,
+art, science, music, jokes,'' \emph{J.\ Artif.\ General Intelligence},
+vol.~1, no.~1, pp.~1--32, 2009.
+
+\bibitem{ramachandran1999science}
+V.~S.~Ramachandran and W.~Hirstein, ``The science of art,''
+\emph{J.\ Consciousness Studies}, vol.~6, no.~6--7, pp.~15--51, 1999.
+
+\bibitem{tymoczko2011geometry}
+D.~Tymoczko, \emph{A Geometry of Music}.\hskip 1em plus 0.5em minus
+0.4em Oxford, UK: Oxford Univ.\ Press, 2011.
+
+\bibitem{chatterjee2014neuroaesthetics}
+A.~Chatterjee and O.~Vartanian, ``Neuroaesthetics,'' \emph{Trends
+Cogn.\ Sci.}, vol.~18, no.~7, pp.~370--375, 2014.
+
+\bibitem{salimpoor2011anatomically}
+V.~N.~Salimpoor \emph{et al.}, ``Anatomically distinct dopamine release
+during anticipation and experience of peak emotion to music,''
+\emph{Nature Neurosci.}, vol.~14, no.~2, pp.~257--262, 2011.
+
+\bibitem{fechner1876vorschule}
+G.~T.~Fechner, \emph{Vorschule der Aesthetik}.\hskip 1em plus 0.5em
+minus 0.4em Leipzig: Breitkopf \& H\"artel, 1876.
+
+\bibitem{weyl1952symmetry}
+H.~Weyl, \emph{Symmetry}.\hskip 1em plus 0.5em minus 0.4em Princeton,
+NJ: Princeton Univ.\ Press, 1952.
+
+\end{thebibliography}
+
+\end{document}

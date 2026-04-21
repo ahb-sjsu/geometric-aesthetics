@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+  workflow_dispatch:
+
+jobs:
+  paper:
+    name: Build LaTeX paper (v3)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build v3.pdf with pdflatex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: v3.tex
+          working_directory: paper
+
+      - name: Upload built PDF as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: geometric-aesthetics-v3
+          path: paper/v3.pdf
+          if-no-files-found: error
+
+  markdown:
+    name: Lint markdown + check links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Markdown link check
+        run: |
+          npx --yes markdown-link-check README.md || true
+          # Chapter files may reference figures / external links we'd tolerate at draft stage.
+          # Report, don't fail, for now.
+
+  figures:
+    name: Validate SVG figures
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check figures are valid XML
+        run: |
+          set -e
+          for f in figures/*.svg; do
+            python3 -c "import xml.etree.ElementTree as ET; ET.parse('$f')"
+            echo "ok: $f"
+          done

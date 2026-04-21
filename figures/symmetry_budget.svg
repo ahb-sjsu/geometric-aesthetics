@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" width="720" height="300" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The asymmetry budget: beauty lives at the boundary between symmetry and deviation</title>
+  <desc>Three panels: left shows perfect symmetry (boring), center shows symmetry with controlled violation (beautiful), right shows no symmetry (chaos).</desc>
+
+  <!-- Panel 1: perfect symmetry -->
+  <g transform="translate(20,40)">
+    <rect x="0" y="0" width="200" height="200" fill="#f5f5f5" stroke="#999"/>
+    <!-- a perfectly symmetric arrangement: regular grid of circles -->
+    <g fill="#1565c0">
+      <circle cx="50"  cy="50"  r="10"/>
+      <circle cx="100" cy="50"  r="10"/>
+      <circle cx="150" cy="50"  r="10"/>
+      <circle cx="50"  cy="100" r="10"/>
+      <circle cx="100" cy="100" r="10"/>
+      <circle cx="150" cy="100" r="10"/>
+      <circle cx="50"  cy="150" r="10"/>
+      <circle cx="100" cy="150" r="10"/>
+      <circle cx="150" cy="150" r="10"/>
+    </g>
+    <text x="100" y="230" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">perfect symmetry</text>
+    <text x="100" y="250" text-anchor="middle" font-size="12" fill="#666" font-style="italic">predictable → banal</text>
+    <text x="100" y="268" text-anchor="middle" font-size="11" fill="#888">compresses perfectly, no information</text>
+  </g>
+
+  <!-- Panel 2: symmetry + violation -->
+  <g transform="translate(260,40)">
+    <rect x="0" y="0" width="200" height="200" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/>
+    <!-- mostly grid but one circle displaced + one different color -->
+    <g fill="#1565c0">
+      <circle cx="50"  cy="50"  r="10"/>
+      <circle cx="100" cy="50"  r="10"/>
+      <circle cx="150" cy="50"  r="10"/>
+      <circle cx="50"  cy="100" r="10"/>
+      <circle cx="115" cy="108" r="13" fill="#e65100"/>
+      <circle cx="150" cy="100" r="10"/>
+      <circle cx="50"  cy="150" r="10"/>
+      <circle cx="100" cy="150" r="10"/>
+      <circle cx="150" cy="150" r="10"/>
+    </g>
+    <text x="100" y="230" text-anchor="middle" font-size="14" font-weight="bold" fill="#2e7d32">beautiful</text>
+    <text x="100" y="250" text-anchor="middle" font-size="12" fill="#666" font-style="italic">symmetry with controlled violation</text>
+    <text x="100" y="268" text-anchor="middle" font-size="11" fill="#888">structure carries meaning</text>
+  </g>
+
+  <!-- Panel 3: chaos -->
+  <g transform="translate(500,40)">
+    <rect x="0" y="0" width="200" height="200" fill="#f5f5f5" stroke="#999"/>
+    <!-- random-looking scatter -->
+    <g fill="#1565c0">
+      <circle cx="37" cy="62" r="10"/>
+      <circle cx="143" cy="28" r="10"/>
+      <circle cx="87" cy="120" r="10"/>
+      <circle cx="172" cy="88" r="10"/>
+      <circle cx="22" cy="170" r="10"/>
+      <circle cx="108" cy="58" r="10"/>
+      <circle cx="158" cy="152" r="10"/>
+      <circle cx="62" cy="42" r="10"/>
+      <circle cx="128" cy="182" r="10"/>
+    </g>
+    <text x="100" y="230" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">no symmetry</text>
+    <text x="100" y="250" text-anchor="middle" font-size="12" fill="#666" font-style="italic">incompressible → chaotic</text>
+    <text x="100" y="268" text-anchor="middle" font-size="11" fill="#888">no structure to perceive</text>
+  </g>
+
+  <!-- top caption -->
+  <text x="360" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">
+    The asymmetry budget
+  </text>
+</svg>
