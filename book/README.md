@@ -1,57 +1,89 @@
-# Geometric Aesthetics — Book Drafts
+# Geometric Aesthetics — Book Source
 
-Chapter stubs generated from [`../OUTLINE.md`](../OUTLINE.md). Each file
-contains that chapter's outline as the section plan plus pointers to the
-figures / paper theorems that support it.
+Canonical markdown source for *Geometric Aesthetics: The Mathematical Structure of Judgment* (Book 13 of the Geometric Series).
 
-**Drafting status:**
+## Structure
 
-| Part | Chapter | Status |
-|---|---|---|
-| I | [01 — Geometry Hiding in Plain Sight](chapter-01-geometry-hiding-in-plain-sight.md) | Outline |
-| I | [02 — Symmetry and Its Violations](chapter-02-symmetry-and-its-violations.md) | Outline |
-| I | [03 — Complexity and the Wundt Curve](chapter-03-complexity-and-the-wundt-curve.md) | Outline, figure ready |
-| I | [04 — Beauty as Compressibility](chapter-04-beauty-as-compressibility.md) | Outline, figure ready |
-| II | [05 — Visual Beauty](chapter-05-visual-beauty.md) | Outline |
-| II | [06 — Musical Beauty](chapter-06-musical-beauty.md) | Outline |
-| II | [07 — Gustatory Beauty](chapter-07-gustatory-beauty.md) | Outline (links to Vol 12 Gastronomy) |
-| II | [08 — Tactile, Olfactory, Kinesthetic](chapter-08-tactile-olfactory-kinesthetic.md) | Outline |
-| III | [09 — Mathematical Beauty](chapter-09-mathematical-beauty.md) | Outline |
-| III | [10 — Literary and Narrative Beauty](chapter-10-literary-and-narrative-beauty.md) | Outline |
-| III | [11 — Beauty of Justice](chapter-11-beauty-of-justice.md) | Outline (links to Vol 5 Law) |
-| IV | [12 — The Aesthetic Brain](chapter-12-the-aesthetic-brain.md) | Outline |
-| IV | [13 — The Cultural Manifold](chapter-13-the-cultural-manifold.md) | Outline, figure ready |
-| V | [14 — The Three Principles](chapter-14-the-three-principles.md) | Outline |
-| V | [15 — Beauty Across the Series](chapter-15-beauty-across-the-series.md) | Outline |
-| V | [16 — Open Questions](chapter-16-open-questions.md) | Outline |
-
-**Appendices:** A (Math foundations), B (Experimental aesthetics), C (Computational aesthetics) — to be drafted from the paper's technical content.
-
-## Drafting convention
-
-Each chapter file follows this template:
-
-```markdown
-# Chapter N: Title
-
-> Part X of the Geometric Series · Vol 7 — Aesthetics
-
-**Draft status:** outline / drafting / review / done
-
-## Section plan
-1. N.1 ...
-2. N.2 ...
-
-## Key figures
-- [wundt_curve.svg](../figures/wundt_curve.svg) — inverted-U
-- (etc.)
-
-## Paper cross-references
-- Proposition X (v3 Section Y)
-
-## Draft
-(content goes here)
+```
+book/
+├── README.md                        ← this file
+└── src/
+    ├── _BOOK_REFERENCE.md            ← shared style / identity / notation guide
+    ├── chapter-01-introduction-why-geometry.md
+    ├── chapter-02-the-failure-of-scalar-aesthetics.md
+    ├── chapter-03-historical-precursors-geometry-before-geometry.md
+    ├── chapter-04-mathematical-preliminaries.md
+    ├── chapter-05-the-aesthetic-manifold.md
+    ├── chapter-06-the-tensor-hierarchy.md
+    ├── chapter-07-one-work-five-levels.md
+    ├── chapter-08-stratification-boundaries-thresholds-phase-transitions.md
+    ├── chapter-09-origin-of-the-aesthetic-metric.md
+    ├── chapter-10-aesthetic-dynamics-parallel-transport-style-holonomy.md
+    ├── chapter-11-aesthetic-reasoning-as-optimal-search.md
+    ├── chapter-12-noethers-theorem-for-aesthetics.md
+    ├── chapter-13-quantum-aesthetic-dynamics-superposition-measurement.md
+    ├── chapter-14-collective-aesthetic-agency-canon-and-emergence.md
+    ├── chapter-15-from-tensor-to-judgment.md
+    ├── chapter-16-aesthetic-uncertainty-and-the-limits-of-geometric-determinacy.md
+    ├── chapter-17-empirical-evidence-for-geometric-aesthetics.md
+    ├── chapter-18-geometric-aesthetics-for-artificial-agents.md
+    ├── chapter-19-deme-architecture-for-aesthetics.md
+    ├── chapter-20-geometric-literary-criticism.md
+    ├── chapter-21-geometric-musicology.md
+    ├── chapter-22-geometric-film-and-television.md
+    ├── chapter-23-geometric-visual-art.md
+    ├── chapter-24-geometric-architecture.md
+    ├── chapter-25-geometric-game-aesthetics.md
+    ├── chapter-26-geometric-ai-curation.md
+    ├── chapter-27-geometric-fashion-and-product-design.md
+    ├── chapter-28-geometric-everyday-aesthetics.md
+    ├── chapter-29-open-problems.md
+    ├── chapter-30-conclusion-the-geometry-of-beauty.md
+    └── appendices/
+        ├── appendix-a-related-work-and-differentiation.md
+        ├── appendix-b-reproduction-cookbook.md
+        ├── appendix-c-human-subjects-research-roadmap.md
+        ├── appendix-d-end-to-end-case-studies.md
+        ├── appendix-e-skeptics-appendix-objections-alternatives-failure-modes.md
+        └── appendix-f-mathematical-ledger-status-of-formal-claims.md
 ```
 
-This keeps the outline sections load-bearing — when a chapter moves to
-"drafting," the outline becomes the TOC and the prose gets added below.
+## Reading order
+
+See [`../OUTLINE.md`](../OUTLINE.md) for the 6-part plan. Short version:
+
+| Part | Chapters | Theme |
+|---|---|---|
+| **I — The Problem** | 1–3 | Why scalar aesthetics fails; historical precursors |
+| **II — Foundations** | 4–9 | Mathematical machinery: manifolds, tensors, metric, stratification |
+| **III — Dynamics** | 10–15 | Parallel transport; search; Noether; quantum dynamics; collectives |
+| **IV — Meta** | 16–19 | Uncertainty limits; empirical evidence; artificial agents; DEME architecture |
+| **V — Applications** | 20–28 | Literature, music, film, visual art, architecture, games, AI curation, design, everyday |
+| **VI — Conclusion** | 29–30 | Open problems; the geometry of beauty |
+| **Appendices** | A–F | Related work; reproduction; human-subjects protocol; case studies; skeptic's appendix; formal-claims ledger |
+
+## Building
+
+HTML rendering uses [`../build_book.py`](../build_book.py). From the repo root:
+
+```bash
+# Builds 30 chapters + 6 appendices + index.html using pandoc.
+# Default output: ../erisml-lib/docs/geometric-aesthetics/  (the website)
+# Override: AESTHETICS_OUT_DIR=/some/path python build_book.py
+python build_book.py
+```
+
+Prerequisites:
+
+- `pandoc` 3.x on PATH
+- A sibling checkout of `ahb-sjsu/erisml-lib` at `../erisml-lib/` (or set `AESTHETICS_OUT_DIR`)
+
+## Authoring conventions
+
+Everything in [`src/_BOOK_REFERENCE.md`](src/_BOOK_REFERENCE.md) is load-bearing:
+
+- Every chapter opens with a **RUNNING EXAMPLE** block (fixed protagonist set — Maya, Priya, Daniel, Hiroshi, Leona, Sam, Elena)
+- First-person plural ("we")
+- `# Chapter N: Title` heading, em-dash-subtitle form
+- Section headings are poetic, not topic labels
+- Empirical numbers must match the ledger in Appendix F

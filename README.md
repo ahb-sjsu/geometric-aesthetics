@@ -1,47 +1,45 @@
-# Geometric Aesthetics: The Mathematical Structure of Beauty Across Domains
+# Geometric Aesthetics: The Mathematical Structure of Judgment
 
 **Andrew H. Bond**
-Senior Member, IEEE | San Jose State University
+Senior Member, IEEE · San Jose State University
+
+**Volume 13 of the Geometric Series**
 
 ---
 
-## Part of the Geometric Series
-
-This book is a domain instantiation of the general framework developed in:
-
-- **Geometric Methods in Computational Modeling** (Bond, 2026a) — the mathematical toolkit
-- **Geometric Reasoning: From Search to Manifolds** (Bond, 2026c) — the parent theory
-
-It inherits the heuristic field formalism, geodesic deviation measure, failure taxonomy, gauge invariance diagnostics, and engineering toolkit from the parent text, and instantiates them on perceptual-preference manifolds.
-
 ## Thesis
 
-Aesthetic experience — the perception of beauty, harmony, elegance, and balance — has geometric structure that is remarkably consistent across sensory modalities, artistic disciplines, and even abstract domains like mathematics and law. This book develops a unified geometric theory of aesthetics grounded in three principles:
-
-1. **Symmetry with controlled violation** — beauty arises at the boundary between symmetry and asymmetry
-2. **Compressibility in the natural basis** — harmony is compression in the perceiver's learned eigenstructure
-3. **Compression progress** — aesthetic preference follows geodesics on a learnable manifold that deforms with expertise, culture, and context
+Aesthetic judgment has geometric structure that a single scalar ("a 4-star book", "a beautiful song") cannot represent. Aesthetic evaluation is not a point on a line — it is a location in a space with dimensions, distances, directions, regimes, and curvature. When we flatten this structure into a scalar we lose information, and the information we lose is precisely the information that matters most in hard cases: which qualities are present, where uncertainty concentrates, how judgments change across genres and regimes, and where the rules discontinuously change.
 
 ## Status
 
-- **Paper (v3):** complete and pre-registered. IEEE-style manuscript at [`paper/v3.pdf`](paper/v3.pdf) ([`v3.tex`](paper/v3.tex)).
-- **Book:** chapter plan locked. See [`OUTLINE.md`](OUTLINE.md) — 5 parts, 16 chapters, 3 appendices.
-- **Drafting:** Parts I and II stubbed in [`book/`](book/), to be elaborated from the paper's theorems.
+- **Book manuscript:** complete first draft. 30 chapters + 6 appendices, ~6,000 lines of markdown. Live at [erisml.org/geometric-aesthetics](https://erisml.org/geometric-aesthetics/).
+- **IEEE paper:** [`paper/v3.pdf`](paper/v3.pdf) — *Beauty as Preference Optimization on Perceptual Eigenspaces* (pre-registered, empirically validated, submitted).
+- **Next steps:** human-subjects extension beyond text (see Appendix C), additional case studies (Appendix D).
 
-```mermaid
-flowchart LR
-    PAPER[IEEE Paper v3<br/>preference optimization<br/>on eigenspaces]
-    OUTLINE[Book outline<br/>5 parts, 16 chapters]
-    BOOK[Book chapters<br/>drafting]
-    FIG[Figures<br/>Wundt curve,<br/>symmetry budget,<br/>compression progress]
+## Repository layout
 
-    PAPER --> BOOK
-    OUTLINE --> BOOK
-    FIG --> BOOK
-    FIG --> PAPER
+```
+geometric-aesthetics/
+├── README.md              ← this file
+├── OUTLINE.md             ← 6-part book plan
+├── LICENSE                ← MIT (matches series)
+├── build_book.py          ← pandoc → HTML build pipeline
+├── book/
+│   ├── README.md          ← source/authoring conventions
+│   └── src/
+│       ├── _BOOK_REFERENCE.md
+│       ├── chapter-01..30-*.md     ← 30 chapters
+│       └── appendices/
+│           └── appendix-a..f-*.md  ← 6 appendices
+├── paper/
+│   ├── v3.tex / v3.pdf    ← IEEE-style manuscript (current)
+│   └── v1, v2              ← version history
+├── figures/               ← 5 SVG illustrations
+└── docs/                  ← proofreader tooling + build log
 ```
 
-## Series map
+## The series
 
 ```mermaid
 flowchart TB
@@ -97,40 +95,46 @@ flowchart TB
 | [Geometric Politics](https://github.com/ahb-sjsu/geometric-politics) | Outline |
 | [Geometric AI](https://github.com/ahb-sjsu/geometric-ai) | Outline |
 | [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Outline |
-| [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Outline |
-| **Geometric Aesthetics: Beauty as Preference Optimization on Perceptual Eigenspaces** | **Paper complete, book drafting (Vol 13)** |
-
-## Repository layout
-
-```
-geometric-aesthetics/
-├── README.md               ← this file
-├── OUTLINE.md              ← full 5-part / 16-chapter plan
-├── paper/                  ← IEEE-style manuscript (v1 → v3)
-├── book/                   ← chapter drafts (stubbed from the outline)
-├── figures/                ← SVG illustrations for the book + paper
-├── docs/                   ← supplementary notes
-└── .github/workflows/      ← CI (LaTeX build)
-```
+| **Geometric Aesthetics: The Mathematical Structure of Judgment** | **Book draft complete (Vol 13)** |
 
 ## Reading order
 
-1. Start with the **paper** (`paper/v3.pdf`, ~15 pages) for the complete mathematical core in one sitting.
-2. Then [`OUTLINE.md`](OUTLINE.md) for the book-length scope.
-3. Then individual chapters in [`book/`](book/) as they get drafted from the paper's theorems.
+1. **Paper** — [`paper/v3.pdf`](paper/v3.pdf), ~15 pages. The mathematical core in one sitting.
+2. **Book outline** — [`OUTLINE.md`](OUTLINE.md). 6 parts, 30 chapters, 6 appendices.
+3. **Book chapters** — `book/src/`. Full prose manuscript.
+4. **Web edition** — [erisml.org/geometric-aesthetics/](https://erisml.org/geometric-aesthetics/) for a rendered read-through.
+
+## Building
+
+HTML rendering uses [`build_book.py`](build_book.py):
+
+```bash
+python build_book.py                             # default: ../erisml-lib/docs/geometric-aesthetics/
+AESTHETICS_OUT_DIR=/tmp/out python build_book.py  # override
+```
+
+Requires `pandoc` 3.x on PATH. See [`book/README.md`](book/README.md) for authoring conventions.
 
 ## License
 
-MIT (matching the rest of the Geometric Series). See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
 
 ## Citation
 
-If you reference this work, please cite the IEEE paper:
-
 ```bibtex
-@article{bond2026aesthetics,
+@book{bond2026aesthetics,
+  author    = {Bond, Andrew H.},
+  title     = {Geometric Aesthetics: The Mathematical Structure of Judgment},
+  publisher = {Manuscript in preparation},
+  year      = {2026},
+  note      = {Volume 13 of the Geometric Series.
+               Paper form: IEEE-style manuscript, \url{paper/v3.pdf}}
+}
+
+@article{bond2026aesthetics-paper,
   author  = {Bond, Andrew H.},
-  title   = {Geometric Aesthetics: Beauty as Preference Optimization on Perceptual Eigenspaces},
+  title   = {Geometric Aesthetics: Beauty as Preference Optimization
+             on Perceptual Eigenspaces},
   journal = {IEEE Transactions on Cognitive and Developmental Systems},
   year    = {2026},
   note    = {Submitted}
