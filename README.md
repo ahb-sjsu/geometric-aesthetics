@@ -88,13 +88,13 @@ flowchart TB
 | [Geometric Ethics](https://github.com/ahb-sjsu/erisml-lib) | Published (v1.23) |
 | [Geometric Economics](https://github.com/ahb-sjsu/geometric-economics) | Draft |
 | [Geometric Law](https://github.com/ahb-sjsu/geometric-law) | Draft |
-| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Outline |
-| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Outline |
-| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Outline |
-| [Geometric Education](https://github.com/ahb-sjsu/geometric-education) | Outline |
-| [Geometric Politics](https://github.com/ahb-sjsu/geometric-politics) | Outline |
-| [Geometric AI](https://github.com/ahb-sjsu/geometric-ai) | Outline |
-| [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Outline |
+| [Geometric Cognition](https://github.com/ahb-sjsu/geometric-cognition) | Draft |
+| [Geometric Communication](https://github.com/ahb-sjsu/geometric-communication) | Draft |
+| [Geometric Medicine](https://github.com/ahb-sjsu/geometric-medicine) | Draft |
+| [Geometric Education](https://github.com/ahb-sjsu/geometric-education) | Draft |
+| [Geometric Politics](https://github.com/ahb-sjsu/geometric-politics) | Draft |
+| [Geometric AI](https://github.com/ahb-sjsu/geometric-ai) | Draft |
+| [Geometric Gastronomy](https://github.com/ahb-sjsu/geometric-gastronomy) | Draft |
 | **Geometric Aesthetics: The Mathematical Structure of Judgment** | **Book draft complete (Vol 13)** |
 
 ## Reading order
