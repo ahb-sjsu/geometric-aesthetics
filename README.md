@@ -5,6 +5,15 @@ Senior Member, IEEE · San Jose State University
 
 **Volume 13 of the Geometric Series**
 
+> **Epistemic status (2026-07-14): mixed — one validated empirical result inside a posited framework.**
+> The structural-channels finding (n=4998 books, pre-registered, 4 channels; the original
+> compressibility formula failed and is reported as failed) stands on its own evidence. The
+> book-length theory around it is *posited*. Admission-filter status
+> ([xbse](https://github.com/ahb-sjsu/xbse)): **AesBSE ruled inadmissible as an embedding
+> instrument** — surface *is* the thing; genre confound, cross-modal sign flips — so no
+> aesthetics *-BSE currently passes the gate. Theory and measurement are labeled separately
+> throughout.
+
 ---
 
 ## Thesis
