@@ -88,7 +88,7 @@ The chapter would be dishonest without a statement of what an empirical result w
 
 **Falsifier 4 — The shot encoder matters more than the pipeline.** If CLIP-based shot embeddings give one result and VideoMAE-based shot embeddings give another, the finding is encoder-specific and the framework cannot make modality-level claims without an encoder-agnostic validation. We would need to re-run with multiple encoders and report intersection before claiming a modality result.
 
-These are real falsifiers. We state them in advance so that a future experimentalist — perhaps Sam of Section 0, perhaps a reader of this chapter — can adjudicate our predictions without the temptation to retrofit.
+These are real falsifiers. We state them in advance so that a future experimentalist — perhaps Sam of the opening example, perhaps a reader of this chapter — can adjudicate our predictions without the temptation to retrofit.
 
 ## 22.8 What a Practicing Editor Would Do With This {#22-8-what-an-editor-would-do}
 

@@ -138,4 +138,4 @@ Architecture is the spatial case. Games — the subject of the next chapter — 
 
 ---
 
-*For the covariance structure of the architectural metric tensor, see the general treatment in Chapter 5; the architectural instantiation is a straightforward specialization. For the empirical grounding of the cross-cultural invariance prediction of §24.4, see Chapter 12 and the cross-lingual results reported in Chapter 17, §17.3.*
+*For the covariance structure of the architectural metric tensor, see the general treatment in Chapter 5; the architectural instantiation is a straightforward specialization. For the empirical grounding of the cross-cultural invariance prediction of §24.4, see Chapter 12 and the cross-lingual results reported in Chapter 17, §17.5.*
