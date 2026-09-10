@@ -33,7 +33,7 @@ geometric-aesthetics/
 ├── README.md              ← this file
 ├── OUTLINE.md             ← 6-part book plan
 ├── LICENSE                ← MIT (matches series)
-├── build_book.py          ← pandoc → HTML build pipeline
+├── .build/                ← shared Geometric Series build kit (canonical copy in erisml-lib)
 ├── book/
 │   ├── README.md          ← source/authoring conventions
 │   └── src/
@@ -115,14 +115,22 @@ flowchart TB
 
 ## Building
 
-HTML rendering uses [`build_book.py`](build_book.py):
+HTML rendering uses the shared Geometric Series build kit in `.build/`
+(canonical copy: `erisml-lib/tools/series-build/`; python-markdown + KaTeX,
+no pandoc needed). It renders `book/src/chapter-*.md` and
+`book/src/appendices/*.md` into the unified series look with the six-part
+contents page and the book abstract:
 
 ```bash
-python build_book.py                             # default: ../erisml-lib/docs/geometric-aesthetics/
-AESTHETICS_OUT_DIR=/tmp/out python build_book.py  # override
+python .build/build.py                 # -> output/
+python .build/series_check.py          # mechanical proofreading + KaTeX/xref checks
+python .build/publish_site.py --push   # rebuild + push the `site` branch served at erisml.org
 ```
 
-Requires `pandoc` 3.x on PATH. See [`book/README.md`](book/README.md) for authoring conventions.
+The web edition is served from this repo's `site` branch through the
+erisml-lib submodule `docs/geometric-aesthetics`; after publishing, re-pin it
+with `python tools/series-build/bump_submodules.py --commit` in erisml-lib.
+See [`book/README.md`](book/README.md) for authoring conventions.
 
 ## License
 
