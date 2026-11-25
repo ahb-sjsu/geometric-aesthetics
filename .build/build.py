@@ -131,6 +131,8 @@ BOOK_CONFIGS: dict[str, dict] = {
                 "chapter-16-geometric-pipelines", "chapter-17-scaling",
                 "chapter-18-production-deployment", "chapter-19-case-study-defect-prediction",
                 "chapter-20-case-study-bioacoustics"]),
+            ("Part V: Discipline and Observation", [
+                "chapter-21-measurement-discipline", "chapter-22-the-read-metric"]),
         ],
         "extra_head": METHODS_EXTRA_HEAD,
         "extra_scripts": METHODS_EXTRA_SCRIPTS,
@@ -198,6 +200,22 @@ BOOK_CONFIGS: dict[str, dict] = {
         "number": 12, "title": "Geometric Gastronomy",
         "subtitle": "The Mathematical Structure of Flavor, Pairing, and Culinary Harmony",
         "source_dirs": ["chapters"], "glob": "*.md",
+    },
+    "geometric-observation": {
+        "number": 14, "title": "Geometric Observation",
+        "subtitle": "The Mathematical Structure of What an Observer Can Use",
+        "source_dirs": ["chapters"], "glob": "*.md",
+        "parts": [
+            ("Front Matter", ["ch00_*", "preface"]),
+            ("Part A: The Problem", ["ch01_*", "ch02_*", "ch03_*"]),
+            ("Part B: The Observer", ["ch04_*", "ch05_*", "ch06_*"]),
+            ("Part C: The Three Quantities", ["ch07_*", "ch08_*", "ch09_*"]),
+            ("Part D: Instruments", ["ch10_*", "ch11_*", "ch12_*", "ch13_*"]),
+            ("Part E: Discipline", ["ch14_*", "ch15_*", "ch16_*", "ch17_*", "ch18_*"]),
+            ("Part F: Ageing", ["ch19_*", "ch20_*", "ch21_*", "ch22_*", "ch23_*"]),
+            ("Part G: Beyond One Consumer", ["ch24_*", "ch25_*", "ch26_*", "ch27_*", "ch28_*", "ch29_*"]),
+            ("Appendices", ["appendix_*"]),
+        ],
     },
     "geometric-aesthetics": {
         "number": 13, "title": "Geometric Aesthetics",
@@ -267,6 +285,14 @@ def check_manifest(config: dict, manifest_path: Path) -> list[str]:
     return problems
 
 
+# A currency dollar. In the page it sits alone in its own element: KaTeX auto-render pairs
+# delimiters inside one text node only, so a dollar in a node by itself can never open or
+# close a formula. Written as plain text (before 2026-11-25), the `$` of `\$50` paired with
+# the opening `$` of the next formula and the sentence between them was typeset as math.
+CURRENCY_TOKEN = "\x00CUR\x00"
+CURRENCY_HTML = '<span class="currency">&#36;</span>'
+
+
 def protect_math(text: str) -> tuple[str, dict[str, str]]:
     """Replace LaTeX math with placeholders before Markdown processing.
 
@@ -278,13 +304,20 @@ def protect_math(text: str) -> tuple[str, dict[str, str]]:
     def _replace(match: re.Match) -> str:
         nonlocal counter
         key = f"\x00MATH{counter}\x00"
-        placeholders[key] = match.group(0)
+        placeholders[key] = match.group(0).replace(CURRENCY_TOKEN, "\\$")
         counter += 1
         return key
 
     def _protect_segment(seg: str) -> str:
+        # An escaped dollar (`\$50`) is currency, not a delimiter. Take it out before pairing
+        # (restore_math writes it back in its own element, see CURRENCY_HTML).
+        seg = seg.replace("\\$", CURRENCY_TOKEN)
         seg = re.sub(r'\$\$(.+?)\$\$', _replace, seg, flags=re.DOTALL)
-        seg = re.sub(r'(?<![\$\\])\$(?!\$)(?!\s)(.+?)(?<![\s\\])\$(?!\$)', _replace, seg)
+        # Inline math may wrap across a line break (hard-wrapped sources do), never across a
+        # blank line. Before 2026-11-25 the body was `.+?`, which stops at a newline: a wrapped
+        # formula was left unprotected, Markdown ate its underscores, and every `$` after it
+        # in the paragraph paired with the wrong partner.
+        seg = re.sub(r'(?<![\$\\])\$(?!\$)(?!\s)((?:[^\n]|\n(?![ \t]*\n))+?)(?<![\s\\])\$(?!\$)', _replace, seg)
         seg = re.sub(r'\\\[(.+?)\\\]', _replace, seg, flags=re.DOTALL)
         seg = re.sub(r'\\\((.+?)\\\)', _replace, seg)
         return seg
@@ -297,9 +330,12 @@ def protect_math(text: str) -> tuple[str, dict[str, str]]:
 
 
 def restore_math(html: str, placeholders: dict[str, str]) -> str:
+    # The formula goes back as HTML text, so its <, > and & must be escaped. Written raw
+    # (before 2026-11-25), `$k<n$, $\lambda>0$` reached the browser as a tag `<n$, $\lambda>`
+    # and the text between the two signs vanished. KaTeX reads the decoded text node.
     for key, value in placeholders.items():
-        html = html.replace(key, value)
-    return html
+        html = html.replace(key, htmllib.escape(value, quote=False))
+    return html.replace(CURRENCY_TOKEN, CURRENCY_HTML)
 
 
 def extract_title(md_text: str) -> str:
