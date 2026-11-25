@@ -68,7 +68,7 @@
 <p>The <em>cotangent space</em> $T_p^* M$ is the dual: the space of linear maps $T_p M \to \mathbb{R}$. Cotangent vectors (covectors, 1-forms) at $p$ are the natural objects that weight tangent vectors to produce numbers. The gradient $df$ of a smooth function $f : M \to \mathbb{R}$ is the canonical covector field: $(df)_p(v) = v(f)$, the derivative of $f$ in the direction $v$. The vector/covector distinction is usually invisible in Euclidean space (the metric identifies them), but becomes important on curved or non-Euclidean manifolds — including the SPD manifold of Section 4.5.</p>
 <h3 id="the-metric-tensor">The Metric Tensor</h3>
 <p>A Riemannian metric is a smooth assignment, to each point $p$, of a positive-definite inner product $g_p(\cdot, \cdot)$ on $T_p M$. In local coordinates $(x^1, \ldots, x^n)$, the metric has components $g_{ij}(p)$ satisfying</p>
-<p>$$g_p(u, v) = \sum_{i,j} g_{ij}(p)\, u^i v^j, \qquad g_{ij} = g_{ji}, \qquad g_{ij}(p)\, v^i v^j > 0 \text{ for } v \neq 0.$$</p>
+<p>$$g_p(u, v) = \sum_{i,j} g_{ij}(p)\, u^i v^j, \qquad g_{ij} = g_{ji}, \qquad g_{ij}(p)\, v^i v^j &gt; 0 \text{ for } v \neq 0.$$</p>
 <p>The length of a curve $\gamma:[0,1] \to M$ is</p>
 <p>$$L(\gamma) = \int_0^1 \sqrt{g_{\gamma(t)}(\dot\gamma(t), \dot\gamma(t))}\, dt,$$</p>
 <p>and the distance $d(p, q)$ between two points is the infimum of lengths of curves from $p$ to $q$. Geodesics are length-minimizing curves; they are the &ldquo;straight lines&rdquo; of a curved space.</p>
@@ -147,7 +147,7 @@
 <h3 id="combined-ridge-lasso">Combined Ridge + Lasso</h3>
 <p>In practice we often combine Lasso-selected features with a Ridge regression (an $\ell_2$ penalty):</p>
 <p>$$\hat\beta = \arg\min_\beta\; \tfrac{1}{2N}\|y - X\beta\|_2^2 + \lambda_1 \|\beta\|_1 + \lambda_2 \|\beta\|_2^2.$$</p>
-<p>The combined objective is Elastic Net when $\lambda_2 > 0$, and we use it when the number of nonzero Lasso features would otherwise be unstable across folds. The Phase-1 headline result (books, combined Ridge+Lasso, $R = 0.241$, 17σ, $R^2 = 0.058$ before genre correction) uses this combination.</p>
+<p>The combined objective is Elastic Net when $\lambda_2 &gt; 0$, and we use it when the number of nonzero Lasso features would otherwise be unstable across folds. The Phase-1 headline result (books, combined Ridge+Lasso, $R = 0.241$, 17σ, $R^2 = 0.058$ before genre correction) uses this combination.</p>
 <h2 id="4-7-notation">4.7 Notation and Conventions</h2>
 <p>We close with notation used throughout the book.</p>
 <p><strong>Works and clouds.</strong> A work is denoted $W$. Its embedding cloud is</p>
