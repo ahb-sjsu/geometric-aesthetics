@@ -98,6 +98,10 @@ The deeper problem is that Birkhoff's $O$ and $C$ are *hand features*. They are 
 
 Birkhoff's aesthetics was the right structural move with the wrong substrate. He needed a representation space that the perceptual system itself uses. That substrate — learned representations — was nine decades away.
 
+![Figure 3.1](figures/ch03_fig1.svg)
+
+*Figure 3.1. Birkhoff's evaluation plane as the chapter reads it: complexity C across, order O up. Each ray from the origin is a set of objects with the same aesthetic measure M = O / C, drawn for M = 0.5, 1 and 2. The two illustrative objects a and b differ in both coordinates yet lie on the same ray and receive the same M = 1. The ratio is one choice of contraction of the plane back to a single number.*
+
 ## Information-Theoretic Aesthetics: Bense, Moles, and the Shannon Turn {#information-theoretic-aesthetics-bense-moles-and-the-shannon-turn}
 
 After Shannon's 1948 *Mathematical Theory of Communication*, a generation of theorists — Max Bense in Germany, Abraham Moles in France, Rudolf Arnheim in a related but distinct lineage — attempted to ground aesthetics in information theory. Bense's *Aesthetica* (four volumes, 1954–60) proposed that aesthetic objects carry a computable information content and that aesthetic value relates to the interplay between this content and the observer's expectations. Moles's *Théorie de l'information et perception esthétique* (1958) formalized the idea that art operates in the zone of moderate information — too low, and the work is boring; too high, and the work is noise.

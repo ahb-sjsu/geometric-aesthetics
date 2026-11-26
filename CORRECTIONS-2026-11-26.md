@@ -167,3 +167,39 @@ marked "withdrawn pending restatement".
    ruled inadmissible (surface is the thing, genre confound, cross-modal sign flips). The book
    does not mention AesBSE, and it calls the cross-lingual result its strongest finding. No
    chapter sentence was found that contradicts the README outright, so nothing was changed.
+
+## Corrected with the figures (2026-11-26)
+
+- Chapter 4, Section 4.4 worked example: for mu = 0 and sigma = 2 the text gave H^2 = 0.056; the chapter's own closed form gives 1 - sqrt(4/5) = 0.106 (and 0.118 for the mean shift, as printed). The sentence's conclusion, that Hellinger ranks the mean shift as the larger change while KL ranks the spread larger, still holds. Figure 4.1 draws the computed values.
+- Appendix F, row F5.3: the status cell read "TODO; open problem in Chapter 29."; it now reads "Open problem; see Chapter 29."
+
+The five older figures in figures/ (wundt_curve, expertise_shift, preference_manifold, symmetry_budget, compression_progress) illustrate the compressibility theory of paper/v3.tex, which no chapter introduces; none is embedded and none belongs to a chapter. They are left as files, unreferenced. Faults found in them, for the record: the Wundt curve's "optimum" sits at a local minimum between two humps; the preference manifold places the cheap direction on the wrong axis and posits an optimum the book does not; all five use dark text on a transparent background, nearly invisible on the dark site.
+
+## Found while drawing the figures (2026-11-26), not changed
+
+These were noticed while the figures were drawn. No figure draws them.
+
+1. Chapter 2, Case 2: nineteen critics at 70 and one at 100 average 71.5, not 72.
+2. The 91% (the hand-feature figure) is still applied to music in general in Chapter 2 ("85-91% ... across books and music", whose "six-to-eight-sigma" also ignores the 28.3 sigma music result), Chapter 8 (Sections 8.1 and 8.8), Chapter 26 (Section 26.2, "9-15% non-confounded"), Chapter 29 (Section 29.12, where the 28 sigma result is the spectrum Lasso, 66%) and Chapter 21 (Section 21.6).
+3. Chapter 4: "128 axes capture about 85% of variance" (Section 4.3) and "inflated by an order of magnitude" (Section 4.6) are unsourced; Appendix B, Section B.8.2, says a factor of 2 to 3.
+4. The cross-lingual rho is described as readers rating translations alike (Sections 5.3, 6.3, 28.1); Chapter 5 calls mahal_mean the most language-invariant feature, while pair_sim_mean is higher; Chapters 1 and 6 (Section 6.9) attribute rho of about 0.7 to the trajectory features.
+5. Saturation dimension: Sections 5.2 and 6.8 say 45 frames in 1024 dimensions; Chapter 17, the reference and B.8.1 say 128. In Chapter 5, 224/14 gives 256 patches, not 196.
+6. Section 5.5: with a single Gaussian prior the inverse covariance is constant everywhere, so the metric does not depend on location.
+7. Wrong references to Chapter 7: Sections 5.10 and 6.9 say it uses Moby-Dick (it uses Bleak House); Section 30.2 describes its five levels wrongly; Section 30.9 says Chapter 29 is longer than Chapter 17 (the reverse).
+8. Chapter 6: the level-by-level R values of Section 6.7 (0.08, 0.18, 0.21, 0.24) and their F-tests are not in the reference; Section 6.8 calls the music pair_sim_mean result "8 sigma-equivalent", while rho = -0.076 with p = 5e-33 is about 12 sigma.
+9. Chapter 7, Level 0: "less so than Great Expectations (3.79)" compares a lower rating as if higher; the comparison ratings are unsourced.
+10. Chapter 7, shuffle counterfactual: shuffling lowers path_eff toward 0 (not "toward unity"); with Appendix B's code recur_rate does not change under shuffling, and with Chapter 17's definition it would rise, not collapse.
+11. Feature definitions in Appendix B's code differ from the chapters (recur_rate, acf1_top3, tail_mass_100; `js` is a symmetrized KL, not Jensen-Shannon); Section 25.3 defines curvature differently again.
+12. Section 10.5 calls "My Favorite Things" a Gershwin song (it is by Rodgers and Hammerstein); Sections 10.6 and 10.9 attribute residualized results to the trajectory channel that the reference does not report.
+13. Section 11.5's effective dimension "d ~ 30-60 (Chapter 17)" is not in Chapter 17.
+14. The bundle threshold is 20 bundles per language; Sections 12.4 and 12.6 call it 20 paragraphs per side; Section 29.2 says five Chinese bundles "reached the n>=20 threshold" (they fell below it).
+15. Section 14.4: "~8 sigma on top of the hand-designed features" is unsourced, and Lasso sparsity comes from the l1 penalty, so it is not evidence of emergence.
+16. Theorem 15.1(i): non-injectivity holds for continuous Q, not "any function" (Chapter 20 states it correctly).
+17. Chapter 18: Section 18.3 gives d of about 25-30 yet includes the 71 axes; Section 18.7 makes causal claims about conditioning on channel values, which Section 17.8 rules out.
+18. Section 21.4 says the head-to-head uses genre residualization, which the reference does not say; Section 21.8 calls the sign flip a "direct empirical witness" for Chapter 13, which Appendix F lists as an analogy.
+19. Section 22.5: the 2010 Psychological Science paper is by Cutting, DeLong and Nothelfer, not "Cutler and colleagues".
+20. Chapter 26: "we observed basin structure directly" (Section 26.3) is unsupported; Section 26.4 cites Chapter 12 for a cross-modality-invariant signal, which Chapter 12 shows is not.
+21. Chapter 27: "70-85% genre accuracy" (Section 27.3) is unsourced; Section 27.2 calls tr(Sigma) a measure of coherence, though it measures spread.
+22. Chapter 28: "twentieth-first-century" (typo).
+23. Section 29.3: pair_sim_mean is said to compare consecutive windows (it averages over all pairs), and the "30-second windows" are one 30-second clip.
+24. Claims with no data behind them: Chapter 3 (a hand-versus-learned feature comparison for books, an Arnheim-encoder correlation), Chapter 8 (within-rock and penumbral-zone findings), Section 9.9 ("survive translation across media").

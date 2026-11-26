@@ -93,6 +93,10 @@ What is in the other ninety percent?
 
 The right summary is this: *the geometric framework captures a real but bounded portion of aesthetic response. The bound is not incidental — it is approximately where one would expect a content-only, context-free, mood-independent account to bottom out.* Much of what we call aesthetic judgment is social, contextual, mood-dependent, and reader-specific. The geometric account does not pretend otherwise.
 
+![Figure 16.1](figures/ch16_fig1.svg)
+
+*Figure 16.1. Variance explained, R² as a percentage, before and after genre residualization, from the correlations the chapter and Chapter 17 report: books R = 0.241 and 0.093, the music spectrum Lasso R = 0.302 and 0.177, with each bar's z. The genre share of R² is 1 − (0.093/0.241)² = 85% for books and 1 − (0.177/0.302)² = 66% for the music spectrum Lasso. The chapter's 91% for music is the share for the hand features.*
+
 ## 16.7 The Normative Gap {#16-7-the-normative-gap}
 
 The deepest limit is not empirical. It is philosophical.

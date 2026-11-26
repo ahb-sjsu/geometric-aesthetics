@@ -148,7 +148,11 @@ Suppose we are given two one-dimensional Gaussians: $p_0 = \mathcal{N}(0, 1)$, t
 
 $$D_{\mathrm{KL}}(p\|p_0) = \tfrac{1}{2}(\sigma^2 + \mu^2 - 1 - \ln \sigma^2), \qquad H^2(p, p_0) = 1 - \sqrt{\tfrac{2\sigma}{1+\sigma^2}} \exp\!\left(-\tfrac{\mu^2}{4(1+\sigma^2)}\right).$$
 
-For $\mu = 1, \sigma = 1$ (same variance, shifted mean): $D_{\mathrm{KL}} = 0.5$, $H^2 \approx 0.118$. For $\mu = 0, \sigma = 2$ (same mean, doubled standard deviation): $D_{\mathrm{KL}} = \tfrac{1}{2}(4 - 1 - \ln 4) \approx 0.807$, $H^2 \approx 0.056$. The two perturbations are "comparably large" under KL but Hellinger regards the mean shift as the larger change. This is a feature, not a bug: different divergences emphasize different aspects of the difference, and reporting only one hides the asymmetry. We report all of them and let the pattern of agreement and disagreement be part of the signal.
+For $\mu = 1, \sigma = 1$ (same variance, shifted mean): $D_{\mathrm{KL}} = 0.5$, $H^2 \approx 0.118$. For $\mu = 0, \sigma = 2$ (same mean, doubled standard deviation): $D_{\mathrm{KL}} = \tfrac{1}{2}(4 - 1 - \ln 4) \approx 0.807$, $H^2 \approx 0.106$. The two perturbations are "comparably large" under KL but Hellinger regards the mean shift as the larger change. This is a feature, not a bug: different divergences emphasize different aspects of the difference, and reporting only one hides the asymmetry. We report all of them and let the pattern of agreement and disagreement be part of the signal.
+
+![Figure 4.1](figures/ch04_fig1.svg)
+
+*Figure 4.1. The chapter's worked example, prior N(0, 1). Each curve plots a family of perturbations by its KL divergence from the prior (across) and its squared Hellinger distance (up), both from the chapter's closed forms. The upper curve shifts the mean with σ = 1; the lower curve widens the spread with μ = 0. The shift μ = 1 has KL 0.5 and H² 0.118; doubling the standard deviation has KL 0.807 and H² 0.106. KL ranks the spread change as the larger, Hellinger the mean shift.*
 
 ### Why All Six
 
@@ -189,6 +193,10 @@ Given design matrix $X \in \mathbb{R}^{N \times p}$ and target $y \in \mathbb{R}
 $$\hat\beta_\lambda = \arg\min_{\beta \in \mathbb{R}^p}\; \tfrac{1}{2N}\|y - X\beta\|_2^2 + \lambda \|\beta\|_1, \qquad \|\beta\|_1 = \sum_{j=1}^{p}|\beta_j|.$$
 
 The $\ell_1$ penalty induces sparsity: for $\lambda$ above a threshold, many components of $\hat\beta_\lambda$ are exactly zero. The nonzero coordinates constitute the *selected features*.
+
+![Figure 4.2](figures/ch04_fig2.svg)
+
+*Figure 4.2. Two coefficients, an illustrative quadratic loss whose level curves are the ellipses (centred on the unpenalized fit), and the same budget, 1, for each penalty. Inside the ℓ1 diamond the smallest loss is reached at a corner, where β2 = 0 exactly. Inside the ℓ2 disc it is reached at a point where both coefficients are non-zero, here (0.88, 0.48). This is the sparsity the chapter relies on to select axes.*
 
 ### Why Lasso Is Load-Bearing Here
 

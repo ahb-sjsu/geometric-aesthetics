@@ -40,6 +40,10 @@ We argue that this is the correct picture for three reasons.
 
 **Reason 3: Cluster-centres, unlike averages, support disagreement without dissolution.** A cluster in feature space has a centre and a variance. The variance is not noise; it is information about how tightly the cluster coheres. A canonical cluster with high variance is a canon-under-construction; one with low variance is a canon-at-consensus; one with bimodal structure is a canon-splitting. The scalar average discards all of this.
 
+![Figure 14.1](figures/ch14_fig1.svg)
+
+*Figure 14.1. Schematic with illustrative points: works in two dense regions of a two-dimensional feature space. The average of all works falls in the empty gap between them; no work lies near it. That is what a scalar-average canon reports. The chapter's alternative takes a canon as a cluster centre together with its spread, drawn here as each cluster's mean and one-standard-deviation ellipse. Canon formation by geometric aggregation is conjectured (Appendix F, F14.1).*
+
 ## 14.4 The Collective Aesthetic Tensor {#the-collective-aesthetic-tensor}
 
 We now make the picture precise, paralleling Ethics Chapter 14's collective agency tensor.

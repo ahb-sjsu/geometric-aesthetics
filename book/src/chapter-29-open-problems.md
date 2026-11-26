@@ -26,6 +26,10 @@ This is a corpus-design gap, not a framework gap. But until it is closed, the in
 
 **What progress would look like.** A purpose-built Sino-Western translation corpus: perhaps 300–500 Chinese translations of English-corpus works, drawn from academic and trade editions where machine-readable text exists, quality-controlled for translation-vs-adaptation, then LaBSE-encoded and projected into the English PCA-128 basis exactly as the other nineteen languages were. The labor is archival and legal, not algorithmic. The predicted outcome, if the framework is correct, is that `pair_sim_mean` and the divergence family should register ρ values in the 0.60–0.75 band seen in Germanic and Uralic — modestly lower, perhaps, given translator-mediated distance from source, but clearly above chance. A null result here would be one of the more interesting failures the framework could suffer.
 
+![Figure 29.1](figures/ch29_fig1.svg)
+
+*Figure 29.1. Matched translation bundles per language in the cross-lingual study, as Chapter 17 and the reference record them, on a logarithmic scale. Ten languages reach the threshold of 20 bundles (dashed line) and carry the invariance result. Seven are exploratory, among them Chinese with 5 bundles, all classical originals rather than translations: the Sinitic gap of this section.*
+
 ## 29.3 The Origin of the Cross-Modal Sign Flip {#cross-modal-sign-flip}
 
 The most surprising finding in this volume is not the cross-lingual invariance but its modality-specific shadow: the robust sign flip between books and music on two features we had no reason to expect would flip.

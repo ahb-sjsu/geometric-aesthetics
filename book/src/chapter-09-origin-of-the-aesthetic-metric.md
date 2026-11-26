@@ -147,6 +147,10 @@ We have referred repeatedly to the cross-lingual result as our strongest evidenc
 
 The interpretation is: translation acts like a tube on the manifold, and the within-tube variation is much smaller than between-book variation. Works stay close to themselves, in the shared geometry, across language families. The metric — to the extent our features instantiate it — is *not* a pure convention of English reception.
 
+![Figure 9.1](figures/ch09_fig1.svg)
+
+*Figure 9.1. Within-bundle standard deviation divided by between-book standard deviation for features of the cross-lingual study, as the chapter reports them: path_eff 0.18, recur_rate 0.28, and 0.39 to 0.44 across the divergence family (drawn as a range). A ratio of 1 would mean that a book's translations differ from one another as much as different books do. Verified empirically (Appendix F, F12.2).*
+
 ### The Sinitic Gap, Honestly
 
 The Chinese Gutenberg corpus is classical originals (Confucius's *Analects*, Sunzi's *Art of War*, the *Shijing*) — not translations of Western works. Only five bundles formed, below the significance threshold. This is a corpus-design limitation, not a failure of the method. The invariance claim we make is established across Germanic, Uralic, Romance, Hellenic, Italic-ancient, and Constructed families. Claims about Sinitic, Japonic, Slavic, and beyond require a matched-translation corpus that, at time of writing, we do not have.

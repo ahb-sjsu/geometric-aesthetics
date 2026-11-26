@@ -158,6 +158,10 @@ The mechanism is familiar. Once *Fountain* has been written about a hundred thou
 
 This gives a principled notion of *canon age*: the rate at which the density matrix of a work's reception approaches diagonality in its institutionally preferred basis. A young canon is one where the coherence terms are large — the work still interferes with itself, still holds multiple readings in constructive or destructive tension. An old canon is one where reception has decohered into a mixture of stable, non-interfering readings. Chapter 14's treatment of canon formation as slow averaging on the manifold is, from this angle, the same phenomenon viewed through a different lens: decoherence is averaging, and averaging is decoherence.
 
+![Figure 13.1](figures/ch13_fig1.svg)
+
+*Figure 13.1. The verdict probability of §13.6 for a reader holding two framings with equal amplitudes 0.5 on a verdict x, against their relative phase θ, with the off-diagonal (interference) term scaled by a coherence factor c. At c = 1 the probability swings between 0 and 0.5; at c = 0.5 the swing halves; at c = 0, a classical mixture, it is flat at 0.25. Decoherence (§13.7) is the passage from the first curve to the last. The quantum vocabulary is an analogy (Appendix F, F13.1); the curves are the formula, not measurements.*
+
 ## 13.8 The Classical Limit {#the-classical-limit}
 
 The quantum extension is not always necessary. Most working aesthetic evaluation — a critic writing a review of a novel she has finished, a listener rating a song on a five-star scale, a curator giving a thumbs-up on an acquisition — can proceed entirely classically. The superposition has collapsed; the verdict is a scalar; the machinery of Hilbert spaces is overkill.

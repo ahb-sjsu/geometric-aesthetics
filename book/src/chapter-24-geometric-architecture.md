@@ -52,6 +52,10 @@ This is a reframing. A proportion system is traditionally *described* as a set o
 
 The framework, applied to a large corpus, should detect these constraints as *high-density tubes* in the trajectory channel. A 4,000-building corpus containing (say) 800 buildings with explicitly Palladian ratios and 3,200 without should, after PCA and Lasso, produce a latent direction whose top-loading buildings are the Palladian subset. The direction would be an empirical identification of the constraint.
 
+![Figure 24.1](figures/ch24_fig1.svg)
+
+*Figure 24.1. The seven room shapes of Palladio's Quattro Libri as the chapter lists them, drawn to their ratio of long side to short: circle, square, square and a third, root-two rectangle, square and a half, square and two thirds, double square. The system admits a family of ratios, not a single one. The golden ratio φ ≈ 1.618, the subject of the next section, is marked on the ratio line for comparison.*
+
 ### The Golden Ratio, Empirically Reconsidered
 
 No proportion has generated more literature and less agreement than the golden ratio $\varphi = (1+\sqrt{5})/2 \approx 1.618$. Claims have been made that $\varphi$ structures the Parthenon, Chartres, the Villa Stein at Garches, Notre Dame, and a great many other buildings. Analyses by Livio (2002), Markowsky (1992), and Falbo (2005) have shown that most of these claims survive only with charitable measurement conventions — the Parthenon's facade can be fit to a $\varphi$ rectangle only by choosing the correct reference points from several plausible alternatives. The question becomes: is the golden ratio *prescriptive* (architects deliberately employed it, and it produces measurable aesthetic effects), or is it *descriptive* (it is a plausible post hoc fit to a wide range of proportions that include but are not exclusive to $\varphi$)?

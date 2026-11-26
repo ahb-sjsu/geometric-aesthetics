@@ -52,6 +52,10 @@ Each of these systems is useful. Each also actively conceals the structure of th
 
 In Chapter 2 we develop this in detail using the empirical structure of Goodreads, Metacritic, and Billboard. We will return to a specific example: *Moby-Dick* sits at roughly 3.5 stars on Goodreads. The Iliad of American literature, the book from which an enormous fraction of later American fiction descends, averages to what is — on the same axis — indistinguishable from a competent mid-list thriller. This is not a verdict. It is a projection error.
 
+![Figure 1.1](figures/ch01_fig1.svg)
+
+*Figure 1.1. Two illustrative work profiles on two qualities the chapter names, structure and emotional warmth, in arbitrary units. Work A is structurally brilliant and emotionally cold; work B is warm and structurally loose. The two are orthogonal, yet their shadows on a reader-weight axis at 45 degrees are equal, 4.1, the rating of the chapter's example. Every profile on the dashed line casts the same shadow, so the rating cannot tell the works apart.*
+
 ### Failure 3: Canon Formation {#failure-3-canon-formation}
 
 The third failure is the most consequential, because it compounds across time. The canon of a tradition — the books taught, the paintings that enter the museum, the records included in the year-end retrospective — is produced by iterated aggregation of scalar judgments. A syllabus is, in effect, a ranked list. A museum's permanent collection is a threshold applied to a ranked list. A "greatest of all time" issue of a magazine is a literal ranked list.

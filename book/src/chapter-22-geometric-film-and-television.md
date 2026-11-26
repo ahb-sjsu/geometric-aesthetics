@@ -44,6 +44,10 @@ We state our prediction here, in advance of running the experiment, so it is adj
 
 We prefer Prediction C as the prior. Predictions A and B are too clean for a modality as internally variegated as film. We state C in advance and will adjudicate against A, B, and C when the data run.
 
+![Figure 22.1](figures/ch22_fig1.svg)
+
+*Figure 22.1. Each modality placed by its two measured rank correlations with reception: internal coherence (pair_sim_mean) across, step size (step_mean) up. Books and music, from Chapter 17, fall in opposite quadrants. The chapter's predictions for film are regions, not points: A puts film with books, B with music, and C, the chapter's prior, splits art-house and drama from action and thriller. The film predictions are conjectured and untested (Appendix F, F22.1).*
+
 ## 22.4 Eisenstein, Bazin, and the Theory Prior {#22-4-eisenstein-bazin}
 
 The prediction basket above is not ours originally. The twentieth century's two dominant film-theoretic traditions — dialectical montage and realist long-take — give exactly the two poles of Prediction C.

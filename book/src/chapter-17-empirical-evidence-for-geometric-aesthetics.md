@@ -188,6 +188,10 @@ The substantive reading: higher-rated books are the ones whose content cloud is 
 
 This is not a trivially derivable consequence of the modalities. Nothing in the mathematics of the channels prescribes a sign; they are symmetric features of the cloud geometry, and either direction could in principle correlate with aesthetic value. The empirical observation that two distinct modalities produce *opposite* signs on the same geometric quantities is the clean finding: the aesthetic manifold has *directionality*, and the directionality is modality-specific.
 
+![Figure 17.1](figures/ch17_fig1.svg)
+
+*Figure 17.1. Spearman correlation of two cloud features with reception, as §17.6.3 reports it: Goodreads rating for books (n = 4,998) and log(1 + listens) for music (n = 24,801). Internal coherence, pair_sim_mean, is positive for books and negative for music; step size, step_mean, is the reverse. Each flip is robust at p < 10⁻²⁸. Verified empirically (Appendix F, F21.6 and F21.7).*
+
 ## 17.7 Philosophical Interpretation
 
 We may now state the philosophical upshot of the chapter in a form compatible with the book's larger project.

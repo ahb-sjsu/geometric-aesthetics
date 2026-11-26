@@ -102,6 +102,10 @@ The most striking consequence of curvature is *holonomy*: parallel-transporting 
 
 **Definition 10.3 (Style Holonomy).** Let $\gamma:[0,1]\to \mathcal{A}$ be a closed loop with $\gamma(0) = \gamma(1) = p$. The holonomy of $\gamma$ is the linear transformation $H_\gamma: T_p \mathcal{A} \to T_p \mathcal{A}$ given by parallel transport of feature-vectors around $\gamma$. If $H_\gamma = \mathrm{id}$ for all loops at $p$, the connection is locally flat. If $H_\gamma \neq \mathrm{id}$ for some $\gamma$, the connection has nontrivial curvature.
 
+![Figure 10.1](figures/ch10_fig1.svg)
+
+*Figure 10.1. Holonomy on a unit sphere, the standard picture behind Definition 10.3. A vector is carried without turning around a closed loop: from the pole N down a meridian to A, along a quarter of the equator to B, and back up to N. It returns rotated by 90 degrees, equal to the area the loop encloses, π/2. The chapter posits style holonomy on the aesthetic manifold by analogy; Appendix F lists it as proved in the abstract and not yet measured on the corpus (F10.2).*
+
 ### The Dickens–Tolstoy–Joyce–Franzen Circuit
 
 Consider a canonical loop of influence in the nineteenth-to-twenty-first-century novel: Dickens $\to$ Tolstoy $\to$ Joyce $\to$ Franzen $\to$ contemporary readers of Dickens. Each arrow is a historically real parallel-transport of aesthetic content. Dickens's serial realism is carried into Tolstoy's panoramic realism; Tolstoy is carried into Joyce's psychological interiority; Joyce is carried into Franzen's domestic-omniscient; contemporary readers reading Dickens-after-Franzen are, themselves, parallel-transporting back to the origin.

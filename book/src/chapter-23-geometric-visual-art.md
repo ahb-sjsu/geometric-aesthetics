@@ -26,6 +26,10 @@ The corpus prior is the mean and covariance of all patch embeddings in the refer
 
 **D. Lasso on latent directions.** Run an L1-penalized regression from a 128-dimensional PCA of the patch-cloud mean against a curatorial target (acquisitions price, critical rating aggregated from published reviews, museum-visit dwell time). The surviving non-zero coefficients are the framework's proposal for the *genre-and-form axes* of painting — the visual equivalents of the 71 interpretable axes we recovered for literature.
 
+![Figure 23.1](figures/ch23_fig1.svg)
+
+*Figure 23.1. Schematic. A vision transformer tiles the image into patches, 37 × 37 = 1,369 for a 518-pixel input to DINOv2-ViT-L/14 (drawn here as 8 × 8), and gives each patch an embedding; together they form the painting's patch cloud. A predicted order of fixations (illustrative, numbered) turns the cloud into a trajectory, on which the step and recurrence features of Chapter 17 are defined. The painting pipeline is proposed and untested (Appendix F, F23.1).*
+
 ### What the Rating-Analog Is
 
 For books, the rating was Goodreads aggregate. For music, it was log listen count. For painting, there is no equally clean target. The four natural candidates, in descending order of cleanliness, are:

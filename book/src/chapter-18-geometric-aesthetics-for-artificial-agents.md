@@ -79,6 +79,10 @@ This is not a claim that MERT is the "right" encoder — Chapter 17's methodolog
 
 There is a governance consequence. Hand features are auditable in the straightforward sense that an engineer can read off "tempo = 128 bpm, energy = 0.7, valence = 0.3". Learned-representation features are not auditable in that sense. The framework's response is that auditability should be moved from the feature level to the *channel level*: the agent must report which of the four geometric channels (divergence, coherence, trajectory, genre-axis) drove its decision, even if the individual PCA component values are opaque. This is the aesthetic analogue of the ethics-framework audit requirement (Ethics Ch 18, §18.3, Req. 3): the output is accompanied by the tensor and the contraction, not by the raw feature values.
 
+![Figure 18.1](figures/ch18_fig1.svg)
+
+*Figure 18.1. Correlation R with log(1 + listens) on the shared Echonest subset of n = 5,233 tracks, as the chapter reports it: the MERT spectrum Lasso 0.225, MERT hand features 0.151, Spotify's eight acoustic features 0.103. The bootstrap difference between the first and the last gives p = 0.001; their ratio, 2.2, is the chapter's factor of 2.2. Verified empirically (Appendix F, F21.3).*
+
 ## 18.5 Invariance as Aesthetic Alignment {#18-5-invariance-as-alignment}
 
 Chapter 17's strongest finding was cross-lingual invariance. The geometry recovered from English Gutenberg text was the same geometry, at $\rho \approx 0.7$, recovered from Finnish, French, German, Dutch, Italian, Spanish, Greek, Esperanto, Hungarian, and Latin text — a corpus of 19 languages, with 6 language families at statistical power, $n = 4{,}683$ non-English books, with the EN↔FI Hellinger correlation at $\rho = 0.77$, $p = 8 \times 10^{-57}$. This is the aesthetic equivalent of the Bond Invariance Principle: *aesthetic structure is invariant under admissible re-descriptions of the work.*

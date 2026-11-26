@@ -42,6 +42,10 @@ Classical menu-engineering intuitions — begin with something light, build to r
 
 The corpus exists in principle: restaurant review aggregators with detailed course-level descriptions, food-science datasets of flavor compound measurements across dishes, the tasting-menu archives of high-profile restaurants. The encoder does not yet exist in a form ready for this work; it would need to combine ingredient composition, cooking technique, and sensory-profile data. The conjecture is testable by a motivated team of food scientists with a grant and two years.
 
+![Figure 28.1](figures/ch28_fig1.svg)
+
+*Figure 28.1. Schematic: the menu intuitions of §28.3 drawn as a path through two of the chapter's flavour axes, richness and acidity, with illustrative course positions. The first six courses build richness in near-equal steps (mean 1.33, standard deviation 0.01); the last takes one step of 5.4 in a new direction, turning 106 degrees, a high-curvature close. Conjecture 28.1, that meals reward contrast as music does, is untested.*
+
 ## 28.4 Gardening and the Slow Trajectory {#28-4-gardening-and-the-slow-trajectory}
 
 A garden is a trajectory that moves on the scale of seasons. A well-designed perennial bed presents a distinct aesthetic state every month from April to October, with coherence across months (the bed reads as one garden, not seven) and contrast within months (something is always blooming while something else has just finished and something else has not yet started). The gardener's craft, in our framework's language, is to design a trajectory with specific properties: bounded spread (the bed stays visually cohesive), non-trivial curvature (it is recognizably different in June than in August), and minimal dead intervals (the trajectory never passes through a point of low aesthetic signal).

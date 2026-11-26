@@ -107,6 +107,10 @@ Two interpretations are compatible with the data.
 
 We cannot distinguish Interpretation A from Interpretation B on the current data. Both would predict null coefficients; neither predicts a negative coefficient of substantial magnitude, and we do not observe one. A corpus that included full-piece audio and a non-listens target (critical rating, concert attendance, scholarly citation) would decide between them. We flag this as an open empirical question. What we do not do is claim that classical and jazz are aesthetically flat on the framework's axes; the framework may simply be measuring the wrong thing for these audiences.
 
+![Figure 21.1](figures/ch21_fig1.svg)
+
+*Figure 21.1. Artist-disjoint within-genre Ridge correlation R with log(1 + listens), with each genre's track count, as the chapter reports it. Rock, electronic, hip-hop and pop lie between 0.139 and 0.185; classical (−0.013) and jazz (0.031) are null. The chapter leaves open whether the nulls come from 30-second clips, from listens as the target, or both. Verified empirically (Appendix F, F21.4 and F21.5).*
+
 ## 21.8 Back to the Manifold {#21-8-back-to-the-manifold}
 
 What does the sign flip tell us about the aesthetic manifold? Three things.

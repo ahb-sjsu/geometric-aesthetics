@@ -68,6 +68,10 @@ where $q^i$ is the reader's judgment along aesthetic dimension $i$ and $\delta q
 
 This is the same pathology that Chapter 2 of *Geometric Ethics* identifies for moral uncertainty: the variance has shape, and the shape is ethically (or aesthetically) decisive. In aesthetics, the scalar variance bar around a rating is, in many cases, not noise — it is the signature of the work's directional content reflected back through the population of readers. A scalar that reports only the mean throws this information away. A scalar that reports mean-and-variance throws away the directional structure of the variance.
 
+![Figure 2.1](figures/ch02_fig1.svg)
+
+*Figure 2.1. Two illustrative distributions of 1-to-5-star ratings built to the chapter's description, each with mean exactly 3.8. On the left most readers give 3 or 4 stars (standard deviation 0.68). On the right 60% give 5 stars and 30% give 1 or 2 (standard deviation 1.60). The mean is the same, and even mean and variance together do not say which quality divides the readers. Bars are the share of readers at each rating.*
+
 ## Failure 3: Regime Collapse {#failure-3-regime-collapse}
 
 The third failure is the most structural. Aesthetic reality is not uniformly smooth. There are regime boundaries — strata — across which aesthetic rules change discontinuously.

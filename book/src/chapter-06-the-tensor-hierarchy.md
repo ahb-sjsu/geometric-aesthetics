@@ -177,6 +177,10 @@ The information that contraction discards is exactly what scalar aesthetics thro
 
 This is the aesthetic analogue of moral residue (Ethics Ch 15): the contraction to a scalar is mathematically well-defined but lossy, and the loss is not incidental. It is the loss of the directional information that makes aesthetic discourse intelligible.
 
+![Figure 6.1](figures/ch06_fig1.svg)
+
+*Figure 6.1. The tensor hierarchy as the chapter defines it, computed from one work's embedding cloud. Levels 1, 2 and 4 treat the cloud as an unordered set; Level 3 alone uses the order of the units; Level 4 alone is fitted to a reception target. The linear contraction of §6.6 maps all four levels to the scalar of Level 0, and no map runs back. In the books experiment 71 of the 128 axes receive non-zero Lasso weight.*
+
 ## 6.7 Why Each Level Is Irreducible to the Others {#6-7-irreducibility}
 
 A natural question: could we dispense with Levels 2, 3, or 4, and compute everything from the rest?

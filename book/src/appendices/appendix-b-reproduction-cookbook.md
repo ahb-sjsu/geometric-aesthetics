@@ -245,6 +245,10 @@ for tr, te in gkf.split(X, y, groups=author):
 r = np.corrcoef(preds, y)[0, 1]
 ```
 
+![Figure B.1](figures/appb_fig1.svg)
+
+*Figure B.1. Schematic of §B.7.1 with 8 illustrative authors (colours) and their books (squares). A plain 5-fold split scatters an author's books across folds (5 of the 8 authors here), so a model can learn an author's rating from the training folds and be scored on the same author in the test fold. GroupKFold puts every book of an author in one fold, so each test fold holds only unseen authors. For music the group is the artist.*
+
 ### B.7.2 Genre Residualization (Phase 2 / Phase 4 Within-Genre)
 
 To get the genre-confound-honest effect size, subtract the per-genre target mean before fitting the model on the target:
@@ -294,6 +298,10 @@ MERT exposes all transformer layers; different layers specialize in different mu
 For every headline number we report: sample size $n$, effect size (Pearson $R$ or Spearman $\rho$), and either a z-score or a p-value. Converting between: a Pearson $R$ at sample size $n$ has z-score roughly $R\sqrt{n-2}/\sqrt{1-R^2}$, and the bootstrap CI we use in the manuscript is 1000 resamples of books (or tracks, or language bundles) with replacement.
 
 For the cross-modality sign-flip test we compute Spearman $\rho$ on each modality separately and test the null $H_0: \rho_{\text{books}} \cdot \rho_{\text{music}} \ge 0$ by stratified bootstrap. This null is rejected at $p<10^{-28}$ for `pair_sim_mean` and $p<10^{-28}$ for `step_mean` (the p-values dominate by the music side's larger sample).
+
+![Figure B.2](figures/appb_fig2.svg)
+
+*Figure B.2. The conversion of §B.9, z ≈ R √(n − 2) / √(1 − R²), drawn for the three sample sizes of the headline results, with the six printed pairs of R and z: books 0.241 and 17σ, residualized 0.093 and 6.5σ; fiction 0.131 and 6.2σ; the music spectrum Lasso 0.302 and 49.8σ, residualized 0.177 and 28.3σ; music hand features, residualized, 0.043 and 6.7σ. Each printed z lies within 0.6 of its curve. At a fixed R, z grows as the square root of n.*
 
 ## B.10 End-to-End Compute Budget
 

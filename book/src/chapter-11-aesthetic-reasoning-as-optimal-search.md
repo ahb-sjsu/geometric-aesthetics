@@ -44,6 +44,10 @@ Why A* rather than alternatives? The choice reflects the structure of aesthetic 
 
 In aesthetic terms, A* balances the consequentialist accounting of already-chosen works (no rescinding, no do-overs, the program-so-far is what it is) with the deontological guidance of trained taste (this next work *feels* right, toward-the-goal, given what the curator knows of the form). This is the computational content of the observation that good aesthetic reasoning requires both *what you have already committed to* and *where you are trying to go*.
 
+![Figure 11.1](figures/ch11_fig1.svg)
+
+*Figure 11.1. An illustrative grid on which each step costs 1, or 5 inside the shaded block, searched from S to G with the Manhattan-distance heuristic, which never overestimates here. A\* expands by f = g + h and returns the cheapest path, of cost 17, around the block. Greedy best-first search expands by h alone, heads straight at the goal through the block, and returns a path of cost 35. Ignoring the accumulated cost g misleads the search, as the chapter argues.*
+
 ## 11.3 Trained Taste as a Heuristic Function {#trained-taste}
 
 The central claim of this chapter is that *aesthetic intuitions* — the trained reflexes of a curator, the "feel" a critic has for how a book is going, the taste of a seasoned anthologist — are the gradients of heuristic functions in the A* framework.

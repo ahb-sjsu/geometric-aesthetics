@@ -58,6 +58,10 @@ In our music empirical work, we observed basin structure directly. Rock ($n = 7{
 
 The sociological consequences — political polarization, niche addiction, the collapse of shared cultural referents — are not our primary concern. Our concern is the geometric diagnosis: the filter bubble is not a bug in the recommender. It is the intended behavior of a system whose objective does not penalize it.
 
+![Figure 26.1](figures/ch26_fig1.svg)
+
+*Figure 26.1. Schematic: an illustrative engagement surface over a two-dimensional user space, with two peaks; the curves are its contour lines. Each user path starts at a marked point and climbs greedily, always in the locally steepest direction, and ends at the peak of the basin it started in, coloured by that peak. No path crosses into the other basin. This is the chapter's reading of the filter bubble as basin convergence; Proposition 26.2 is argued in the chapter, not proved or tested.*
+
 ## 26.4 What the Geometric Framework Prescribes {#26-4-what-the-geometric-framework-prescribes}
 
 We now sketch, prescriptively, what a recommender built on the aesthetic-manifold framework of this book would look like. We emphasize: this is speculative engineering. The components exist (manifold learning, diversity regularization, multi-objective ranking have each been studied), but the integration we propose has not been built and evaluated at scale.

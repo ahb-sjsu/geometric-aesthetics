@@ -149,6 +149,10 @@ $$\Delta S(p) = \lim_{\varepsilon \to 0^+} S(p + \varepsilon n) - \lim_{\varepsi
 
 where $n$ is the unit normal to the boundary at $p$. Empirically, this jump appears as the genre-confound residual itself: the 85% of books R² that disappears when we residualise against genre *is* the jump, projected onto the rating target. The within-stratum residual of R = 0.093 is the smooth-interior signal. Together, they decompose the total variance: a large boundary-aligned component plus a smaller within-stratum aesthetic component.
 
+![Figure 8.1](figures/ch08_fig1.svg)
+
+*Figure 8.1. Schematic with illustrative values: two genre strata along one feature of the work, each with the same within-stratum slope, 0.25, and a jump of 0.43 in the evaluation at the boundary between them. A single least-squares line fitted across both strata has slope 0.53, most of it the jump. The chapter identifies this jump with the genre-confound share of R², 85% in books, and the within-stratum slope with the residual signal.*
+
 ### Penumbral Zones
 
 In practice, aesthetic boundaries are not always sharp. A novel-in-verse inhabits a penumbra between prose fiction and poetry. A documentary with scripted reenactments inhabits a penumbra between documentary and narrative film. In our corpus, works in penumbral zones can show unusual trajectory statistics — moderate values of several statistics that would be high on one side and low on the other — and their Lasso loadings often split across axes that are typically exclusive. The penumbra is not a failure of the stratification. It is the resolution of the stratification telling us that some works genuinely inhabit the boundary.

@@ -62,6 +62,10 @@ We can formalize. Let $\delta_B(t) = \phi(B) - \mu_{\text{industry}}(t)$ be the 
 
 Note the dual role of time. Classics are works that persist in the face of trajectory; trends are the trajectory they persist against. Neither concept is intelligible without the other. A classic cannot be identified except relative to a drift; a drift cannot be identified except against anchoring invariants. This duality is structurally analogous to the cross-lingual invariance finding of Chapter 12: certain structural features (`path_eff`, `recur_rate`, the spectral divergence family) showed small within-bundle variance relative to between-book variance — std ratio 0.18–0.44 across 6 language families. Classics, in design, are the corresponding low-variance invariants: features that hold constant under the cultural transformation that would, for a typical work, change them. The mathematics of identifying cross-lingual invariants in text (Chapter 12) would, mutatis mutandis, identify classics in design.
 
+![Figure 27.1](figures/ch27_fig1.svg)
+
+*Figure 27.1. Schematic with an illustrative path: the industry-average centroid μ(t) drifts across a two-dimensional design space over eight seasons while a classic design φ(B) stays where it is. The relative position δ(t) = φ(B) − μ(t), the chapter's measure of a classic's distinctiveness, changes length (from 1.8 to 5.5 units here) and direction although the design never moves. The tangent to the centroid path is the trend vector T(t). Conjectured and untested (Appendix F, F25 to F28).*
+
 ## 27.6 Brand Repositioning as Manifold Navigation {#27-6-brand-repositioning}
 
 Fashion executives speak of repositioning a brand — Burberry's move from checked outerwear heritage to luxury-youth under Christopher Bailey in the mid-2000s, Gucci's reinvention under Alessandro Michele, Balenciaga's shift under Demna Gvasalia. Each is described in the business press as a shift in "brand aesthetic."

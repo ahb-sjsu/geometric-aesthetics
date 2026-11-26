@@ -124,6 +124,10 @@ A full pipeline, end-to-end, for a single query (e.g., "should we acquire this p
 
 The flow is specified at a level of abstraction that admits many implementations. It does not dictate the encoder, the PCA dimension, the exact covector-elicitation protocol, or the aggregation rule. These are parameters of the deployment, set by the governance layer. What is fixed by the architecture is the separation of layers, the tensor-valued intermediate representation, the explicit contraction, and the Explain accountability.
 
+![Figure 19.1](figures/ch19_fig1.svg)
+
+*Figure 19.1. The six steps of §19.7 for one query. The evaluation layer returns a tensor and no verdict; the scalar appears only at step 4, when an interest covector supplied by the translation layer is contracted against it; governance audits the covectors and revises them. A design, not a running system: §19.9 reports Discover and Evaluate built for books and music, Mediate partial, and the full four-layer architecture not built.*
+
 ## 19.8 Connection to ErisML {#19-8-connection-to-erisml}
 
 The ErisML modeling language developed for *Geometric Ethics* Ch 19 is directly applicable to aesthetic DEME. Where the ethics-framework ErisML specifies *environment* (state space), *agency* (capabilities, beliefs), *intent* (multi-objective utilities), *norms* (permissions, obligations, prohibitions), and *dynamics* (multi-agent interactions), the aesthetic-framework ErisML would specify:

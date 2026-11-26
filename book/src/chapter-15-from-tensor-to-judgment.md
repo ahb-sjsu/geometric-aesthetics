@@ -108,6 +108,10 @@ The parallel to Ethics Chapter 15 §15.5 is exact. We recount the taxonomy aesth
 
 Each is a different operation on the *same* tensor. The tensor does not change; the projection does. Much aesthetic disagreement reduces, on inspection, to disagreement about projection rather than disagreement about the work. Two critics who seem to disagree about whether a novel is good may in fact agree about its valence vector, its local metric, and its location on the manifold — and disagree only about whether to apply summative, maximin, or lexicographic projection. Identifying the projection disagreement clarifies the dispute even when it does not settle it.
 
+![Figure 15.1](figures/ch15_fig1.svg)
+
+*Figure 15.1. Two illustrative works, A and B, on two quality axes. Under the summative projection of §15.5, V = O¹ + O², the lines of equal verdict are diagonals and A ranks first, 1.2 to 1.1. Under the maximin projection, V = min(O¹, O²), they are corners and B ranks first, 0.55 to 0.3. The works do not change; only the projection does.*
+
 ## 15.6 The Information Lost {#the-information-lost}
 
 A $d$-dimensional valence vector projects to a scalar. The ratio of information retained to information discarded is roughly $1 : d-1$. In our 128-dim PCA spectrum, that is $1 : 127$. What, specifically, is lost?

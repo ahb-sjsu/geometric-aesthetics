@@ -105,6 +105,10 @@ Mean feature-wise Spearman correlations across all language pairs:
 
 The strongest individual language-pair result is EN$\leftrightarrow$FI on the Hellinger feature: $\rho = 0.77$, $n = 288$, $p = 8 \times 10^{-57}$. The EN$\leftrightarrow$FR Hellinger correlation is $\rho = 0.78$, $n = 227$.
 
+![Figure 12.1](figures/ch12_fig1.svg)
+
+*Figure 12.1. Spearman correlation between a feature's value on a book in English and on its translation, as the chapter reports it. The upper five bars are means over language pairs for the five most invariant features; the lower two are the headline pairs on the Hellinger feature (English–Finnish, n = 288, p = 8×10⁻⁵⁷; English–French, n = 227). Verified empirically (Appendix F, F12.1); reading the feature profile as a Noether current is an analogy (F12.3).*
+
 ### Within-Bundle vs. Between-Book Dispersion
 
 A second invariance measure is the ratio of within-bundle feature-dispersion to between-book feature-dispersion. Small ratios indicate that the feature is more variable between different works than between language-versions of the same work — i.e., the feature is language-invariant.

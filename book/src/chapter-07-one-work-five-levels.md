@@ -152,6 +152,10 @@ The shuffled book has the same Level 0 (if we charitably suppose readers rated t
 
 The shuffled book is, in the technical sense, indistinguishable from the original under the first two levels of our tensor. It is sharply distinguishable under the third. This is what "trajectory geometry" buys us: a family of statistics that cares about authorial ordering.
 
+![Figure 7.1](figures/ch07_fig1.svg)
+
+*Figure 7.1. An illustrative trajectory of 40 points that circles back on itself (left) and the same 40 points in a random order (right). The two clouds are identical, so the mean, the covariance and every pairwise similarity agree, and with them every Level 0 to Level 2 quantity. The mean step between consecutive points, step_mean, is 0.35 in the author's order and 1.34 after shuffling. Illustrative points, not data from Bleak House.*
+
 ## Closing Note: Against Collapse {#closing-note}
 
 The argument of this chapter is precisely the argument of its sibling in *Geometric Ethics*, with the target variable changed. In ethics, collapsing the case to a scalar before examining it hides structure — the rank-2 tensor of multi-agent evaluation, the metric that determines trade-off rates, the stratum boundaries at which rules change. In aesthetics, collapsing the work to a scalar before examining it hides the same sorts of structure: internal coherence versus distance-from-prior (rank-2, in a sense), trajectory shape, and the discovered axes along which genre and form live.

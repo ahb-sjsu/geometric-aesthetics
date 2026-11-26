@@ -130,6 +130,10 @@ The distance $D(p_W, p_0)$ — how unusual a work is, relative to the corpus —
 
 KL is asymmetric: $D_{\mathrm{KL}}(p_W \| p_0) \neq D_{\mathrm{KL}}(p_0 \| p_W)$. The first quantity — how surprising the work is under the prior — measures the work's *information content* relative to expectation. The second — how surprising the prior is under the work — measures how much the prior would have to be *updated* to accommodate the work. Aesthetic novelty is closer to the first; aesthetic influence is closer to the second. Chapter 10 (*Aesthetic Dynamics*) develops this asymmetry.
 
+![Figure 5.1](figures/ch05_fig1.svg)
+
+*Figure 5.1. The two directions of the KL divergence of Chapter 4 for a prior N(0, 1) and a work N(1, σ²), against the work's standard deviation σ. The chapter reads KL(work ‖ prior) as how surprising the work is under the prior (novelty) and KL(prior ‖ work) as how far the prior would have to be updated to accommodate the work (influence). They are equal, 0.5, only at σ = 1; for a narrow work the update is the larger, for a broad work the surprise.*
+
 ## 5.7 The Per-Work Gaussian Is an Approximation {#5-7-approximation}
 
 ### Non-Gaussianity in Practice
@@ -151,6 +155,10 @@ This is the rationale for the tensor *hierarchy* of Chapter 6: each level adds i
 ### What Gaussian Fits Miss
 
 A Gaussian fit cannot distinguish a novel whose paragraphs form two tight clusters from one whose paragraphs form a single wider cluster with the same covariance. A moment-matching Gaussian fits both identically. The trajectory features of Level 3 distinguish them: the bimodal novel has a low `recur_rate` (paragraphs do not return to the other cluster from within the first) and a bimodal `step_mean` distribution (jumps within a cluster are small, jumps between clusters are large). The Gaussian has erased a distinction that mattered; the third-order tensor recovers it.
+
+![Figure 5.2](figures/ch05_fig2.svg)
+
+*Figure 5.2. Two illustrative clouds of 80 points in a two-dimensional embedding. The left is one wide cluster. The right is two tight clusters, transformed so that its mean and covariance equal the left cloud's exactly. Both are fitted by the same Gaussian, whose 2-standard-deviation ellipse is drawn on each, so every first- and second-moment quantity agrees. The chapter assigns the difference to the higher levels of Chapter 6.*
 
 ## 5.8 Foreshadow — The Four Channels {#5-8-four-channels}
 

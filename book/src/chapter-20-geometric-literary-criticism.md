@@ -40,6 +40,10 @@ The honest reframe is that **85% of the headline $R^2$ was genre confound**. Wha
 
 Stratifying by genre, the within-fiction result is $R = 0.131$, $6.2\sigma$, $n = 2{,}250$ — a real within-genre effect for novels. The within-nonfiction and within-history-biography results are null. The framework captures fiction-internal aesthetic variation, not variation inside the genres whose own internal structure is closer to an argument or a record than a narrative trajectory.
 
+![Figure 20.1](figures/ch20_fig1.svg)
+
+*Figure 20.1. The Gutenberg–Goodreads experiment as the chapter describes it, with the significance each channel reaches and the result at each control. The headline R = 0.241 falls to R = 0.093 when genre is residualized, so 85% of the R² was genre; within fiction alone R = 0.131. Non-fiction and history-biography are null within genre. Verified empirically (Appendix F, F17.1 to F17.5).*
+
 ## 20.4 The Strongest Finding — Cross-Lingual Invariance {#20-4-cross-lingual-invariance}
 
 The finding that bears the most philosophical weight is not the strongest in effect size. It is the *invariance*.

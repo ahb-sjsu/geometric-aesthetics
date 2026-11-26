@@ -4,6 +4,10 @@
 
 Priya's last figure is not a scatterplot. It is a pair of scatterplots placed side by side. On the left: books — `pair_sim_mean` on the x-axis, Goodreads rating on the y-axis, a gentle positive slope, ρ=+0.126, 8.4σ, a cloud of 4,998 points where coherence rewards the novelist. On the right: music — `pair_sim_mean` on the x-axis, log-listens on the y-axis, the slope running the other way, ρ=−0.076, p=5×10⁻³³, a cloud of 24,801 tracks where coherence punishes the producer. Priya prints the two plots on a single page and labels the page simply: *The same axis, opposite signs.* She thinks: this is what a geometry of beauty looks like. Not one arrow, but many, each with its own direction, some of them pointing ways that contradict each other across modalities, all of them measurable. She pins the page to the wall next to her desk and leaves it there. It is not an answer. It is the beginning of an answer.
 
+![Figure 30.1](figures/ch30_fig1.svg)
+
+*Figure 30.1. Schematic of the two-panel figure the running example describes. Each panel shows only the sign of the measured rank correlation between internal coherence, pair_sim_mean, and reception; the lines are not fitted and no data points are drawn. Books (n = 4,998): ρ = +0.126, 8.4σ, with Goodreads rating. Music (n = 24,801): ρ = −0.076, p = 5×10⁻³³, with log(1 + listens).*
+
 ## 30.1 Return to the Scalar {#return-to-the-scalar}
 
 We began with a star rating.

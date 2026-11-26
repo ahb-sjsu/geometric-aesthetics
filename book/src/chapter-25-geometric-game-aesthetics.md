@@ -60,6 +60,10 @@ The predictions above are in dialogue with four traditions.
 
 **Juul's *The Art of Failure* (2013).** Jesper Juul's observation that players *seek out* failure in games — that failure is not the opposite of aesthetic success but one of its ingredients — becomes, in the framework, a claim about acceptable trajectory discontinuities. A trajectory that terminates in failure and restarts has high curvature at the failure point; players tolerate this curvature because it is the content. Juul's empirical observation is that excessive curvature (repeated failure with no progress) and zero curvature (no failure, no challenge) are both aesthetically inferior to moderated curvature. The curvature × step_std quantity of Prediction 25.2 is, roughly, Juul's sweet spot made geometric.
 
+![Figure 25.1](figures/ch25_fig1.svg)
+
+*Figure 25.1. Csikszentmihalyi's flow channel as the chapter describes it: experience is optimal while challenge matches skill within a narrow band, anxious when challenge runs above it and boring when it falls below. The band width and the session path are illustrative. The chapter restates flow as a property of the session trajectory, its curvature and step variance (Prediction 25.2); that restatement is conjectured and untested (Appendix F, F25 to F28).*
+
 ## 25.5 Genre, as Ever
 
 The within-genre residualization that destroyed 85% of the books' $R^2$ (Chapter 17, §17.4) and 91% of the music's hand-feature $R^2$ (§17.6) will be *at least as severe* for games. Genre in games (roguelike, Soulslike, 4X strategy, farming sim, walking simulator, puzzle, rhythm, battle royale) is more strongly visually and structurally encoded than either book or music genre; a game's state-space embedding cloud will identify its genre with essentially perfect accuracy. Any naive correlation between trajectory features and enjoyment will be dominated by genre.
