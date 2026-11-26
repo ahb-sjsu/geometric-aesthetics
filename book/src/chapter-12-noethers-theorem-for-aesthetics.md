@@ -204,7 +204,7 @@ A practical summary for the reader who wants to know what this chapter licenses 
 - Non-alphabetic writing systems beyond the tested range: untested.
 - Non-textual, non-auditory modalities (visual art, architecture, film): speculative-but-principled in Chapters 22–28; untested as invariance claims here.
 
-## 12.8 Harm, Beauty, and the Conserved Quantity {#conserved-quantity}
+## 12.8 Harm, Beauty, and the Invariant Quantity {#conserved-quantity}
 
 *Note (2026-11-26).* *Geometric Ethics* withdrew "Conservation of Harm" as a conservation law on 2026-06-19 and kept the weaker claim of invariance of harm accounting under re-description. The comparison in this section uses only that weaker claim and stands in that form. Any reading of it that treats harm as a conserved quantity in the sense of a conservation law is withdrawn.
 

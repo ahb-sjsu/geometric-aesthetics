@@ -564,3 +564,63 @@ These need something the repository does not hold or a decision that is the auth
    after the Hellinger fix; no pre-fix values are reported); §27.3 ("Design critics can, in blind
    comparison, identify Apple products from silhouette alone with high accuracy"). Needed: a source
    for each, or agreement to weaken them as the items above were.
+
+## Cross-volume repairs (2026-11-26)
+
+These repairs apply the cross-volume survey of the Geometric Series (`cross-volume-report.md`,
+findings AES-1 to AES-8 and the series-wide patterns X1, X2, X3 and S1), after the survey of
+this volume above. Items the report marked [AUTHOR] were decided by the author's rules of
+2026-11-26 (G1 to G14 in `author-decisions.md`); the deciding rule is named for each. Each
+statement about *Geometric Ethics* was checked against its v1.29 text. No figure line, caption,
+heading that a figure is placed before, or file under `tools/`, `figures/` or `.build/` was edited.
+
+1. **AES-1 [AUTHOR, G8] (X1, X2, X3).** README. The series map's node "Geometric
+   Methods<br/>in Computational Modeling" now reads "Geometric Methods<br/>Computational
+   Modeling", and the subgraph that holds Methods gains `OBS[Geometric Observation]`, with no new
+   edge. The series table lists fourteen volumes in series order: Ethics "Published (v1.29)" (was
+   v1.23), the Economics, Communication and Medicine subtitles of their title pages (G7), and a
+   last row for *Geometric Observation* with the status "Draft" (its README gives no status word
+   and its Chapters 20 to 23 are outlines). "Volume 13" was already right.
+2. **S1 [AUTHOR, G8].** README license paragraph: "Every claim in this series carries a status
+   label, such as `[proved]`, `[posited]` or `[open]`, graded against a claim ledger" now reads
+   "Claims in this series carry status labels, such as `[proved]`, `[posited]` or `[open]` or a
+   volume's own tags, graded against a claim ledger where the volume keeps one". This volume's
+   ledger is Appendix F.
+3. **AES-3 (U7, now settled by *Geometric Ethics* v1.29).** §17.7: "The moral manifold carries
+   a nine-dimensional structure that *Geometric Ethics* reports as cross-culturally invariant at
+   the level of dimensions (its Chapter 17 §17.3) but culturally variable at the level of metric
+   weights (its Chapter 17 §17.2 and Chapter 20 §20.10)" now reads "The moral manifold carries a
+   nine-dimensional chart whose obligation/permission axis *Geometric Ethics* reports as
+   transferring across eleven languages in one multilingual embedding model (its Chapter 17
+   §17.3), and whose metric weights it reports as culturally variable (its Chapter 17 §17.2)".
+   That volume's §17.3 reports the transfer of the obligation/permission axis in LaBSE, not of
+   nine dimensions; its v1.29 calls the nine a chart (its §5.3) and removed the same reading from
+   its own Chapters 24 and 26. Its §20.10 holds the retrospective economic cases and was dropped
+   from the citation. This settles the §17.7 half of "Still open" item 6.
+4. **AES-4 (U7, now settled).** §8.8: "the 100% cross-linguistic transfer of the deontic axis in
+   the BIP experiments" now reads "... in one multilingual embedding model (a preliminary result;
+   *Geometric Ethics* §17.3, §17.7)", the grade *Geometric Ethics* gives it ("[Empirical result
+   (preliminary)]", and "a property of the LaBSE model's representations"). This settles the §8.8
+   half of "Still open" item 6.
+5. **AES-5 [AUTHOR, G3].** §17.9: "The claim in *Geometric Ethics* (Chapter 4 §4.9) that meaning
+   has geometric structure in a unified sense would predict eventual unification" now reads "A
+   claim that meaning has geometric structure in a unified sense would predict eventual
+   unification". *Geometric Ethics* §4.9 is "Gauge Theory: A Brief Introduction", and no passage
+   of that volume makes the claim; the attribution is dropped.
+6. **AES-6.** Appendix A, §A.9: "Where Ethics used synthetic scenario data and algebraic
+   verification" now reads "Where Ethics used an advice-column corpus, a multilingual corpus read
+   through one embedding model, scenario tests of one language model, and algebraic verification"
+   (*Geometric Ethics* §17.2, 20,030 Dear Abby letters; §17.3, 109,294 passages in LaBSE; its
+   README, order effects from one language model).
+7. **AES-7 [AUTHOR, G1].** The heading "12.8 Harm, Beauty, and the Conserved Quantity" now reads
+   "12.8 Harm, Beauty, and the Invariant Quantity"; the anchor `{#conserved-quantity}` is kept so
+   that links still resolve. *Geometric Ethics* v1.29 renamed its own §12.7 and §12.9 headings to
+   "the Invariance of Harm Accounting", and the dated note under this heading already said harm
+   is invariant, not conserved. No figure is placed before this heading.
+
+**Already repaired by this volume's own survey:** AES-2 (Theorem 15.1 now reads "any continuous
+function", survey item F16).
+
+**Not applied here:** AES-8, the status of the contents-page abstract, is in the build
+configuration of erisml-lib (`AESTHETICS_ABSTRACT`) and is applied there, not in this
+repository.
