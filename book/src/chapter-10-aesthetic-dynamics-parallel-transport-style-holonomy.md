@@ -118,7 +118,7 @@ This is the geometric content of the critical intuition that *reading order chan
 
 ### A Musical Example: The Coltrane Loop
 
-A shorter musical loop makes the same point. Start at the Gershwin song "My Favorite Things." Rodgers and Hammerstein wrote it as a waltz. Coltrane recorded it in 1960 as a modal excursion. Every post-Coltrane jazz player inherits the Coltrane reading as the default. A contemporary listener who hears the original Broadway waltz after growing up on Coltrane's recording hears the waltz as strangely *simple*, a reading Rodgers and Hammerstein could not have intended and their first audience could not have had.
+A shorter musical loop makes the same point. Start at the Broadway song "My Favorite Things." Rodgers and Hammerstein wrote it as a waltz. Coltrane recorded it in 1960 as a modal excursion. Every post-Coltrane jazz player inherits the Coltrane reading as the default. A contemporary listener who hears the original Broadway waltz after growing up on Coltrane's recording hears the waltz as strangely *simple*, a reading Rodgers and Hammerstein could not have intended and their first audience could not have had.
 
 The feature-vector of the Broadway waltz has not changed. Its holonomy through the Coltrane loop has. In our measured features, this would register as a shift in `step_mean` and `recur_rate` as heard — not as measured from the score, which is unchanged, but as measured from the listener's internal trajectory through the piece, which carries the rotation Coltrane installed.
 
@@ -134,7 +134,7 @@ The Riemann curvature tensor $R^\rho_{\sigma\mu\nu}$ measures, infinitesimally, 
 
 For most aesthetic decisions within a single work, the answer is: not much. The tangent space locally commutes. But at stratum boundaries (genre thresholds, form transitions, modality changes), the Riemann tensor spikes. Moving from "realist scene" to "stream-of-consciousness scene" and then to "formal letter" is not aesthetically commutative with doing those moves in the reverse order. The resulting work reads differently. Curvature has performed work on the trajectory.
 
-We do not claim to have estimated $R^\rho_{\sigma\mu\nu}$ from data. We do claim that the trajectory channel of Chapter 17 — specifically the `curvature` feature, which measures the second-derivative of a book's semantic path — is a consistent-with-curvature signal at the level of within-work variation. It carried 3–6σ independent predictive weight in the books headline (Chapter 17, Phase 1), disappearing substantially under genre residualization (Phase 2) but not vanishing. That residual is where local curvature lives: the part of within-work path-shape that is not explained by genre membership.
+We do not claim to have estimated $R^\rho_{\sigma\mu\nu}$ from data. We do claim that the trajectory channel of Chapter 17 — specifically the `curvature` feature, which measures the second-derivative of a book's semantic path — is a consistent-with-curvature signal at the level of within-work variation. It carried 3–6σ independent predictive weight in the books headline (Chapter 17, Phase 1). Chapter 17 does not report how much of it survives genre residualization (Phase 2); the residualized model as a whole keeps R = 0.093. Whatever part survives is where local curvature would live: the part of within-work path-shape that is not explained by genre membership.
 
 ## 10.7 Influence as a Connection {#influence-connection}
 
@@ -173,9 +173,9 @@ The dynamics developed in this chapter are not purely theoretical. Chapter 17 re
 
 Three observations discipline our theoretical use of these features.
 
-*First*, the features were identified in data before the geometric framework was imposed. They are a found rather than constructed channel.
+*First*, the features were proposed and measured in exploratory work before the geometric framework was imposed. They are hand-crafted (Chapter 17, §17.3.4), but their signal was found in the data rather than derived from the framework.
 
-*Second*, under within-genre residualization (Chapter 17, Phase 2), the channel's effect size shrinks substantially — 85% of the headline $R^2$ was genre confound. What remains is an honest "additional aesthetic signal beyond genre," $R = 0.093$, $z = 6.5\sigma$. The trajectory channel is *not* trivially reducible to genre. It is, at reduced effect size, independently predictive within genre.
+*Second*, under within-genre residualization (Chapter 17, Phase 2), the effect size of the combined model shrinks substantially — 85% of the headline $R^2$ was genre confound. What remains is an honest "additional aesthetic signal beyond genre," $R = 0.093$, $z = 6.5\sigma$, for all channels together. Chapter 17 does not report the trajectory channel's residualized effect on its own, so that the channel is *not* trivially reducible to genre, and stays independently predictive within genre at reduced effect size, is an expectation rather than a finding.
 
 *Third*, the modality sign-flips (Chapter 17, Chapter 21) show that the trajectory channel's *direction* of effect is modality-specific. In books, smaller `step_mean` predicts higher ratings ($\rho = -0.096$, 6.4σ). In music, *larger* `step_mean` predicts more listens ($\rho = +0.071$, $p = 4 \times 10^{-29}$). The trajectory channel therefore does not carry a universal aesthetic sign; it carries a modality-conditioned one. The geometry is real; the preferred direction of motion along it depends on the stratum you are in.
 

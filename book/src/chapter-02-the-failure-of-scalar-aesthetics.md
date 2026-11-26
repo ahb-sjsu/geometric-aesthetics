@@ -110,7 +110,7 @@ Consider a film that earns a Metacritic score of 72. That 72 is compatible with 
 
 - Twenty critics each gave the film a 72: consensus mid-to-good.
 - Ten critics gave it a 95 and ten gave it a 49: a divisive film that half the profession regards as major.
-- Nineteen critics gave it a 70 and one gave it a 100: a consensus good film with a single enthusiast.
+- Fourteen critics gave it a 70 and one gave it a 100: a consensus good film with a single enthusiast.
 
 These are three very different aesthetic facts. They lead to three very different decisions about whether to see the film, teach the film, preserve the film, or let it fade. The scalar 72 represents all three identically.
 
@@ -132,7 +132,7 @@ What this tells us is that the *listen-count* scalar is a genre-confounded objec
 
 We emphasize the 85%-and-91% genre-confound results because they are the strongest data-side evidence we know for the thesis of this chapter.
 
-If scalar aesthetic ratings carried primarily aesthetic information, we would expect residualization by genre to reduce predictive performance by a small fraction. Genre is one aesthetic axis among many. It should not absorb most of the variance. In fact, it does. Across books and music, roughly 85–91% of the predictive variance that geometric features carry onto scalar ratings is absorbed by a single categorical nuisance variable: what genre the work is. Within genre, the remaining predictive signal is real but small: R in the 0.09–0.19 range, with six-to-eight-sigma significance.
+If scalar aesthetic ratings carried primarily aesthetic information, we would expect residualization by genre to reduce predictive performance by a small fraction. Genre is one aesthetic axis among many. It should not absorb most of the variance. In fact, it does. Across books and music, most of the predictive variance that geometric features carry onto scalar ratings is absorbed by a single categorical nuisance variable, what genre the work is: 85% in books, 91% for the music hand features, and about two-thirds even for the music spectrum Lasso (1 − (0.177/0.302)² = 66%). Within genre, the remaining predictive signal is real but small: R from about 0.04 to 0.19, with significance from about six sigma to 28 sigma.
 
 This is exactly what the three failures predict.
 

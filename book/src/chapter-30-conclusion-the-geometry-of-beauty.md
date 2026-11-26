@@ -22,7 +22,7 @@ The scalar's failure is not an artifact of coarse recording. Refine the scale to
 
 We built a manifold.
 
-Chapters 4 and 5 developed the mathematical preliminaries: a smooth differentiable space in which a work is a point and distances between works are well-defined. Chapter 6 populated the manifold with a tensor hierarchy — scalars for ratings, vectors for critical verdicts, covectors for interest profiles, second-rank tensors for metric trade-offs, higher ranks for the richer structure that collective and comparative aesthetic claims require. Chapter 7 showed that a single work can be read at five tensor levels simultaneously: the brush-stroke, the phrase, the movement, the corpus, the tradition.
+Chapters 4 and 5 developed the mathematical preliminaries: a smooth differentiable space in which a work is a point and distances between works are well-defined. Chapter 6 populated the manifold with a tensor hierarchy — scalars for ratings, vectors for critical verdicts, covectors for interest profiles, second-rank tensors for metric trade-offs, higher ranks for the richer structure that collective and comparative aesthetic claims require. Chapter 7 showed that a single work, *Bleak House*, can be read at five tensor levels simultaneously: the scalar rating, the mean embedding and its distance from the corpus, the divergences and internal coherence, the trajectory, and the loadings on the Lasso-discovered axes.
 
 We built channels.
 
@@ -76,7 +76,7 @@ An aesthetic theory without geometry is a theory that confuses the projection fo
 
 The star rating, the heart icon, the thumbs-up — these are contractions of a richer tensor, and the infrastructure that aggregates them into recommendation engines and best-of lists is doing geometry whether or not it knows it. A recommendation algorithm that treats ratings as scalars is implicitly choosing a metric. It is a metric most users would not endorse if asked and most designers could not defend if challenged. The flat scalar is not a neutral starting point. It is a substantive aesthetic commitment disguised as the absence of one.
 
-Giving practitioners — novelists, composers, curators, critics, platform designers — a vocabulary that can say *which axis the work is working along* is not a theoretical exercise. It is the difference between a feedback loop that flattens aesthetic life into a single ranking and a feedback loop that can articulate, to an audience, a creator, or an algorithm, what a work is doing and where it is going. Chapter 26's AI curation results, modest as they are, bear on this. So do Chapter 20's literary-criticism applications and Chapter 21's musicology.
+Giving practitioners — novelists, composers, curators, critics, platform designers — a vocabulary that can say *which axis the work is working along* is not a theoretical exercise. It is the difference between a feedback loop that flattens aesthetic life into a single ranking and a feedback loop that can articulate, to an audience, a creator, or an algorithm, what a work is doing and where it is going. Chapter 26's AI-curation arguments, untested as they are, bear on this. So do Chapter 20's literary-criticism applications and Chapter 21's musicology.
 
 The practical stakes are larger than the theoretical ones. A generation of aesthetic infrastructure is being built on scalar proxies. The cost of building it on geometric proxies is modest; the cost of continuing to build it on scalar proxies is the erosion of directional information across the aesthetic commons. The framework does not by itself replace the existing infrastructure. It does provide the schema against which a replacement could be designed.
 
@@ -108,7 +108,7 @@ The geometry of beauty is neither a theorem nor a mystery. It has structure — 
 
 Return, one last time, to Priya's figure.
 
-On the left panel: books, coherence rewarded, a positive slope at 8.4σ. On the right panel: music, coherence punished, a negative slope at p < 10⁻³³. The same feature — `pair_sim_mean`, computed by the same formula, estimated on corpora of comparable size, projected through encoders trained for different tasks — pointing in opposite directions along the modality axis.
+On the left panel: books, coherence rewarded, a positive slope at 8.4σ. On the right panel: music, coherence punished, a negative slope at p = 5×10⁻³³. The same feature — `pair_sim_mean`, computed by the same formula, estimated on corpora of comparable size, projected through encoders trained for different tasks — pointing in opposite directions along the modality axis.
 
 A scalar theory cannot produce this figure. There is no position on a single number line at which a work can be simultaneously coherent-and-good and coherent-and-bad. The figure demands a geometry in which the axis itself has a direction, and in which the direction can flip as the modality changes. This is not a limitation of the framework. It is the framework, photographed.
 
@@ -116,7 +116,7 @@ The figure does not say that music is worse than books, or that books are deeper
 
 A hundred years of aesthetic theory built increasingly baroque scalar rankings. A decade of recommendation-system engineering built aggregators that consumed those rankings and returned flatter ones. The framework of this volume is the beginning of an alternative: a set of methods, vocabulary, and empirical anchors that can represent the structure those earlier projects collapsed.
 
-The framework is not finished. Chapter 29 is longer than Chapter 17. That is the honest ratio of open-to-settled at this stage of the work. A volume that pretended otherwise would be proposing a closure that the evidence does not warrant.
+The framework is not finished. Chapter 29's list of what the framework has not produced is longer than its list of what it has (§29.12). That is the honest ratio of open-to-settled at this stage of the work. A volume that pretended otherwise would be proposing a closure that the evidence does not warrant.
 
 But the direction is set. Aesthetic judgment has geometric structure. The structure is measurable. The measurements are cross-lingually invariant across the six language families in which we have statistical power. The directionality is modality-specific across the two modalities we have tested. The hermeneutic residue is real and bounded. The next decade's work will be the story of how much further the framework reaches, and where it finally lays down its tools.
 

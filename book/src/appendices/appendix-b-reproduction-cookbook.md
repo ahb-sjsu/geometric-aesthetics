@@ -225,7 +225,7 @@ def extract_features(X, ref_mean, ref_cov, ref_cov_inv, ref_logdet):
     )
 ```
 
-Channels A, B, C yield scalar features; Channel D is the 128-dimensional PCA-spectrum vector fed separately to a Lasso regressor.
+Channels A, B, C yield scalar features; Channel D is the 128-dimensional PCA-spectrum vector fed separately to a Lasso regressor. The sketch simplifies several features. Its `js` is a symmetrized KL divergence, not the Jensen–Shannon divergence of Chapter 4, which has no closed form for Gaussians; and its `recur_rate`, `acf1_top3` and `tail_mass_100` are computed differently from the definitions in Chapter 6 and §17.3.3. Where the sketch and the chapters differ, this appendix does not record which form produced the reported numbers.
 
 ## B.7 Cross-Validation and Residualization
 
@@ -279,7 +279,7 @@ Two fixes. First, reduce to a $K=32$ PCA subspace before computing Hellinger on 
 
 ### B.8.2 Author/Artist Leakage
 
-We reiterate: use group-disjoint folds. A standard 5-fold on books without author grouping will inflate the headline $R$ by a factor of 2–3 because the model learns per-author intercepts. This is the single biggest reproducibility trap.
+We reiterate: use group-disjoint folds. A standard 5-fold on books without author grouping will inflate the headline $R$, by an estimated factor of 2–3, because the model learns per-author intercepts. This is the single biggest reproducibility trap.
 
 ### B.8.3 Genre Confound
 
@@ -314,7 +314,7 @@ On a single 32 GB GPU (A100-40G or A6000-48G both tested):
 | Non-English book acquisition (HF `laion/Project-Gutenberg`) | 30 min (I/O) |
 | Non-English LaBSE encoding | 40 min |
 | English PCA-128 fit | 2 min |
-| Book feature extraction (all four channels, 4,998 × 19 langs ≈ 9,681 books) | 15 min |
+| Book feature extraction (all four channels, 4,998 English + 4,683 in 19 other languages = 9,681 books) | 15 min |
 | FMA Medium download from HF mirror | 30 min (I/O) |
 | MERT inference (24,801 tracks × 30s clips) | 40 min |
 | Music PCA + feature extraction | 15 min |

@@ -74,11 +74,11 @@ We ran Lasso regression of Goodreads ratings on the 128-dimensional PCA spectrum
 - were not specified in advance;
 - are, for about 30 of them (Appendix F, F14.2), interpretable on post-hoc inspection as genre-and-form directions (narrative continuity, register-variation, lexical-field coherence, and so on);
 - survive cross-validation;
-- collectively contribute ~8σ of predictive signal on top of the hand-designed features.
+- collectively add predictive signal on top of the hand-designed features (roughly 8σ, by an estimate that Chapter 17 does not report).
 
 Each of these axes is, in the vocabulary of this chapter, a *discovered canonical direction*. No reader picked them. No critic wrote an essay naming them. No voting produced them. They are the directions along which the collective reception data — 4,998 books, millions of reader-hours — clusters. They are, we conjecture, $\mathcal{E}$ made visible.
 
-**Caveat on effect size.** The genre-confound correction brings the total predictive R down from 0.241 to 0.093 intra-genre. Most of the 71 axes are doing genre-discrimination work; a smaller subset is doing within-genre aesthetic work. But the point for Chapter 14 is structural rather than effect-size-dependent: the Lasso's discovery of any interpretable axes at all — let alone 71 — is evidence that the collective aesthetic tensor has non-zero emergent components. A pure sum of individual judgments would have produced a diffuse, un-sparse solution. It did not.
+**Caveat on effect size.** The genre-confound correction brings the total predictive R down from 0.241 to 0.093 intra-genre. Most of the 71 axes are doing genre-discrimination work; a smaller subset is doing within-genre aesthetic work. But the point for Chapter 14 is structural rather than effect-size-dependent: the Lasso's discovery of interpretable axes (about 30 of the 71, Appendix F, F14.2) is consistent with non-zero emergent components in the collective aesthetic tensor, though it is not evidence for them. The sparsity of the solution proves nothing here: it comes from the $\ell_1$ penalty (Chapter 4, §4.6), which would return a sparse solution for a pure sum of individual judgments too.
 
 ## 14.5 The Reception Structure Tensor {#the-reception-structure-tensor}
 

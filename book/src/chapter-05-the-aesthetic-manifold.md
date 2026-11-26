@@ -20,7 +20,7 @@ The obvious choice is to make the base space the space of works and let each wor
 
 ### Candidate 2 — Tokens as Points
 
-The opposite extreme: let the base space be the space of tokens, frames, patches — the atomic units an encoder operates on. A paragraph of *Moby-Dick* is a point in $\mathbb{R}^{768}$ under LaBSE; a 30-second clip's $20\text{ms}$ frame is a point in $\mathbb{R}^{1024}$ under MERT. This is the right space for individual tokens, but it is the wrong space for the work: tokens are the atoms, not the organisms. A work is the collection.
+The opposite extreme: let the base space be the space of tokens, frames, patches — the atomic units an encoder operates on. A paragraph of *Moby-Dick* is a point in $\mathbb{R}^{768}$ under LaBSE; each of a 30-second clip's 45 frames is a point in $\mathbb{R}^{1024}$ under MERT. This is the right space for individual tokens, but it is the wrong space for the work: tokens are the atoms, not the organisms. A work is the collection.
 
 ### Our Choice — Distributions as Points
 
@@ -42,7 +42,7 @@ A work $W$ is a sequence of atomic units: paragraphs for a novel, seconds for a 
 
 $$X(W) = \{\phi(t_1), \phi(t_2), \ldots, \phi(t_{N_W})\} \subset \mathbb{R}^d.$$
 
-Concretely, for a 300-paragraph novel encoded by LaBSE, $X(W)$ is 300 points in $\mathbb{R}^{768}$. For a 30-second clip encoded by MERT at 1.5Hz frame rate, $X(W)$ is 45 points in $\mathbb{R}^{1024}$. For a 224×224 image encoded by DINO with 14×14 patches, $X(W)$ is 196 points in $\mathbb{R}^{768}$.
+Concretely, for a 300-paragraph novel encoded by LaBSE, $X(W)$ is 300 points in $\mathbb{R}^{768}$. For a 30-second clip encoded by MERT at 1.5Hz frame rate, $X(W)$ is 45 points in $\mathbb{R}^{1024}$. For a 224×224 image encoded by DINOv2 with 14×14-pixel patches, $X(W)$ is 16 × 16 = 256 points in $\mathbb{R}^{768}$.
 
 **Modality choices in this book.**
 
@@ -56,7 +56,7 @@ The choice of encoder is a modeling choice, not a discovery. The framework is en
 
 The cloud's shape depends on the encoder. LaBSE embeddings are L2-normalized and live on the unit sphere $S^{767}$ rather than in the full $\mathbb{R}^{768}$. MERT hidden states are not normalized; they have a natural magnitude scale. CLIP image embeddings are normalized by convention in most applications. These conventions matter: a Gaussian on the sphere is not the same as a Gaussian in the ambient; a divergence between Gaussians on the sphere must be computed with care (we project into the tangent space at a reference point, fit Gaussians there, and compute divergences in the tangent).
 
-In practice, for LaBSE we work in the PCA-128 basis of the prior corpus; the PCA projection both reduces dimensionality and effectively flattens the sphere locally, making the Gaussian approximation defensible. For MERT we work in the raw 1024-d space and accept that Gaussian fits are ill-conditioned for short clips (45 frames in 1024 dimensions is badly under-sampled), which is why we re-fit in a $K = 32$ PCA subspace for the music experiments of Chapter 21. The framework is robust to these choices; the divergences are not always, and the Hellinger saturation observed in music (Chapter 17) is a direct consequence.
+In practice, for LaBSE we work in the PCA-128 basis of the prior corpus; the PCA projection both reduces dimensionality and effectively flattens the sphere locally, making the Gaussian approximation defensible. For MERT we project into a 128-d PCA basis fitted on the music corpus (Appendix B, §B.5) and accept that Gaussian fits there are ill-conditioned for short clips (45 frames in 128 dimensions is badly under-sampled), which is why we re-fit in a $K = 32$ PCA subspace for the music experiments of Chapter 21. The framework is robust to these choices; the divergences are not always, and the Hellinger saturation observed in music (Chapter 17) is a direct consequence.
 
 ## 5.3 Mean, Covariance, and What They Mean Aesthetically {#5-3-mean-cov}
 
@@ -68,7 +68,7 @@ The Mahalanobis distance of the mean from the prior,
 
 $$D_{\mathrm{Mahal}}(W) = \sqrt{(\hat\mu_W - \mu_0)^{\top}\Sigma_0^{-1}(\hat\mu_W - \mu_0)},$$
 
-is the *distance-from-prior* at the level of first moments. It measures, in prior-normalized units, how unusual the work's centroid is. In Phase 3 of the empirical work (cross-lingual, Chapter 17), the Mahalanobis-mean feature is the single most language-invariant of all hand-features tested, with a mean Spearman correlation across language pairs of ρ = +0.710. When Finnish readers and English readers rate translations of the same book similarly, this is one of the features on which they agree.
+is the *distance-from-prior* at the level of first moments. It measures, in prior-normalized units, how unusual the work's centroid is. In Phase 3 of the empirical work (cross-lingual, Chapter 17), the Mahalanobis-mean feature is, after internal coherence (`pair_sim_mean`, ρ = +0.712), the most language-invariant of the hand-features ranked by mean Spearman correlation across language pairs, at ρ = +0.710. When a book and its Finnish translation are encoded, this is one of the features on which the two clouds agree most closely.
 
 ### The Second Moment
 
@@ -106,7 +106,7 @@ For Gaussians parameterized by $(\mu, \Sigma)$ the Fisher metric decomposes: the
 
 ### What the Metric Encodes
 
-For the aesthetic manifold, the metric encodes *how much a unit displacement matters*. In regions of $\mathcal{A}$ where the prior is concentrated — near the corpus centroid — a small Euclidean displacement corresponds to a large aesthetic displacement, because the prior is tightly sampled. In thin regions of the prior, the same Euclidean step is aesthetically smaller. This is the content of measuring in Mahalanobis units: we normalize by the local prior variance.
+For the aesthetic manifold, the metric encodes *how much a unit displacement matters*. Along directions in which the prior is concentrated — directions in which the corpus varies little — a small Euclidean displacement corresponds to a large aesthetic displacement. Along directions in which the prior is spread wide, the same Euclidean step is aesthetically smaller. This is the content of measuring in Mahalanobis units: we normalize by the prior variance in each direction. With a single Gaussian prior, $\Sigma_0^{-1}$ is the same everywhere, so this weighting does not change from one region of the embedding space to another; a metric that varied by region would need a non-Gaussian prior, such as a mixture.
 
 ### Axes Discovered From Data
 
@@ -181,4 +181,4 @@ Chapter 8 develops the formal theory of aesthetic stratification, using the Whit
 
 ## 5.10 Bridge {#5-10-bridge}
 
-Chapter 5 has established the stage: the aesthetic manifold $\mathcal{A}$, with its points (distributions), its metric (Fisher, with the Mahalanobis and affine-invariant components), its reference point (the corpus prior), and its dimensional structure (axes discovered, not prescribed). Chapter 6 populates the stage with the tensor hierarchy: four levels, each stacking on top of the previous, each encoding a kind of aesthetic structure the previous cannot capture. Chapter 7 shows the hierarchy applied to a single work — *Moby-Dick* as a case study in five levels. Chapter 17 delivers the empirical evidence that the hierarchy is not a formal curiosity but carries independent signal at each level. The geometric stage is set; the tensors are ready to be raised upon it.
+Chapter 5 has established the stage: the aesthetic manifold $\mathcal{A}$, with its points (distributions), its metric (Fisher, with the Mahalanobis and affine-invariant components), its reference point (the corpus prior), and its dimensional structure (axes discovered, not prescribed). Chapter 6 populates the stage with the tensor hierarchy: four levels, each stacking on top of the previous, each encoding a kind of aesthetic structure the previous cannot capture. Chapter 7 shows the hierarchy applied to a single work — *Bleak House* as a case study in five levels. Chapter 17 delivers the empirical evidence that the hierarchy is not a formal curiosity but carries independent signal at each level. The geometric stage is set; the tensors are ready to be raised upon it.

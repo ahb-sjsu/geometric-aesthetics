@@ -4,7 +4,7 @@
 
 **RUNNING EXAMPLE — Priya's Cross-Lingual Replication**
 
-Priya, now consulting for an international streaming platform, is asked to justify why the model trained on English-language novels should be trusted when applied to a Finnish catalogue. The Finnish team is polite but unconvinced. She opens her notebook and shows them the numbers. On the 288 Finnish books where the Gutenberg–Goodreads bundles contain at least twenty LaBSE-encoded paragraphs, the Hellinger-divergence feature correlates with the English-fitted Hellinger feature at $\rho = 0.77$, with $p = 8 \times 10^{-57}$. Across six language families — Germanic, Uralic, Romance, Hellenic, Italic-ancient, Constructed — the mean feature-wise correlation is $\rho \approx 0.70$. "We did not retrain the basis on Finnish," she says. "We projected Finnish paragraphs into the English PCA-128 basis and measured the same features. The features correlate because the structure survives the translation." The Finnish lead is still skeptical. Priya writes on the whiteboard a single line. *For every continuous symmetry, a conserved quantity.* She draws a circle around "replace the language" and a circle around "structural-feature profile." The conserved quantity, she says, is on the right. The symmetry is on the left. Noether's theorem gives us the arrow.
+Priya, now consulting for an international streaming platform, is asked to justify why the model trained on English-language novels should be trusted when applied to a Finnish catalogue. The Finnish team is polite but unconvinced. She opens her notebook and shows them the numbers. On the 288 Finnish books matched in bundles with their English originals, the Hellinger-divergence feature correlates with the English-fitted Hellinger feature at $\rho = 0.77$, with $p = 8 \times 10^{-57}$. Across six language families — Germanic, Uralic, Romance, Hellenic, Italic-ancient, Constructed — the mean feature-wise correlation is $\rho \approx 0.70$. "We did not retrain the basis on Finnish," she says. "We projected Finnish paragraphs into the English PCA-128 basis and measured the same features. The features correlate because the structure survives the translation." The Finnish lead is still skeptical. Priya writes on the whiteboard a single line. *For every continuous symmetry, a conserved quantity.* She draws a circle around "replace the language" and a circle around "structural-feature profile." The conserved quantity, she says, is on the right. The symmetry is on the left. Noether's theorem gives us the arrow.
 
 ## 12.1 The Deepest Theorem in Physics {#deepest-theorem}
 
@@ -89,7 +89,7 @@ We compiled a corpus of 4,683 non-English books from Project Gutenberg, matched 
 
 Crucially, we did *not* refit the PCA basis per language. The 128-dimensional principal-axis basis derived from the English corpus was held fixed; non-English paragraphs were projected into this English-derived basis. This is the symmetry-test setup: if the aesthetic structure is genuinely coordinate-invariant, then features measured in the English-fitted basis should still correlate meaningfully across languages.
 
-Bundles (matched book pairs with $\geq 20$ LaBSE-encoded paragraphs on each side) formed in ten languages with statistical power: Finnish 288, French 227, German 138, Dutch 88, Italian 49, Spanish 38, Greek 33, Esperanto 24, Hungarian 21, Latin 20. Six language families — Germanic, Uralic, Romance, Hellenic, Italic-ancient, Constructed — had sufficient sample for family-level inference. An exploratory tail (fewer than 20 bundles per language) covered Portuguese, Japanese, Polish, Swedish, Russian, Czech, and Chinese; these are reported for completeness but not used for inference.
+Bundles (matched book pairs: a book and its translation) formed in ten languages at or above the statistical-power threshold of 20 bundles per language: Finnish 288, French 227, German 138, Dutch 88, Italian 49, Spanish 38, Greek 33, Esperanto 24, Hungarian 21, Latin 20. Six language families — Germanic, Uralic, Romance, Hellenic, Italic-ancient, Constructed — had sufficient sample for family-level inference. An exploratory tail (fewer than 20 bundles per language) covered Portuguese, Japanese, Polish, Swedish, Russian, Czech, and Chinese; these are reported for completeness but not used for inference.
 
 ### Headline Results
 
@@ -103,7 +103,7 @@ Mean feature-wise Spearman correlations across all language pairs:
 | Bhattacharyya divergence | $+0.675$ |
 | Jensen–Shannon divergence | $+0.674$ |
 
-The strongest individual language-pair result is EN$\leftrightarrow$FI on the Hellinger feature: $\rho = 0.77$, $n = 288$, $p = 8 \times 10^{-57}$. The EN$\leftrightarrow$FR Hellinger correlation is $\rho = 0.78$, $n = 227$.
+The most significant individual language-pair result is EN$\leftrightarrow$FI on the Hellinger feature: $\rho = 0.77$, $n = 288$, $p = 8 \times 10^{-57}$. The EN$\leftrightarrow$FR Hellinger correlation is $\rho = 0.78$, $n = 227$.
 
 ![Figure 12.1](figures/ch12_fig1.svg)
 
@@ -172,7 +172,7 @@ The situation is analogous to parity in physics. Parity is a beautiful symmetry 
 
 ## 12.6 The Sinitic Corpus Gap {#sinitic-gap}
 
-We must report an honest gap. Our cross-lingual experiments included five Sinitic-language bundles, which did not reach the twenty-paragraph threshold for inclusion in the language-family-level analysis. This is not a null finding against the symmetry; it is a corpus-design gap.
+We must report an honest gap. Our cross-lingual experiments included five Sinitic-language bundles, which did not reach the threshold of twenty bundles per language for inclusion in the language-family-level analysis. This is not a null finding against the symmetry; it is a corpus-design gap.
 
 The issue is that the Chinese-language holdings on Project Gutenberg are overwhelmingly *classical Chinese originals*: Confucius's *Analects*, Sunzi's *Art of War*, the *Shijing*. These are not Chinese translations of Western works; they are Chinese originals that lack matched English-pair structure in the Gutenberg $\leftrightarrow$ Goodreads pipeline we used. Only five bundles formed, below the statistical-power threshold of twenty.
 

@@ -160,7 +160,7 @@ The Chinese Gutenberg corpus is classical originals (Confucius's *Analects*, Sun
 Complementary evidence, from the other direction: without care, the metric tracks sociological category much more than aesthetic structure.
 
 - Books: headline Phase-1 combined Ridge+Lasso R = 0.241. Phase-2 genre-residualised R = 0.093. Eighty-five percent of the headline R² was genre confound.
-- Music (FMA Medium, MERT): Lasso-on-spectrum R = 0.302. Genre-residualised R = 0.177 for spectrum Lasso; R = 0.043 for hand features (down from R = 0.151). Ninety-one percent of hand-feature R² was genre confound.
+- Music (FMA Medium, MERT): Lasso-on-spectrum R = 0.302. Genre-residualised R = 0.177 for spectrum Lasso; R = 0.043 for hand features (which score R = 0.151 on the Echonest subset of 5,233 tracks). Ninety-one percent of hand-feature R² was genre confound.
 - Within-genre residuals:
   - Fiction (R = 0.131, n = 2,250, 6.2σ).
   - Non-fiction history-biography: null.
@@ -185,7 +185,7 @@ The honest empirical practice is to report the metric at all three levels: the f
 
 ## 9.9 What This Means for Practice {#practice}
 
-Hiroshi's committee, given the honest answer, can now articulate a position for the board. Their acquisition metric is *discovered-constructed*. It was constructed by the museum's history — the choices of what to collect and how to train curators. It was inherited from the art-world reception community — from the critics, galleries, dealers, and scholars whose judgments preceded any individual acquisition. And yet, within these contingencies, it tracks structural facts about works that are not purely conventional: facts that survive translation across media, that show up consistently to well-trained curatorial eyes independent of the local reception tradition, that can be sharpened but not fabricated.
+Hiroshi's committee, given the honest answer, can now articulate a position for the board. Their acquisition metric is *discovered-constructed*. It was constructed by the museum's history — the choices of what to collect and how to train curators. It was inherited from the art-world reception community — from the critics, galleries, dealers, and scholars whose judgments preceded any individual acquisition. And yet, within these contingencies, it tracks structural facts about works that are not purely conventional: facts that survive translation across languages, that show up consistently to well-trained curatorial eyes independent of the local reception tradition, that can be sharpened but not fabricated.
 
 The methodological recommendation of this chapter, to any empirical aesthetic programme, is the same as its sibling's methodological recommendation for moral inquiry. Do not claim discovery alone. Do not concede all ground to construction. Do not dissolve the metric into convention. The honest middle position is:
 

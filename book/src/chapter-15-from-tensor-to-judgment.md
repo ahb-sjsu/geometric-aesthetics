@@ -128,7 +128,7 @@ A $d$-dimensional valence vector projects to a scalar. The ratio of information 
 
 The information loss is not merely quantitative. It is structurally irrecoverable. The theorem of Ethics Chapter 15 transfers to aesthetics unchanged.
 
-**Theorem 15.1 (Aesthetic Scalar Irrecoverability).** Let $Q: \mathbb{R}^d \to \mathbb{R}$ be any function mapping a $d$-dimensional aesthetic tensor to a scalar verdict. Then:
+**Theorem 15.1 (Aesthetic Scalar Irrecoverability).** Let $Q: \mathbb{R}^d \to \mathbb{R}$, $d > 1$, be any continuous function mapping a $d$-dimensional aesthetic tensor to a scalar verdict. Then:
 
 (i) $Q$ is not injective. Generically, the preimage of any scalar value is a $(d-1)$-dimensional submanifold of $\mathbb{R}^d$: multiple aesthetically distinct works map to the same scalar.
 
@@ -136,7 +136,7 @@ The information loss is not merely quantitative. It is structurally irrecoverabl
 
 (iii) The geodesic on the full manifold $\mathcal{M}$ is in general different from the scalar-optimal path, and the divergence between them is not bounded by any function of $Q$ alone.
 
-*Proof sketch.* (i) By rank-nullity, the kernel of $dQ$ at any regular point has dimension at least $d-1$. (ii) By the data processing inequality, information lost under a dimensionality-reducing map cannot be recovered downstream. (iii) Any path that maximises $Q$ is underspecified in the $(d-1)$ kernel dimensions; the true geodesic on $\mathcal{M}$ uses the full metric, which $Q$ does not see. □
+*Proof sketch.* (i) No continuous map from $\mathbb{R}^d$ to $\mathbb{R}$ with $d > 1$ is injective: removing one point disconnects an interval but not $\mathbb{R}^d$. Where $Q$ is smooth, by rank-nullity, the kernel of $dQ$ at any regular point has dimension at least $d-1$. (ii) By the data processing inequality, information lost under a dimensionality-reducing map cannot be recovered downstream. (iii) Any path that maximises $Q$ is underspecified in the $(d-1)$ kernel dimensions; the true geodesic on $\mathcal{M}$ uses the full metric, which $Q$ does not see. □
 
 **Aesthetic consequence.** The Goodreads-average canon is irrecoverable: no reader can, from the star rating alone, reconstruct the structural features (coherence, trajectory, recurrence) that produced the rating. Conversely, the structural-feature tensor is recoverable-in-principle from the text (that is what Chapter 17's R, effect sizes, and 17σ signal mean), and projecting that tensor to a star reverses-engineer-ably loses the content that made the projection non-trivial.
 

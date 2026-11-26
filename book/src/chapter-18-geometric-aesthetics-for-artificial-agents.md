@@ -44,7 +44,7 @@ The first design principle: **an artificial aesthetic agent should maintain a ve
 
 Concretely, a tensor-valued aesthetic target $T^\mu$ for a work $W$ has components along the four channels identified in Chapter 17:
 
-- $T^1$: **divergence channel** — the work's distributional distance from a reference corpus (KL, JS, Hellinger, Bhattacharyya, Mahalanobis-mean, TV). The ~8σ-each significance of these features across languages says this channel carries real aesthetic signal.
+- $T^1$: **divergence channel** — the work's distributional distance from a reference corpus (KL, JS, Hellinger, Bhattacharyya, Mahalanobis-mean, TV). The ~8σ-each significance of these features in the books corpus says this channel carries real aesthetic signal.
 - $T^2$: **coherence channel** — `pair_sim_mean` and `pair_sim_std`. 8.4σ in books, and the sign is modality-specific.
 - $T^3$: **trajectory channel** — `step_mean`, `step_std`, `step_skew`, `recur_rate`, `acf1_top3`, `curvature`, `path_eff`, `powerlaw_slope`, `tail_mass_100`. Individually 3–6σ; jointly informative about the temporal shape of the work.
 - $T^4$: **genre-axis channel** — the 71 non-zero interpretable axes recovered by Lasso on the PCA-128 spectrum (Chapter 17 §17.3). These are the discovered genre coordinates; they are *not* confounds to be removed from a recommender, they are the coordinates a recommender should know it is operating in.
@@ -53,7 +53,7 @@ The tensor value is:
 $$
 T^\mu(W) = (T^1(W),\; T^2(W),\; T^3(W),\; T^4(W)) \in \mathbb{R}^d
 $$
-where $d$ is the total dimensionality across channels (roughly 25–30 for our implementation). The agent's policy is then a function of the tensor, not of its scalar contraction. A rank-2 extension — a tensor $T^{\mu}_\nu$ with stakeholder-dimension $\nu$ representing different user-profiles on the manifold — is the natural generalization for recommendation.
+where $d$ is the total dimensionality across channels (88 for our implementation, counting the features listed above: 6 divergences, 2 coherence features, 9 trajectory features and the 71 Lasso-selected axes). The agent's policy is then a function of the tensor, not of its scalar contraction. A rank-2 extension — a tensor $T^{\mu}_\nu$ with stakeholder-dimension $\nu$ representing different user-profiles on the manifold — is the natural generalization for recommendation.
 
 The contraction from tensor to action is a separate, auditable step:
 $$
@@ -71,7 +71,7 @@ On the shared $n = 5{,}233$ FMA tracks with Echonest metadata, the head-to-head 
 - MERT hand features: $R = 0.151$
 - Spotify's 8 acoustic features: $R = 0.103$
 
-Bootstrap difference MERT-spectrum vs Spotify hand features: $p = 0.001$. **MERT-geometry beat Spotify hand features by a factor of 2.2 in correlation.** The gap is not marginal; it is the difference between a recommender that sees twice as much aesthetic signal.
+Bootstrap difference MERT-spectrum vs Spotify hand features: $p = 0.001$. **MERT-geometry beat Spotify hand features by a factor of 2.2 in correlation.** The gap is not marginal; it is the difference between a recommender that sees twice as much aesthetic signal and one that does not.
 
 The design implication is direct: *aesthetic prediction pipelines should optimize on learned-representation geometry, not on hand-crafted acoustic or textual features.* The hand features are interpretable but lossy. The learned representations are less interpretable but capture dimensions of aesthetic content the hand features demonstrably miss.
 
@@ -128,7 +128,7 @@ $$
 c = (c_1, c_2, c_3, c_4) = (\text{target divergence}, \text{target coherence}, \text{target trajectory}, \text{target genre-axis})
 $$
 
-For music generation, $c_2 < 0$ (low internal coherence) and $c_3 > 0$ (large steps) are conditioning signals that, by Chapter 17's sign-flip result, predict higher listener engagement. For text generation, the signs reverse. The generator is conditioned not on a single quality score but on a geometric location. Two works conditioned on different channel profiles can both be "high-quality" — they just live in different regions of the manifold.
+For music generation, $c_2 < 0$ (low internal coherence) and $c_3 > 0$ (large steps) are conditioning signals in the direction that, by Chapter 17's sign-flip result, goes with higher listener engagement among existing tracks. For text generation, the signs reverse. Whether conditioning a generator in that direction would raise engagement is untested: Chapter 17 reports correlations and makes no causal claim (§17.8). The generator is conditioned not on a single quality score but on a geometric location. Two works conditioned on different channel profiles can both be "high-quality" — they just live in different regions of the manifold.
 
 This has the pleasant property that the generator's biases are legible. If a system consistently produces work at a specific manifold location, that location is read off the channel values. A generator that secretly reduces to a single aesthetic attractor — the generative analogue of the filter bubble — is detectable by geometry. The channel-conditioning target $c$ makes the aesthetic intent of the generation *auditable* in a way scalar RLHF preference-tuning does not.
 

@@ -86,7 +86,7 @@ with eigenvalues $\lambda_1 \geq \lambda_2 \geq \cdots \geq \lambda_d \geq 0$ an
 
 ### PCA as Dimensionality Reduction
 
-Projecting onto the top $K$ components yields a low-rank approximation that preserves as much variance as possible among all rank-$K$ approximations (Eckart–Young). The projection matrix is $P_K = U_K U_K^{\top}$ where $U_K$ stacks the first $K$ eigenvectors. For the empirical work in this book, we use $K = 128$ on the English-book corpus — a basis fit once, frozen, and used across all languages as the common coordinate system (Chapter 12, on Noether symmetries, gives the cross-lingual evidence that this basis *transfers*). The choice $K = 128$ is empirical: it captures roughly 85% of embedding variance on the Gutenberg-LaBSE corpus while keeping the Gaussian fits of Section 4.4 well-conditioned.
+Projecting onto the top $K$ components yields a low-rank approximation that preserves as much variance as possible among all rank-$K$ approximations (Eckart–Young). The projection matrix is $P_K = U_K U_K^{\top}$ where $U_K$ stacks the first $K$ eigenvectors. For the empirical work in this book, we use $K = 128$ on the English-book corpus — a basis fit once, frozen, and used across all languages as the common coordinate system (Chapter 12, on Noether symmetries, gives the cross-lingual evidence that this basis *transfers*). The choice $K = 128$ is empirical: by an estimate that is not among the results recorded in Chapter 17, it captures roughly 85% of embedding variance on the Gutenberg-LaBSE corpus, while keeping the Gaussian fits of Section 4.4 well-conditioned for books.
 
 ### The Spectrum Itself Is a Feature
 
@@ -204,7 +204,7 @@ The core discovery of Chapter 6 — the fourth channel of aesthetic structure �
 
 ### The Bias-Variance Tradeoff and $\lambda$ Selection
 
-Lasso's $\lambda$ governs the bias-variance tradeoff. We select $\lambda$ by 5-fold cross-validation, with the split *author-disjoint* (books in Phase 1, artists in Phase 4): a fold's training set shares no authors with its validation set, so the model cannot memorize an author-level signal. This is not a statistical nicety — without author-disjoint splitting, apparent $R$ values are inflated by an order of magnitude.
+Lasso's $\lambda$ governs the bias-variance tradeoff. We select $\lambda$ by 5-fold cross-validation, with the split *author-disjoint* (books in Phase 1, artists in Phase 4): a fold's training set shares no authors with its validation set, so the model cannot memorize an author-level signal. This is not a statistical nicety — without author-disjoint splitting, apparent $R$ values are inflated, by an estimated factor of 2 to 3 (Appendix B, §B.8.2).
 
 ### Combined Ridge + Lasso
 

@@ -94,7 +94,7 @@ Birkhoff also recognized that different artistic domains require different opera
 
 Birkhoff's formula has been, rightly, criticized. The values of $O$ and $C$ that he computes for specific objects depend heavily on hand-chosen counting conventions; the formula gives results that do not match informed aesthetic judgment in several well-studied cases; and the ratio $O/C$ collapses two independent dimensions back into a single number, reintroducing the scalar pathology at the moment of evaluation even after dimensional structure has been correctly identified.
 
-The deeper problem is that Birkhoff's $O$ and $C$ are *hand features*. They are numerical summaries of properties that a theorist has decided to measure. They are not learned from data about how actual perceivers respond. In our empirical work on books (Chapter 17), the difference between *hand features* and *learned-representation geometric features* is substantial: hand features recover a small fraction of the signal that learned-embedding-plus-geometric-channels recover.
+The deeper problem is that Birkhoff's $O$ and $C$ are *hand features*. They are numerical summaries of properties that a theorist has decided to measure. They are not learned from data about how actual perceivers respond. In our empirical work on music (Chapter 17, §17.6.2), the difference between curated *hand features* and *learned-representation geometric features* is substantial: on the shared Echonest subset, Spotify's eight acoustic features reach R = 0.103 against R = 0.225 for the MERT spectrum Lasso. We have not run the corresponding comparison on books.
 
 Birkhoff's aesthetics was the right structural move with the wrong substrate. He needed a representation space that the perceptual system itself uses. That substrate — learned representations — was nine decades away.
 
@@ -142,7 +142,7 @@ This is the most sophisticated pre-computational aesthetic geometry in the tradi
 
 Arnheim's field theory was qualitative. He could not compute the weight vector at a given point of a given image, and he had no means to test whether his claims about visual forces matched measured viewer response. His theory is, structurally, a rank-1 vector-field account of the visual plane, and it is almost certainly directionally correct. But it lived as phenomenological description, not as measurable structure.
 
-The arrival of convolutional and transformer-based vision models has changed this. A sufficiently trained vision encoder produces a representation space in which the position of an image induces a structured response that is substantially correlated with Arnheim's described forces. Chapter 23 (Geometric Visual Art) develops the details. The framework that Arnheim reached for, without being able to hold it, has become tractable in the last decade.
+The arrival of convolutional and transformer-based vision models has changed this. We expect that a sufficiently trained vision encoder produces a representation space in which the position of an image induces a structured response substantially correlated with Arnheim's described forces; this has not been measured. Chapter 23 (Geometric Visual Art) develops the details. The framework that Arnheim reached for, without being able to hold it, has become tractable in the last decade.
 
 ## What the Tradition Saw — And What It Could Not Have Seen {#what-the-tradition-saw-and-what-it-could-not-have-seen}
 

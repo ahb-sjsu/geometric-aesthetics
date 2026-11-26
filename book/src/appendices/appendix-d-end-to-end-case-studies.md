@@ -31,7 +31,7 @@ $$D_{\mathrm{KL}}(\mathcal{N}(\mu_{BH}, \Sigma_{BH}) \,\|\, \mathcal{N}(\mu_V, \
 
 For *Bleak House* against the Victorian-novel prior, this KL is modest: *Bleak House* is, in the technical sense, a representative sample of the prior it helped create. Against a broader Gutenberg prior (all fiction, all periods) the KL widens substantially. Representative numbers from our run: KL$(BH \| V) \approx 0.9$ nats, KL$(BH \| \text{all-Gutenberg fiction}) \approx 3.1$ nats, KL$(BH \| \text{Gutenberg non-fiction}) \approx 7.8$ nats. The ordering is the important claim; the absolute values are representative.
 
-The Mahalanobis distance from mean-of-means, $(\mu_{BH} - \mu_V)^\top \Sigma_V^{-1}(\mu_{BH} - \mu_V)$, is small by the same reasoning. The Hellinger distance sits between the full-KL and the Mahalanobis extreme and is the feature that carries the most cross-lingual signal in our corpus (ρ = +0.675 across the language-family panel, see Chapter 17), so we will return to it.
+The Mahalanobis distance from mean-of-means, $(\mu_{BH} - \mu_V)^\top \Sigma_V^{-1}(\mu_{BH} - \mu_V)$, is small by the same reasoning. The Hellinger distance sits between the full-KL and the Mahalanobis extreme and is the feature of the headline cross-lingual pairs in our corpus (EN↔FI ρ = +0.77, EN↔FR ρ = +0.78; mean ρ = +0.675 across language pairs, see Chapter 17), so we will return to it.
 
 ### Step 3: Internal Coherence
 
@@ -84,7 +84,7 @@ We deliberately do not name specific FMA track IDs here; we describe the pattern
 
 Each track is represented as a token cloud $\{z_1, \ldots, z_{45}\} \subset \mathbb{R}^{1024}$ — 45 timesteps of MERT layer-7 hidden state, one per roughly 0.67 seconds. This is the exact analog of the book paragraph cloud: a temporally ordered sequence of high-dimensional embeddings from a pretrained encoder, on which we compute the same four channels.
 
-For the Gaussian-fit features, the 45-in-1024 regime is badly ill-conditioned. As described in Chapter 21 and the methodological note in the book reference, we project into a K=32 PCA subspace before fitting Gaussians; the Bhattacharyya feature, which does not saturate, is preferred directly.
+For the Gaussian-fit features, even after projection into the 128-d music PCA basis, the 45-in-128 regime is badly ill-conditioned. As described in Chapter 21 and the methodological note in the book reference, we project into a K=32 PCA subspace before fitting Gaussians; the Bhattacharyya feature, which does not saturate, is preferred directly.
 
 ### Step 2: Spectral Divergences
 
@@ -139,9 +139,9 @@ We compute the full feature vector (spectral divergences, internal coherence, tr
 
 Representative channel-by-channel comparison for the two *Hamlet* encodings:
 
-- `pair_sim_mean`: near-identical across EN and FR. In the cross-lingual panel (n=940 bundles, 19 languages), this feature has ρ = +0.712; any individual work sits within a narrow band. *Hamlet*'s internal coherence is high in both languages — Shakespeare's stylistic unity survives translation as a geometric property of the paragraph cloud.
+- `pair_sim_mean`: near-identical across EN and FR. In the cross-lingual panel (the matched bundles of the ten languages at the threshold, 926 by the per-language counts of Chapter 17, from a corpus of 19 languages), this feature has ρ = +0.712; any individual work sits within a narrow band. *Hamlet*'s internal coherence is high in both languages — Shakespeare's stylistic unity survives translation as a geometric property of the paragraph cloud.
 - `mahal_mean`: also near-identical (ρ = +0.710 in the panel). Both EN-*Hamlet* and FR-*Hamlet* sit roughly the same Mahalanobis distance from the pooled English-corpus mean.
-- `Hellinger`: the most predictive individual channel (ρ = +0.675; EN↔FI ρ = +0.77 at n=288, p = 8×10⁻⁵⁷; EN↔FR ρ = +0.78 at n=227). *Hamlet*'s Hellinger distance from the English-corpus prior is reproduced in FR.
+- `Hellinger`: the channel of the headline pairs (mean ρ = +0.675; EN↔FI ρ = +0.77 at n=288, p = 8×10⁻⁵⁷; EN↔FR ρ = +0.78 at n=227). *Hamlet*'s Hellinger distance from the English-corpus prior is reproduced in FR.
 - `Bhattacharyya`, `JS`, `KL`: all reproduce across the language pair with ρ ≈ 0.67.
 - `step_mean`, `step_std`, `curvature`: reproduce with somewhat smaller correlations but still positive.
 - `path_eff`: has the tightest language invariance in our panel — within-bundle std / between-book std = 0.18, the lowest across all features.
