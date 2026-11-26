@@ -218,7 +218,7 @@ def extract_features(X, ref_mean, ref_cov, ref_cov_inv, ref_logdet):
         pca_spectrum=pca_spectrum,
     )
 </code></pre>
-<p>Channels A, B, C yield scalar features; Channel D is the 128-dimensional PCA-spectrum vector fed separately to a Lasso regressor.</p>
+<p>Channels A, B, C yield scalar features; Channel D is the 128-dimensional PCA-spectrum vector fed separately to a Lasso regressor. The sketch simplifies several features. Its <code>js</code> is a symmetrized KL divergence, not the Jensen–Shannon divergence of Chapter 4, which has no closed form for Gaussians; and its <code>recur_rate</code>, <code>acf1_top3</code> and <code>tail_mass_100</code> are computed differently from the definitions in Chapter 6 and §17.3.3. Where the sketch and the chapters differ, this appendix does not record which form produced the reported numbers.</p>
 <h2 id="b7-cross-validation-and-residualization">B.7 Cross-Validation and Residualization</h2>
 <h3 id="b71-group-disjoint-folds">B.7.1 Group-Disjoint Folds</h3>
 <p>We use <code>sklearn.model_selection.GroupKFold</code> with 5 folds. The group identifier is the <em>author</em> for books and the <em>artist</em> for music. This prevents trivial leakage — a Ridge model that learns &ldquo;Jane Austen&rsquo;s Goodreads rating is 4.2&rdquo; would score well on non-grouped splits and tell us nothing about aesthetic signal.</p>
@@ -253,7 +253,7 @@ y_res = residualize(y, genre)
 <p>With $T=45$ token-level vectors in $D=128$ dimensions, the empirical covariance $C$ is rank-deficient. Closed-form Gaussian Hellinger becomes numerically unstable: the $\log\det$ terms diverge and the feature saturates at 1.0. We observed this first in the music data (every track scored Hellinger $\approx 1.0$) and the feature became useless.</p>
 <p>Two fixes. First, reduce to a $K=32$ PCA subspace before computing Hellinger on music. The geometric verdict — sign of correlation with <code>log(track_listens)</code> — is unchanged between $K=32$ and $K=128$ for the divergence family, so the reduction does not distort the empirical claim. Second, use Bhattacharyya directly instead of Hellinger. Bhattacharyya $B = 0.125 (\mu_1-\mu_2)^\top C_{\text{avg}}^{-1}(\mu_1-\mu_2) + 0.5 \log(|C_{\text{avg}}|/\sqrt{|C_1||C_2|})$ does not exponentiate away into saturation. Our book data at $T\gtrsim 200$ is not as badly affected, but we report both and prefer Bhattacharyya in practice.</p>
 <h3 id="b82-authorartist-leakage">B.8.2 Author/Artist Leakage</h3>
-<p>We reiterate: use group-disjoint folds. A standard 5-fold on books without author grouping will inflate the headline $R$ by a factor of 2–3 because the model learns per-author intercepts. This is the single biggest reproducibility trap.</p>
+<p>We reiterate: use group-disjoint folds. A standard 5-fold on books without author grouping will inflate the headline $R$, by an estimated factor of 2–3, because the model learns per-author intercepts. This is the single biggest reproducibility trap.</p>
 <h3 id="b83-genre-confound">B.8.3 Genre Confound</h3>
 <p>Reporting $R$ without genre residualization is not wrong if clearly labeled as &ldquo;includes genre signal&rdquo;, but it is misleading if presented as aesthetic predictive power. Our headline decomposition — raw $R=0.241$ vs residualized $R=0.093$ — shows that 85% of the variance explained is genre. Always report the residualized number alongside the raw number.</p>
 <h3 id="b84-cross-lingual-basis-must-be-shared">B.8.4 Cross-Lingual Basis Must Be Shared</h3>
@@ -296,7 +296,7 @@ y_res = residualize(y, genre)
 <td>2 min</td>
 </tr>
 <tr>
-<td>Book feature extraction (all four channels, 4,998 × 19 langs ≈ 9,681 books)</td>
+<td>Book feature extraction (all four channels, 4,998 English + 4,683 in 19 other languages = 9,681 books)</td>
 <td>15 min</td>
 </tr>
 <tr>
