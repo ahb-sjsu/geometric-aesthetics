@@ -113,6 +113,8 @@
 <p>The distance $D(p_W, p_0)$ — how unusual a work is, relative to the corpus — is the single most empirically important quantity in the book. It is the Level 1/Level 2 tensor contraction of Chapter 6, and it carries 8σ signal in Phase 1. Interpretively, a work at large $D(p_W, p_0)$ is either innovative or anomalous; distinguishing these is a direction-rather-than-magnitude question, which is why the vector-valued mean displacement $\hat\mu_W - \mu_0$ matters in addition to its scalar Mahalanobis norm.</p>
 <h3 id="the-asymmetry-of-novelty">The Asymmetry of Novelty</h3>
 <p>KL is asymmetric: $D_{\mathrm{KL}}(p_W \| p_0) \neq D_{\mathrm{KL}}(p_0 \| p_W)$. The first quantity — how surprising the work is under the prior — measures the work&rsquo;s <em>information content</em> relative to expectation. The second — how surprising the prior is under the work — measures how much the prior would have to be <em>updated</em> to accommodate the work. Aesthetic novelty is closer to the first; aesthetic influence is closer to the second. Chapter 10 (<em>Aesthetic Dynamics</em>) develops this asymmetry.</p>
+<p><img alt="Figure 5.1" src="figures/ch05_fig1.svg" /></p>
+<p><em>Figure 5.1. The two directions of the KL divergence of Chapter 4 for a prior N(0, 1) and a work N(1, σ²), against the work&rsquo;s standard deviation σ. The chapter reads KL(work ‖ prior) as how surprising the work is under the prior (novelty) and KL(prior ‖ work) as how far the prior would have to be updated to accommodate the work (influence). They are equal, 0.5, only at σ = 1; for a narrow work the update is the larger, for a broad work the surprise.</em></p>
 <h2 id="5-7-approximation">5.7 The Per-Work Gaussian Is an Approximation</h2>
 <h3 id="non-gaussianity-in-practice">Non-Gaussianity in Practice</h3>
 <p>Embedding clouds are not Gaussian. They are:</p>
@@ -130,6 +132,8 @@
 <p>This is the rationale for the tensor <em>hierarchy</em> of Chapter 6: each level adds information that the previous levels cannot represent. The Gaussian is not the endpoint; it is Level 2 of a four-level stack.</p>
 <h3 id="what-gaussian-fits-miss">What Gaussian Fits Miss</h3>
 <p>A Gaussian fit cannot distinguish a novel whose paragraphs form two tight clusters from one whose paragraphs form a single wider cluster with the same covariance. A moment-matching Gaussian fits both identically. The trajectory features of Level 3 distinguish them: the bimodal novel has a low <code>recur_rate</code> (paragraphs do not return to the other cluster from within the first) and a bimodal <code>step_mean</code> distribution (jumps within a cluster are small, jumps between clusters are large). The Gaussian has erased a distinction that mattered; the third-order tensor recovers it.</p>
+<p><img alt="Figure 5.2" src="figures/ch05_fig2.svg" /></p>
+<p><em>Figure 5.2. Two illustrative clouds of 80 points in a two-dimensional embedding. The left is one wide cluster. The right is two tight clusters, transformed so that its mean and covariance equal the left cloud&rsquo;s exactly. Both are fitted by the same Gaussian, whose 2-standard-deviation ellipse is drawn on each, so every first- and second-moment quantity agrees. The chapter assigns the difference to the higher levels of Chapter 6.</em></p>
 <h2 id="5-8-four-channels">5.8 Foreshadow — The Four Channels</h2>
 <p>The aesthetic manifold supports four structural channels of the tensor hierarchy developed in Chapter 6, each extracting signal the others cannot:</p>
 <ul>

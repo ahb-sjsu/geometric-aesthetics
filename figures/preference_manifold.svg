@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>The preference manifold: eigenstructure defines the Mahalanobis metric</title>
+  <desc>Elongated ellipses (iso-aesthetic contours) around an optimum; the axes are labeled with eigenvalues lambda_1 (large, familiar) and lambda_2 (small, unfamiliar).</desc>
+
+  <!-- axes -->
+  <line x1="80" y1="220" x2="600" y2="220" stroke="#888" stroke-width="1"/>
+  <line x1="340" y1="380" x2="340" y2="40" stroke="#888" stroke-width="1"/>
+
+  <!-- axis labels -->
+  <text x="585" y="240" font-size="13" fill="#333">z₁ (high λ₁: familiar)</text>
+  <text x="350" y="55" font-size="13" fill="#333">z₂ (low λ₂: unfamiliar)</text>
+
+  <!-- iso-aesthetic contours: elongated ellipses centered at (340, 220), stretched along z1 -->
+  <g fill="none" stroke-width="1.5" stroke-dasharray="none">
+    <ellipse cx="340" cy="220" rx="200" ry="45" stroke="#90caf9"/>
+    <ellipse cx="340" cy="220" rx="160" ry="35" stroke="#64b5f6"/>
+    <ellipse cx="340" cy="220" rx="120" ry="25" stroke="#42a5f5"/>
+    <ellipse cx="340" cy="220" rx="80"  ry="18" stroke="#2196f3"/>
+    <ellipse cx="340" cy="220" rx="40"  ry="10" stroke="#1976d2"/>
+  </g>
+
+  <!-- optimum -->
+  <circle cx="340" cy="220" r="5" fill="#e65100"/>
+  <text x="350" y="213" font-size="12" fill="#e65100" font-weight="bold">optimum</text>
+
+  <!-- sample points + geodesic arc -->
+  <circle cx="470" cy="185" r="4" fill="#2e7d32"/>
+  <text x="476" y="182" font-size="11" fill="#2e7d32">expert sees fine distinctions here</text>
+
+  <!-- arrow showing expertise expansion -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+  </defs>
+  <text x="340" y="105" text-anchor="middle" font-size="12" fill="#666" font-style="italic">cheap direction (experienced)</text>
+  <text x="140" y="310" font-size="12" fill="#666" font-style="italic">expensive</text>
+  <text x="140" y="328" font-size="12" fill="#666" font-style="italic">direction</text>
+  <text x="140" y="346" font-size="12" fill="#666" font-style="italic">(rare)</text>
+
+  <!-- Key concept label -->
+  <text x="320" y="405" text-anchor="middle" font-size="12" fill="#555" font-style="italic">
+    Iso-aesthetic contours: d_G(z, z*) = c, where G = Λ⁻¹ (Mahalanobis)
+  </text>
+
+  <!-- title -->
+  <text x="320" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">
+    Preference manifold around an aesthetic optimum
+  </text>
+</svg>

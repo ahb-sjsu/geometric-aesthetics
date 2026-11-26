@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 380" width="640" height="380" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title>Expertise shifts the Wundt curve: the connoisseur needs more complexity</title>
+  <desc>Two overlaid inverted-U curves — novice (lower, left-shifted) and expert (higher, right-shifted) — showing how expertise expands the effective dimensionality.</desc>
+
+  <!-- axes -->
+  <line x1="80" y1="320" x2="600" y2="320" stroke="#333" stroke-width="1.5"/>
+  <line x1="80" y1="320" x2="80"  y2="40"  stroke="#333" stroke-width="1.5"/>
+
+  <text x="340" y="360" text-anchor="middle" font-size="14" fill="#333">stimulus complexity</text>
+  <text x="32" y="180" text-anchor="middle" font-size="14" fill="#333" transform="rotate(-90 32 180)">aesthetic score</text>
+
+  <!-- novice curve: peaks left, lower height -->
+  <path d="M 80 320 Q 130 170, 220 170 Q 310 170, 400 320" fill="none" stroke="#64b5f6" stroke-width="3"/>
+  <circle cx="220" cy="170" r="5" fill="#1565c0"/>
+  <text x="220" y="155" text-anchor="middle" font-size="12" font-weight="bold" fill="#1565c0">novice</text>
+
+  <!-- expert curve: peaks right, higher -->
+  <path d="M 180 320 Q 260 70, 420 70 Q 580 70, 600 320" fill="none" stroke="#43a047" stroke-width="3"/>
+  <circle cx="420" cy="70" r="5" fill="#2e7d32"/>
+  <text x="420" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#2e7d32">expert</text>
+
+  <!-- connecting arrow: shows the peak shift -->
+  <defs>
+    <marker id="arr2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e65100"/>
+    </marker>
+  </defs>
+  <path d="M 230 170 Q 325 120, 410 80" fill="none" stroke="#e65100" stroke-width="2" stroke-dasharray="6 4" marker-end="url(#arr2)"/>
+  <text x="320" y="125" text-anchor="middle" font-size="12" fill="#e65100" font-weight="bold">expertise expands D_eff</text>
+
+  <!-- key formula -->
+  <text x="320" y="355" text-anchor="middle" font-size="11" fill="#555" font-style="italic">
+    Proposition 2: majorized spectrum ⇒ D_eff(Σ') ≥ D_eff(Σ)
+  </text>
+
+  <!-- title -->
+  <text x="320" y="25" text-anchor="middle" font-size="15" font-weight="bold" fill="#333">
+    Expertise shifts the aesthetic peak rightward and upward
+  </text>
+</svg>

@@ -232,6 +232,8 @@ for tr, te in gkf.split(X, y, groups=author):
     preds[te] = model.predict(X[te])
 r = np.corrcoef(preds, y)[0, 1]
 </code></pre>
+<p><img alt="Figure B.1" src="figures/appb_fig1.svg" /></p>
+<p><em>Figure B.1. Schematic of §B.7.1 with 8 illustrative authors (colours) and their books (squares). A plain 5-fold split scatters an author&rsquo;s books across folds (5 of the 8 authors here), so a model can learn an author&rsquo;s rating from the training folds and be scored on the same author in the test fold. GroupKFold puts every book of an author in one fold, so each test fold holds only unseen authors. For music the group is the artist.</em></p>
 <h3 id="b72-genre-residualization-phase-2-phase-4-within-genre">B.7.2 Genre Residualization (Phase 2 / Phase 4 Within-Genre)</h3>
 <p>To get the genre-confound-honest effect size, subtract the per-genre target mean before fitting the model on the target:</p>
 <pre><code class="language-python">def residualize(y, genre):
@@ -261,6 +263,8 @@ y_res = residualize(y, genre)
 <h2 id="b9-statistical-reporting">B.9 Statistical Reporting</h2>
 <p>For every headline number we report: sample size $n$, effect size (Pearson $R$ or Spearman $\rho$), and either a z-score or a p-value. Converting between: a Pearson $R$ at sample size $n$ has z-score roughly $R\sqrt{n-2}/\sqrt{1-R^2}$, and the bootstrap CI we use in the manuscript is 1000 resamples of books (or tracks, or language bundles) with replacement.</p>
 <p>For the cross-modality sign-flip test we compute Spearman $\rho$ on each modality separately and test the null $H_0: \rho_{\text{books}} \cdot \rho_{\text{music}} \ge 0$ by stratified bootstrap. This null is rejected at $p&lt;10^{-28}$ for <code>pair_sim_mean</code> and $p&lt;10^{-28}$ for <code>step_mean</code> (the p-values dominate by the music side&rsquo;s larger sample).</p>
+<p><img alt="Figure B.2" src="figures/appb_fig2.svg" /></p>
+<p><em>Figure B.2. The conversion of §B.9, z ≈ R √(n − 2) / √(1 − R²), drawn for the three sample sizes of the headline results, with the six printed pairs of R and z: books 0.241 and 17σ, residualized 0.093 and 6.5σ; fiction 0.131 and 6.2σ; the music spectrum Lasso 0.302 and 49.8σ, residualized 0.177 and 28.3σ; music hand features, residualized, 0.043 and 6.7σ. Each printed z lies within 0.6 of its curve. At a fixed R, z grows as the square root of n.</em></p>
 <h2 id="b10-end-to-end-compute-budget">B.10 End-to-End Compute Budget</h2>
 <p>On a single 32 GB GPU (A100-40G or A6000-48G both tested):</p>
 <table>
