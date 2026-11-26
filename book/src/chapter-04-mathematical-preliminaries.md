@@ -152,7 +152,7 @@ For $\mu = 1, \sigma = 1$ (same variance, shifted mean): $D_{\mathrm{KL}} = 0.5$
 
 ### Why All Six
 
-One might ask why we use six different divergences when they all measure "how different the distributions are". The answer is empirical: they are correlated but not redundant. In the cross-lingual invariance analysis (Chapter 12, §17.7 in the Aesthetics Ch. 17 which is the already-drafted empirical chapter), the mean Spearman correlation across language pairs for Hellinger (ρ = +0.675), Bhattacharyya (ρ = +0.675), and JS (ρ = +0.674) are nearly identical — but the Mahalanobis mean-distance (ρ = +0.710) and the internal-coherence feature `pair_sim_mean` (ρ = +0.712) are *higher*, indicating that each divergence family captures a slightly different slice of the aesthetic signal. Using all of them is the empirical counterpart of refusing to collapse information prematurely.
+One might ask why we use six different divergences when they all measure "how different the distributions are". The answer is empirical: they are correlated but not redundant. In the cross-lingual invariance analysis (Chapter 12; Chapter 17, §17.5), the mean Spearman correlation across language pairs for Hellinger (ρ = +0.675), Bhattacharyya (ρ = +0.675), and JS (ρ = +0.674) are nearly identical — but the Mahalanobis mean-distance (ρ = +0.710) and the internal-coherence feature `pair_sim_mean` (ρ = +0.712) are *higher*, indicating that each divergence family captures a slightly different slice of the aesthetic signal. Using all of them is the empirical counterpart of refusing to collapse information prematurely.
 
 ## 4.5 The SPD Manifold {#4-5-spd-manifold}
 

@@ -6,7 +6,7 @@ Hiroshi, a curator at a mid-sized contemporary art museum, is preparing the cata
 
 ## 13.1 Why Quantum? {#why-quantum}
 
-Chapters 5 through 12 built a classical geometric aesthetics. A work occupies a location on the aesthetic manifold (Chapter 5). Tensor fields assign it a local structure — obligation-like *invitations to respond*, interest-like *attentions a reader brings* (Chapter 6). The metric encodes which axes are near and which are far (Chapter 9). Dynamics carries interpretations along paths with curvature and holonomy (Chapter 10). Symmetries conserve specific features under translation, and our cross-lingual finding of ρ ≈ 0.71 across six language families (Chapter 12) is the empirical witness that the conservation law is not a fantasy.
+Chapters 5 through 12 built a classical geometric aesthetics. A work occupies a location on the aesthetic manifold (Chapter 5). Tensor fields assign it a local structure — obligation-like *invitations to respond*, interest-like *attentions a reader brings* (Chapter 6). The metric encodes which axes are near and which are far (Chapter 9). Dynamics carries interpretations along paths with curvature and holonomy (Chapter 10). Symmetries conserve specific features under translation, and our cross-lingual finding of ρ ≈ 0.71 across six language families (Chapter 12) is the empirical witness that the invariance is not a fantasy.
 
 At every step, a work has had a definite aesthetic state. The manifold location is a point. The tensors take values at that point. The reader, the listener, the viewer is a classical observer who reads that point off.
 

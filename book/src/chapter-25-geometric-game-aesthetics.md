@@ -62,7 +62,7 @@ The predictions above are in dialogue with four traditions.
 
 ## 25.5 Genre, as Ever
 
-The within-genre residualization that destroyed 85% of the books' $R^2$ (Chapter 17, §17.3) and 91% of the music's (§17.5) will be *at least as severe* for games. Genre in games (roguelike, Soulslike, 4X strategy, farming sim, walking simulator, puzzle, rhythm, battle royale) is more strongly visually and structurally encoded than either book or music genre; a game's state-space embedding cloud will identify its genre with essentially perfect accuracy. Any naive correlation between trajectory features and enjoyment will be dominated by genre.
+The within-genre residualization that destroyed 85% of the books' $R^2$ (Chapter 17, §17.4) and 91% of the music's hand-feature $R^2$ (§17.6) will be *at least as severe* for games. Genre in games (roguelike, Soulslike, 4X strategy, farming sim, walking simulator, puzzle, rhythm, battle royale) is more strongly visually and structurally encoded than either book or music genre; a game's state-space embedding cloud will identify its genre with essentially perfect accuracy. Any naive correlation between trajectory features and enjoyment will be dominated by genre.
 
 **Prediction 25.3.** The honest, within-genre residualized correlation between curvature × step_std and session enjoyment will be on the order of $R = 0.10$–$0.20$, consistent with the residualized book and music results (Chapter 17). Unresidualized correlations will be much larger (we would not be surprised by $R \geq 0.4$) and will be reporting genre. We anticipate practitioner and industry claims of very large effect sizes and flag them, in advance, as probable genre confound.
 

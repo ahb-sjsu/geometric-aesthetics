@@ -92,7 +92,7 @@ Against a genre-pooled Rock prior, Track R's Bhattacharyya divergence is small �
 
 Against a genre-pooled Jazz prior, Track J likewise has a small Bhattacharyya divergence — Jazz tracks cluster tightly enough that a typical Jazz track sits near the Jazz centroid.
 
-The divergences alone therefore **cannot** tell Track R from Track J in terms of rating. They successfully place each track within its own genre, which is why the raw Lasso-on-spectrum result (R=0.302, z=49.8σ) is overwhelmingly a genre-prediction result. After genre residualization — the manoeuvre that reduces books' R² by 85% and music's R² by 91% — the divergences retain only a small residual signal. This is the honest frame of Chapter 21 and the reason we do not headline a single R value for "geometry predicts listens".
+The divergences alone therefore **cannot** tell Track R from Track J in terms of rating. They successfully place each track within its own genre, which is why the raw Lasso-on-spectrum result (R=0.302, z=49.8σ) is overwhelmingly a genre-prediction result. After genre residualization — the manoeuvre that reduces books' R² by 85% and music's hand-feature R² by 91% — the divergences retain only a small residual signal. This is the honest frame of Chapter 21 and the reason we do not headline a single R value for "geometry predicts listens".
 
 ### Step 3: Internal Coherence — The Sign Flip
 

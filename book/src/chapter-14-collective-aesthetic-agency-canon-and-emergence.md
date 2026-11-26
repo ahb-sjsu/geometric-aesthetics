@@ -22,7 +22,7 @@ The failure of this procedure is well known in the social-choice literature and 
 
 **Failure 2: Arithmetic means dissolve disagreement.** A novel that half its readers loved and half hated receives the same mean rating as a novel that every reader found mediocre. These are morally and aesthetically different facts about the works, and the scalar discards both.
 
-**Failure 3: Means are non-invariant under basis change.** We showed in Chapter 12 that the aesthetic tensor has specific invariant components — `pair_sim_mean`, Hellinger — that survive translation into 19 languages at $\rho \approx 0.7$. The *average rating* has no such invariance: Goodreads averages in Finnish, French, and Japanese do not measure the same quantity even for the same book. The geometry transfers; the scalar does not.
+**Failure 3: Means are non-invariant under basis change.** We showed in Chapter 12 that the aesthetic tensor has specific invariant components — `pair_sim_mean`, Hellinger — that survive translation into ten languages from six families at $\rho \approx 0.7$. The *average rating* has no such invariance: Goodreads averages in Finnish, French, and Japanese do not measure the same quantity even for the same book. The geometry transfers; the scalar does not.
 
 The scalar-average canon is a collapsed observable with no basis-invariance, no disagreement signal, and no confound correction. It is the aesthetic analogue of what Ethics Chapter 14 calls "the majoritarian fallacy": the assumption that aggregation is addition.
 
@@ -51,7 +51,7 @@ $$\mathcal{C} : T_1^* \otimes \cdots \otimes T_n^* \to T_p \mathcal{M}$$
 that takes one interest covector from each reader and returns a collective aesthetic valence direction on $\mathcal{M}$. In components,
 $$V^\mu_{\text{coll}} = \mathcal{C}^\mu_{\nu_1 \cdots \nu_n}\, I^{(1)}_{\nu_1} \cdots I^{(n)}_{\nu_n}.$$
 
-For a two-reader collective, $\mathcal{C}$ has rank 3 and $9 \times 9 \times 9 = 729$ components (using our nine working axes; the full 128-dimensional PCA basis gives $128^3 \approx 2.1 \times 10^6$).
+For a two-reader collective, $\mathcal{C}$ has rank 3 and $d \times d \times d = d^3$ components on $d$ axes per reader (the 128-dimensional PCA basis gives $128^3 \approx 2.1 \times 10^6$).
 
 ### Decomposition
 
@@ -63,16 +63,16 @@ The emergent component vanishes if and only if the collective valence is the sum
 
 ### Measuring Emergence: The 71 PCA Axes as Discovered Canons
 
-The empirical witness for $\mathcal{E} \neq 0$ in the aesthetic setting comes from our Lasso study.
+The empirical motivation for $\mathcal{E} \neq 0$ in the aesthetic setting comes from our Lasso study.
 
 We ran Lasso regression of Goodreads ratings on the 128-dimensional PCA spectrum of LaBSE paragraph-trajectory features, author-disjoint 5-fold CV, $n = 4{,}998$ Gutenberg↔Goodreads matched books. The Lasso retained 71 non-zero coefficients. These axes:
 
 - were not specified in advance;
-- are individually interpretable as genre-and-form directions (narrative continuity, register-variation, lexical-field coherence, and so on);
+- are, for about 30 of them (Appendix F, F14.2), interpretable on post-hoc inspection as genre-and-form directions (narrative continuity, register-variation, lexical-field coherence, and so on);
 - survive cross-validation;
 - collectively contribute ~8σ of predictive signal on top of the hand-designed features.
 
-Each of these axes is, in the vocabulary of this chapter, a *discovered canonical direction*. No reader picked them. No critic wrote an essay naming them. No voting produced them. They are the directions along which the collective reception data — 4,998 books, millions of reader-hours — clusters. They are $\mathcal{E}$, made visible.
+Each of these axes is, in the vocabulary of this chapter, a *discovered canonical direction*. No reader picked them. No critic wrote an essay naming them. No voting produced them. They are the directions along which the collective reception data — 4,998 books, millions of reader-hours — clusters. They are, we conjecture, $\mathcal{E}$ made visible.
 
 **Caveat on effect size.** The genre-confound correction brings the total predictive R down from 0.241 to 0.093 intra-genre. Most of the 71 axes are doing genre-discrimination work; a smaller subset is doing within-genre aesthetic work. But the point for Chapter 14 is structural rather than effect-size-dependent: the Lasso's discovery of any interpretable axes at all — let alone 71 — is evidence that the collective aesthetic tensor has non-zero emergent components. A pure sum of individual judgments would have produced a diffuse, un-sparse solution. It did not.
 
@@ -108,7 +108,7 @@ for all works in the canonised cluster. Equivalently, the contraction
 $$\mathcal{E}^\mu_{\nu_1 \cdots \nu_n} I^{(1)}_{\nu_1} \cdots I^{(n)}_{\nu_n} \neq 0$$
 on a set of non-trivial measure in the manifold.
 
-The criterion is testable. Our 71 Lasso axes pass it: no linear combination of the hand-designed individual-reader-scale features reproduces them, which is exactly why the Lasso selected them as independent predictors.
+The criterion is testable. Our 71 Lasso axes are consistent with it but do not establish it (Appendix F lists the aggregation model as conjectured, F14.1): no linear combination of the hand-designed individual-reader-scale features reproduces them, which is exactly why the Lasso selected them as independent predictors.
 
 ## 14.7 Cultural Memory as Slow Averaging {#cultural-memory-as-slow-averaging}
 
@@ -136,7 +136,7 @@ Increasingly, the reception structure includes non-human agents. A recommender s
 
 First, a recommender system's canon is not *found* in the data; it is *imposed on* the data by the choice of loss function. Different loss functions perform different contractions (Chapter 15), producing different canons. The "neutrality" claim common in platform rhetoric is false at the level of the collective tensor.
 
-Second, the genre-confound asymmetry we found in Phase 2 (85% of books' headline R² is genre; 91% of music's is) is directly relevant. A recommender trained on raw engagement data learns an aesthetic tensor that is 85–91% genre-sorting machinery. This is not necessarily a failure — sometimes we want genre sorting — but it is not aesthetic recommendation, and calling it that is a mis-measurement.
+Second, the genre-confound asymmetry we found in Phase 2 (85% of books' headline R² is genre; 91% of music's hand-feature R² is) is directly relevant. A recommender trained on raw engagement data learns an aesthetic tensor that is 85–91% genre-sorting machinery. This is not necessarily a failure — sometimes we want genre sorting — but it is not aesthetic recommendation, and calling it that is a mis-measurement.
 
 Third, cross-lingual recommender systems will succeed or fail based on which observables they learn. The invariant features ($\rho \approx 0.7$ across 6 language families) will transfer; the non-invariant ones will not. A recommender relying on raw star averages will not cross linguistic borders. One relying on `pair_sim_mean` or the Hellinger structural signal will. This is an empirical, falsifiable claim about recommender-system architecture, not a philosophical one.
 

@@ -18,7 +18,7 @@ The sibling volume *Geometric Ethics*, in its Chapter 9, takes up the parallel q
 
 Our position, which occupies the middle ground between these three, is that the aesthetic metric is *discovered-constructed* — neither free-floating in the world nor freely invented, but extracted under specific representational constraints that themselves reflect prior human choices.
 
-The empirical warrants for this middle position are two. The cross-lingual invariance result (ρ = 0.7 across six language families, Chapter 17) is the strongest evidence we have that the metric tracks something *more-than-conventional*: it survives translation into geometrically distant languages. The genre-confound finding (85% of our books R², 91% of our music R²) is the strongest evidence we have that, without care, the metric tracks sociological categories much more than aesthetic ones. Between these two findings the middle position is forced. The chapter is about why.
+The empirical warrants for this middle position are two. The cross-lingual invariance result (ρ = 0.7 across six language families, Chapter 17) is the strongest evidence we have that the metric tracks something *more-than-conventional*: it survives translation into geometrically distant languages. The genre-confound finding (85% of our books R², 91% of our music hand-feature R²) is the strongest evidence we have that, without care, the metric tracks sociological categories much more than aesthetic ones. Between these two findings the middle position is forced. The chapter is about why.
 
 ## 9.2 The Discovery Account {#discovery}
 
@@ -84,7 +84,7 @@ The conventionalist account holds that the metric emerges from collective judgme
 
 ### Strengths
 
-**The genre-confound result.** Eighty-five percent of our books R² was genre confound, and ninety-one percent of our music R² was. These are big numbers. They say that a very large share of what our pipeline learns, when trained against human rating and listen data, is *what category the community has placed the work in*. The conventionalist says: that is not a bug. That is the metric. The metric just is the pattern of collective categorisation.
+**The genre-confound result.** Eighty-five percent of our books R² was genre confound, and ninety-one percent of our music hand-feature R² was. These are big numbers. They say that a very large share of what our pipeline learns, when trained against human rating and listen data, is *what category the community has placed the work in*. The conventionalist says: that is not a bug. That is the metric. The metric just is the pattern of collective categorisation.
 
 **Canon explains reception.** The highest-rated books on Goodreads are not a random sample of literature. They are, largely, canonical works that have had decades to accumulate reputation. Any metric trained against Goodreads rating will thus recover, primarily, the structure of the reception-filtered canon. Conventionalism accepts this at face value.
 

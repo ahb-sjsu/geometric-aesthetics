@@ -12,7 +12,7 @@ In 1918, Emmy Noether proved what many physicists regard as the most beautiful t
 
 The preceding chapter established that aesthetic reasoning is A* search. For this search to yield consistent results, the heuristic $h$ must be invariant under re-description: the same work, described differently, must receive the same heuristic estimate. Where this invariance holds, we say the heuristic is *gauge-compatible* with the structure of the aesthetic manifold. Where it fails, the search is gauge-variant and its outputs are arbitrary. Chapter 11 flagged this as a category-(iv) pathology. This chapter develops the positive side of the claim: *where a continuous symmetry of the aesthetic action holds, a conserved aesthetic quantity exists, and that quantity is the object the honest search is searching for*.
 
-This chapter is empirically load-bearing. Unlike most chapters of this book, which develop geometric apparatus in advance of its empirical instantiation, here the empirical finding came first and the chapter formalizes it. Our cross-lingual invariance result — the structural-feature profile of a work is preserved under translation across six language families — is a measured symmetry of the aesthetic manifold under the gauge group of linguistic re-description. Noether's theorem then identifies the conserved current: the feature-vector itself.
+This chapter is empirically load-bearing. Unlike most chapters of this book, which develop geometric apparatus in advance of its empirical instantiation, here the empirical finding came first and the chapter formalizes it. Our cross-lingual invariance result — the structural-feature profile of a work is preserved under translation across six language families — is a measured symmetry of the aesthetic manifold under the gauge group of linguistic re-description. By analogy with Noether's theorem (Appendix F, F12.3), we then identify the conserved current: the feature-vector itself.
 
 ## 12.2 Noether's Theorem: The Physics {#physics}
 
@@ -123,9 +123,9 @@ A complementary, more demanding test: does the English-trained Ridge model, whic
 
 ### Interpretation via Noether
 
-The structural-feature profile, measured in the invariant English-derived basis, is the Noether current corresponding to the symmetry "change the coordinate chart by changing the language." The correlations of $\rho \approx 0.70$ across six language families and the $p = 8 \times 10^{-57}$ at the EN–FI pair constitute empirical evidence that the symmetry holds at the level of the aesthetic feature-vector.
+The structural-feature profile, measured in the invariant English-derived basis, is, in this analogy, the Noether current corresponding to the symmetry "change the coordinate chart by changing the language." The correlations of $\rho \approx 0.70$ across six language families and the $p = 8 \times 10^{-57}$ at the EN–FI pair constitute empirical evidence that the symmetry holds at the level of the aesthetic feature-vector.
 
-We state the claim carefully. We do not claim that aesthetic *verdicts* are preserved by translation — the rating-transfer $R = 0.07$ is too weak for that. We claim that the *geometric-feature vector* is preserved, and that this vector is a Noether current of the translation symmetry. The rating is a compression of the feature-vector (Chapter 11 §11.6); the compression is lossy, and the loss shows up in the rating-transfer gap.
+We state the claim carefully. We do not claim that aesthetic *verdicts* are preserved by translation — the rating-transfer $R = 0.07$ is too weak for that. We claim that the *geometric-feature vector* is preserved, and that this vector plays the role of a Noether current of the translation symmetry. The rating is a compression of the feature-vector (Chapter 11 §11.6); the compression is lossy, and the loss shows up in the rating-transfer gap.
 
 ## 12.5 Broken Symmetry: The Modality Sign-Flip {#broken-symmetry}
 
@@ -147,7 +147,7 @@ Two features show robustly opposite signs of aesthetic association between books
 - Books: $\rho = -0.096$ (6.4σ). *Smaller* steps $\to$ higher rating.
 - Music: $\rho = +0.071$, $p = 4 \times 10^{-29}$. *Larger* steps $\to$ more listens.
 
-Both flips are robust at $p < 10^{-28}$. They are not artifacts of sample size, model choice, or residualization. The genre-residualization of Chapter 17 preserves both flips: they are not driven by genre confound.
+Both flips are robust at $p < 10^{-28}$. They are not artifacts of sample size, and they persist after the Hellinger fix (Appendix E.4). Chapter 17 does not report the flips on genre-residualized targets, and an encoder-level origin has not been ruled out (Chapter 17 §17.9).
 
 ### Modality-Swap Is Not an Admissible Gauge Transformation
 
@@ -202,13 +202,15 @@ A practical summary for the reader who wants to know what this chapter licenses 
 
 ## 12.8 Harm, Beauty, and the Conserved Quantity {#conserved-quantity}
 
-We pause on an asymmetry between this chapter and its Ethics sibling. In the Ethics volume, Chapter 12's Noether theorem identifies *harm* as the conserved quantity: what is preserved under re-description of a moral situation is its harm content.
+*Note (2026-11-26).* *Geometric Ethics* withdrew "Conservation of Harm" as a conservation law on 2026-06-19 and kept the weaker claim of invariance of harm accounting under re-description. The comparison in this section uses only that weaker claim and stands in that form. Any reading of it that treats harm as a conserved quantity in the sense of a conservation law is withdrawn.
+
+We pause on an asymmetry between this chapter and its Ethics sibling. In the Ethics volume, Chapter 12's Noether argument identifies *harm accounting* as the invariant: what is preserved under re-description of a moral situation is its harm content.
 
 Harm is a directed, signed quantity — bad for the agent it accrues to. The ethical symmetry argument thereby licenses a consequentialist inference: relabeling cannot make the harm go away.
 
 In aesthetics, the conserved quantity is the feature-vector itself: a multi-component, directional object whose sign of aesthetic effect is modality-specific (§12.5). It is *not* a scalar "beauty" analogous to harm. Attempting to identify a conserved scalar in aesthetics — a quantity such that "beauty cannot be created or destroyed by re-description" — produces, at best, an overfit scalar whose modality-swap behavior we have already shown is inconsistent.
 
-This is a methodologically important difference between the Ethics and Aesthetics volumes, and we want to mark it clearly. *Ethics* admits a conserved scalar (harm). *Aesthetics* admits a conserved vector (the feature profile) but *not* a conserved scalar. Attempts to reduce the vector to a single scalar verdict (Chapter 11 §11.6) are exactly the compressions that lose the directional information we have shown is modality-specific. The framework's refusal to reduce is not squeamishness. It is the formal consequence of a broken scalar-level symmetry coexisting with an intact vector-level one.
+This is a methodologically important difference between the Ethics and Aesthetics volumes, and we want to mark it clearly. *Ethics* admits an invariant scalar account (harm). *Aesthetics* admits a conserved vector (the feature profile) but *not* a conserved scalar. Attempts to reduce the vector to a single scalar verdict (Chapter 11 §11.6) are exactly the compressions that lose the directional information we have shown is modality-specific. The framework's refusal to reduce is not squeamishness. It is the formal consequence of a broken scalar-level symmetry coexisting with an intact vector-level one.
 
 ## 12.9 Limitations and Caveats {#caveats}
 
@@ -229,4 +231,4 @@ This chapter has developed the aesthetic analogue of Noether's theorem and groun
 
 The next chapter turns to *quantum aesthetic dynamics* — the phenomenon of aesthetic superposition, the role of the observer, and the curious feature of aesthetic judgment that observation appears to alter the thing observed. Chapter 13 will develop this alongside its Ethics sibling, with an emphasis on the measurement problem in aesthetics: a work has, in a sense, multiple aesthetic eigenstates — genre-readings, period-readings, ideologically-inflected readings — and the act of critical evaluation projects the work onto one of them.
 
-Priya, with whom this chapter opened, will write the Finnish team's deployment memo. She will cite the EN–FI Hellinger number with its $p$-value, acknowledge the Sinitic gap, and qualify any modality-swap claim the marketing team attempts to make. The conservation law tells her exactly which claims she is licensed to make and which she is not. That is what a Noether argument, when it is grounded in measurement rather than postulation, is good for.
+Priya, with whom this chapter opened, will write the Finnish team's deployment memo. She will cite the EN–FI Hellinger number with its $p$-value, acknowledge the Sinitic gap, and qualify any modality-swap claim the marketing team attempts to make. The invariance result tells her exactly which claims she is licensed to make and which she is not. That is what a Noether argument, when it is grounded in measurement rather than postulation, is good for.

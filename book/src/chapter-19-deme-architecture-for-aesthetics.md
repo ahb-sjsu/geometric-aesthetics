@@ -67,7 +67,7 @@ The Evaluate stage operates on a candidate work $W^*$ not in the Discover corpus
 
 **Task E3: Channel.** Compute the tensor value $T^\mu(W^*)$ across the four channels. Return the full tensor, not a scalar.
 
-**Task E4: Stratum assignment.** Identify which genre stratum $W^*$ sits in, using the Discover-stage stratum boundaries. The within-stratum evaluation of Chapter 17 §17.2 — the honest aesthetic signal after genre controls — should drive the evaluation's intended interpretation. A work near a stratum boundary should be flagged; the framework's behavior at boundaries is less well characterized.
+**Task E4: Stratum assignment.** Identify which genre stratum $W^*$ sits in, using the Discover-stage stratum boundaries. The within-stratum evaluation of Chapter 17 §17.4 — the honest aesthetic signal after genre controls — should drive the evaluation's intended interpretation. A work near a stratum boundary should be flagged; the framework's behavior at boundaries is less well characterized.
 
 **Task E5: Invariance check.** Where possible (format variants, paraphrases), re-run E1–E3 under gauge transformations and verify the result is within the invariance envelope. Flag when it is not.
 

@@ -8,7 +8,7 @@ Maya has been revising her novel for three years. The geometric analysis her edi
 
 ## 16.1 What the Framework Cannot Settle {#16-1-what-the-framework-cannot-settle}
 
-The preceding fifteen chapters have developed a mathematical account of aesthetic judgment — manifolds, tensors, metrics, stratification, dynamics, symmetries, quantum extension, collective canon-formation, and the philosophy of contraction from tensor to verdict. The account is real. It has been tested against hundreds of thousands of works in two modalities and nineteen languages (Chapter 17). It produces effect sizes that, while modest, are statistically unmistakable. It identifies structural channels — spectral divergence, internal coherence, trajectory geometry, genre axes — that are cross-lingually invariant at $\rho \approx 0.7$ across six language families.
+The preceding fifteen chapters have developed a mathematical account of aesthetic judgment — manifolds, tensors, metrics, stratification, dynamics, symmetries, quantum extension, collective canon-formation, and the philosophy of contraction from tensor to verdict. The account is real. It has been tested against tens of thousands of works in two modalities and nineteen languages (Chapter 17). It produces effect sizes that, while modest, are statistically unmistakable. It identifies structural channels — spectral divergence, internal coherence, trajectory geometry, genre axes — that are cross-lingually invariant at $\rho \approx 0.7$ across six language families.
 
 And yet, after all this, the account is bounded. It characterizes aesthetic *structure*; it does not deliver aesthetic *verdicts*. It tells us what shape the embedding cloud of a work has; it does not tell us whether the cloud is beautiful. It locates the work in a manifold; it does not rank the locations.
 
@@ -75,7 +75,7 @@ This is a limit of the current tool, not necessarily of the framework in princip
 
 We now come to the observation that, more than any philosophical argument, constrains the framework's claims.
 
-The empirical account of Chapter 17 reports that after within-genre controls, the residualized correlation between geometric features and observed ratings falls to $R = 0.093$, $R^2 = 0.009$ — meaning that the framework explains roughly one per cent of the variance in aesthetic response *once genre is controlled for*. Before residualization, the raw figure was $R = 0.241$, $R^2 = 0.058$. **Eighty-five percent of the headline $R^2$ was genre confound.** For music the figure was worse — 91% of the hand-feature $R^2$ was genre confound, with MERT-spectrum features recovering more but still bounded (Chapter 17, §17.4).
+The empirical account of Chapter 17 reports that after within-genre controls, the residualized correlation between geometric features and observed ratings falls to $R = 0.093$, $R^2 = 0.009$ — meaning that the framework explains roughly one per cent of the variance in aesthetic response *once genre is controlled for*. Before residualization, the raw figure was $R = 0.241$, $R^2 = 0.058$. **Eighty-five percent of the headline $R^2$ was genre confound.** For music the figure was worse — 91% of the hand-feature $R^2$ was genre confound, with MERT-spectrum features recovering more but still bounded (Chapter 17, §17.6).
 
 We cannot emphasize this enough: **the geometric account captures, optimistically, 5–9 percent of whatever is driving aesthetic response, and a smaller residual fraction once genre is controlled.** This is a real effect — the statistical significance is extreme ($z = 6.5$ to $28.3$, depending on modality and control set; the EN↔FI Hellinger invariance alone is $p = 8 \times 10^{-57}$) — but it is also a small effect in absolute terms. Roughly **ninety percent of the variance in aesthetic response is not explained by the geometric features we have.**
 
@@ -89,7 +89,7 @@ What is in the other ninety percent?
 
 **The ineliminable surface of taste.** Some readers prefer short sentences. Some prefer long paragraphs. Some cannot abide second-person narration. These preferences are idiosyncratic, stable within a reader, and not obviously tracked by the high-level geometric channels the framework measures.
 
-**Genre-specific craft.** The null within-genre results on Classical music and Jazz ($R = -0.013$ and $R = 0.031$ respectively, Chapter 17 §17.4) suggest that some genres operate on craft dimensions that the MERT-v1-330M encoder, trained primarily on popular-music tagging tasks, does not represent well. In these cases the framework sees very little, and honestly reports that it sees very little.
+**Genre-specific craft.** The null within-genre results on Classical music and Jazz ($R = -0.013$ and $R = 0.031$ respectively, Chapter 17 §17.6) suggest that some genres operate on craft dimensions that the MERT-v1-330M encoder, trained primarily on popular-music tagging tasks, does not represent well. In these cases the framework sees very little, and honestly reports that it sees very little.
 
 The right summary is this: *the geometric framework captures a real but bounded portion of aesthetic response. The bound is not incidental — it is approximately where one would expect a content-only, context-free, mood-independent account to bottom out.* Much of what we call aesthetic judgment is social, contextual, mood-dependent, and reader-specific. The geometric account does not pretend otherwise.
 
@@ -146,7 +146,7 @@ The geometric account of aesthetics makes specific, bounded claims:
 *It claims:* Aesthetic works have measurable geometric structure in pretrained representation spaces.
 *It does not claim:* That structure is sufficient to issue aesthetic verdicts.
 
-*It claims:* The structure is partly invariant across languages ($\rho \approx 0.7$ on core features, 19 languages, 6 families).
+*It claims:* The structure is partly invariant across languages ($\rho \approx 0.7$ on core features, ten languages, 6 families).
 *It does not claim:* The structure is invariant across observers, moods, or historical moments.
 
 *It claims:* The contribution of geometric structure to observed ratings is real ($z = 6.5$ after genre controls, $p = 5.7 \times 10^{-11}$, $n = 4,998$).

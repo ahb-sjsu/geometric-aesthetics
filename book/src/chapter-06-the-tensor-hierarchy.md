@@ -141,7 +141,7 @@ $$s_W^{(k)} = \frac{1}{N_W}\sum_n (\phi(t_n) - \mu_0)^{\top} u_k \quad \text{for
 
 the mean projection of the work's cloud onto the $k$-th corpus axis. Also define the *spectral variance* $v_W^{(k)} = \operatorname{var}_n\{(\phi(t_n))^{\top} u_k\}$.
 
-Lasso-regressing rating (Phase 1) or log-listens (Phase 4) against $(s_W^{(1)}, \ldots, s_W^{(K)}, v_W^{(1)}, \ldots, v_W^{(K)})$ yields a sparse vector of nonzero coefficients. In Phase 1, 71 of the 256 axes are selected as nonzero. Inspection of the paragraphs loading most strongly on each selected axis reveals interpretable content: one axis separates adventure from romance, another separates dialogue-heavy from exposition-heavy, a third separates archaic from modern diction, a fourth separates first-person from third-person voice, and so on. These are the *discovered style/content/form axes* — the aesthetic-geometry analogues of the moral manifold's nine a priori cells, but bottom-up and data-driven.
+Lasso-regressing rating (Phase 1) or log-listens (Phase 4) against $(s_W^{(1)}, \ldots, s_W^{(K)})$ yields a sparse vector of nonzero coefficients. In Phase 1, 71 of the 128 axes are selected as nonzero. Inspection of the paragraphs loading most strongly on each selected axis reveals interpretable content: one axis separates adventure from romance, another separates dialogue-heavy from exposition-heavy, a third separates archaic from modern diction, a fourth separates first-person from third-person voice, and so on. These are the *discovered style/content/form axes* — the aesthetic-geometry analogues of the moral manifold's nine a priori cells, but bottom-up and data-driven.
 
 ### The Level-4 Tensor
 

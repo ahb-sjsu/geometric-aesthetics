@@ -110,7 +110,7 @@ All numerical findings in Chapter 17 are *Verified empirically*; the ledger entr
 | # | Claim | Status | Evidence |
 |---|---|---|---|
 | F21.1 | Raw Lasso-on-PCA-spectrum predicts log(1+track_listens) at R = 0.302, z = 49.8σ. | Verified empirically | FMA Medium, n = 24,801, artist-disjoint 5-fold CV, MERT-v1-330M. |
-| F21.2 | 91% of F21.1's R² is genre confound. | Verified empirically | Genre-residualized hand-feature R = 0.043 (z = 6.7); spectrum Lasso R = 0.177 (z = 28.3σ). |
+| F21.2 | 91% of the hand-feature R² is genre confound (about 66% of F21.1's spectrum-Lasso R²). | Verified empirically | Genre-residualized hand-feature R = 0.043 (z = 6.7); spectrum Lasso R = 0.177 (z = 28.3σ). |
 | F21.3 | MERT-derived features outperform Spotify's 8 acoustic features on the Echonest head-to-head. | Verified empirically | Shared n = 5,233; MERT Lasso-spectrum R = 0.225, Spotify 8 features R = 0.103, bootstrap difference p = 0.001. |
 | F21.4 | Within-genre predictive signal, artist-disjoint: Rock R = 0.139 (n = 7,088), Electronic R = 0.143 (n = 6,284), Hip-Hop R = 0.141 (n = 2,190), Pop R = 0.185 (n = 1,173). | Verified empirically | — |
 | F21.5 | Within-genre, Classical and Jazz are null. | Verified empirically (null) | Classical R = −0.013, n = 584; Jazz R = 0.031, n = 384. |
